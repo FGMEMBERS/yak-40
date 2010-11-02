@@ -1,0 +1,71 @@
+Group  "WORLD", v 0, s 0, kids 43 
+        Group  "Armature", v 0, s 0, kids 3 *
+                Object "Cube.028", v 14, s 15, kids 0 
+                Object "Cube.030", v 47, s 52, kids 0 
+                Object "Cylinder.002", v 170, s 172, kids 0 
+        Group  "Armature.001", v 0, s 0, kids 3 *
+                Object "Cube.031", v 47, s 52, kids 0 
+                Object "Cube.032", v 14, s 15, kids 0 
+                Object "Cylinder.003", v 170, s 172, kids 0 
+        Group  "Armature.002", v 0, s 0, kids 3 *
+                Object "Cube.033", v 47, s 52, kids 0 
+                Object "Cube.034", v 14, s 15, kids 0 
+                Object "Cylinder.004", v 170, s 172, kids 0 
+        Group  "Armature.003", v 0, s 0, kids 3 *
+                Object "Cube.035", v 14, s 15, kids 0 
+                Object "Cube.036", v 47, s 52, kids 0 
+                Object "Cylinder.005", v 170, s 172, kids 0 
+        Group  "Armature.004", v 0, s 0, kids 1 *
+                Object "Cylinder.008", v 90, s 100, kids 0 
+        Group  "Armature.005", v 0, s 0, kids 1 *
+                Object "Cylinder.006", v 90, s 100, kids 0 
+        Group  "Armature.006", v 0, s 0, kids 1 *
+                Object "Cylinder.007", v 90, s 100, kids 0 
+        Group  "Cube", v 0, s 0, kids 3 *
+                Object "Cube_0", v 7, s 5, kids 0 
+                Object "Cube_1", v 26, s 17, kids 0 
+                Object "Cube_2", v 41, s 41, kids 0 
+        Object "Cube.001", v 30, s 20, kids 0 *
+        Object "Cube.002", v 8, s 6, kids 0 *
+        Object "Cube.003", v 74, s 72, kids 0 *
+        Object "Cube.004", v 74, s 72, kids 0 *
+        Object "Cube.005", v 52, s 42, kids 0 *
+        Object "Cube.006", v 72, s 82, kids 0 *
+        Object "Cube.007", v 8, s 6, kids 0 *
+        Object "Cube.008", v 8, s 6, kids 0 *
+        Object "Cube.009", v 196, s 173, kids 0 *
+        Object "Cube.010", v 64, s 57, kids 0 *
+        Group  "Cube.011", v 0, s 0, kids 3 *
+                Object "Cube.011_0", v 8, s 2, kids 0 
+                Object "Cube.011_1", v 18, s 13, kids 0 
+                Object "Cube.011_2", v 86, s 101, kids 0 
+        Object "Cube.012", v 61, s 81, kids 0 *
+        Object "Cube.013", v 1538, s 1536, kids 0 *
+        Object "Cube.014", v 1538, s 1536, kids 0 *
+        Object "Cube.015", v 8, s 6, kids 0 *
+        Object "Cube.016", v 8, s 6, kids 0 *
+        Object "Cube.017", v 386, s 384, kids 0 *
+        Object "Cube.018", v 386, s 384, kids 0 *
+        Object "Cube.019", v 8, s 6, kids 0 *
+        Object "Cube.020", v 386, s 384, kids 0 *
+        Object "Cube.021", v 8, s 6, kids 0 *
+        Object "Cube.022", v 386, s 384, kids 0 *
+        Object "Cube.023", v 8, s 6, kids 0 *
+        Object "Cube.024", v 1538, s 1536, kids 0 *
+        Object "Cube.025", v 1538, s 1536, kids 0 *
+        Object "Cube.026", v 61, s 81, kids 0 *
+        Object "Cube.027", v 8, s 6, kids 0 *
+        Object "Cube.029", v 128, s 114, kids 0 *
+        Group  "Cylinder", v 0, s 0, kids 2 *
+                Object "Cylinder_0", v 51, s 49, kids 0 
+                Object "Cylinder_1", v 33, s 32, kids 0 
+        Object "Cylinder.001", v 66, s 80, kids 0 *
+        Object "Plane", v 4, s 1, kids 0 *
+        Object "Plane.001", v 55, s 46, kids 0 *
+        Object "Sphere", v 533, s 516, kids 0 *
+        Object "Tube.001", v 320, s 256, kids 0 *
+        Group  "cabin", v 0, s 0, kids 2 *
+                Object "cabin_0", v 349, s 380, kids 0 
+                Object "cabin_1", v 71, s 55, kids 0 
+
+Total objects: 69   surfaces: 11378   vertices: 11442

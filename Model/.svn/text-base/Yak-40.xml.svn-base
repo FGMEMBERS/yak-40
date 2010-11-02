@@ -1,0 +1,1337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+ <path>Aircraft/yak-40/Model/yak-40.ac</path>
+
+ <!--Virtual cockpit staff-->
+ 
+ <model>
+    <name>cockpit</name>
+    <path>Aircraft/yak-40/Model/cockpit.xml</path>
+    <offsets>
+      <x-m>-0.40</x-m>
+      <y-m>0.0</y-m>
+      <z-m>-0.4</z-m>
+	  <heading-deg>90.0</heading-deg>
+    </offsets>
+    <nopreview/>
+</model>
+
+<animation>
+  <type>select</type>
+	<object-name>MESH160</object-name>
+	<object-name>MESH161</object-name>
+	<object-name>MESH166</object-name>
+	<object-name>MESH167</object-name>
+	<object-name>MESH168</object-name>
+	<object-name>MESH169</object-name>
+	<object-name>MESH170</object-name>
+	<object-name>MESH171</object-name>
+	<object-name>MESH172</object-name>
+	<object-name>MESH173</object-name>
+	<object-name>MESH174</object-name>
+	<object-name>MESH190</object-name>
+	<object-name>MESH191</object-name>
+	<object-name>MESH192</object-name>
+	<object-name>MESH193</object-name>
+	<object-name>MESH194</object-name>
+	<object-name>MESH199</object-name>
+  <condition>
+    <not>
+    	<property>/sim/current-view/internal</property>
+    </not>
+  </condition>
+</animation>
+ 
+ <!--End VC section-->
+ 
+ <!--Instruments-->
+
+<!--************************** Captain panel ***************************-->
+ 
+<!--AGB--> 
+<!--
+ <model>
+   <name>agd-l</name>
+   <path>Aircraft/Yak-40/Panels/Instruments-3d/agb/agb_1.xml</path>
+   <offsets>
+     <x-m>-8.7259</x-m>
+     <y-m>-0.466</y-m>
+     <z-m>-0.095</z-m>
+	 <pitch-deg>-0.01</pitch-deg>
+	 <heading-deg>0.0</heading-deg>
+	 </offsets>
+ </model>
+ -->
+ <!--KPP-1234--> 
+ <model>
+   <name>agd-l</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/agd/agd-l.xml</path>
+   <offsets>
+     <x-m>-8.7046</x-m>
+     <y-m>-0.466</y-m>
+     <z-m>-0.0946</z-m>
+	 <pitch-deg>0.0</pitch-deg>
+	 <heading-deg>180.0</heading-deg>
+	 </offsets>
+ </model>
+ 
+<!--KUS-->
+ <model>
+   <name>kus730-1100</name><!-- Подогнал-->
+   <path>Aircraft/yak-40/Panels/Instruments-3d/kus730-1100/kus730-1100.xml</path>
+   <offsets>
+     <x-m>-8.700</x-m>
+     <y-m>-0.5833</y-m>
+     <z-m>-0.086</z-m>
+	 <heading-deg>-90.0</heading-deg>
+   </offsets>
+</model>
+ 
+<!--VD-10-->
+<!--
+<model>
+   <name>vd10</name>
+   <path>Aircraft/Yak-40/Panels/Instruments-3d/vd10/vd10.xml</path>
+   <offsets>
+     <x-m>-8.702</x-m>
+     <y-m>-0.5815</y-m>
+     <z-m>-0.195</z-m>
+	 <heading-deg>-90.0</heading-deg>
+   </offsets>
+</model>
+-->
+<!--UVID-15-L-->
+<model>
+   <name>uvid-15</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/uvid-15/uvid-15-m.xml</path>
+   <offsets>
+     <x-m>-8.7015</x-m>
+     <y-m>-0.5817</y-m>
+     <z-m>-0.190</z-m>
+	 <heading-deg>0.0</heading-deg>
+   </offsets>
+</model>
+
+<!--ACHS-2-->
+
+<model>
+   <name>achs-2</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/achs-2/achs-2.xml</path>
+   <offsets>
+     <x-m>-8.65</x-m>
+     <y-m>0.0</y-m>
+     <z-m>0.33</z-m>
+	 <heading-deg>0.0</heading-deg>
+   </offsets>
+</model>
+
+<!--TNV-15-->
+<model>
+   <name>tnv-15</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tnv-15/tnv.xml</path>
+   <offsets>
+     <x-m>-8.698</x-m>
+     <y-m>-0.587</y-m>
+     <z-m>-0.368</z-m>
+	 <heading-deg>0.0</heading-deg>
+   </offsets>
+</model>
+
+<!--VAR-30-->
+<model>
+   <name>var30-3</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/var/var-30.xml</path>
+   <offsets>
+     <x-m>-8.708</x-m>
+     <y-m>-0.337</y-m>
+     <z-m>-0.081</z-m>
+	 <heading-deg>0.0</heading-deg>
+   </offsets>
+</model>
+
+<!--IKU-->
+<model>
+   <name>iku</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/iku-1/iku-1.xml</path>
+   <offsets>
+     <x-m>-8.701</x-m>
+     <y-m>-0.338</y-m>
+     <z-m>-0.19</z-m>
+	 <heading-deg>0.0</heading-deg>
+   </offsets>
+</model>
+
+<!--RV5-M-->
+<model>
+   <name>RV5-1-UM</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/rv-5m/rv-5m.xml</path>
+   <offsets>
+     <x-m>-8.708</x-m>
+     <y-m>-0.24</y-m>
+     <z-m>-0.0834</z-m>
+	 <heading-deg>0.0</heading-deg>
+   </offsets>
+</model>
+
+<!--Приборы двигателя-->
+
+<!--TVG_1-->
+<model>
+   <name>tvg_1</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_1.xml</path>
+   <offsets>
+     <x-m>-8.705</x-m>
+     <y-m>-0.08</y-m>
+     <z-m>-0.16</z-m>
+	 <heading-deg>0.0</heading-deg>
+   </offsets>
+</model>
+
+
+<!--TVG_2-->
+<model>
+   <name>tvg_2</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_2.xml</path>
+   <offsets>
+     <x-m>-8.705</x-m>
+     <y-m>0.00461</y-m>
+     <z-m>-0.16</z-m>
+	 <heading-deg>0.0</heading-deg>
+   </offsets>
+</model>
+
+
+<!--TVG_3-->
+<model>
+   <name>tvg_3</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_3.xml</path>
+   <offsets>
+     <x-m>-8.705</x-m>
+     <y-m>0.083</y-m>
+     <z-m>-0.16</z-m>
+	 <heading-deg>0.0</heading-deg>
+   </offsets>
+</model>
+
+<!--ITE2_1-->
+<model>
+   <name>ite-1</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/ite/ite-2t_1.xml</path>
+   <offsets>
+     <x-m>-8.705</x-m>
+     <y-m>-0.1076</y-m>
+     <z-m>-0.2528</z-m>
+	 <heading-deg>0.0</heading-deg>
+   </offsets>
+</model>
+
+<!--ITE2_2-->
+<model>
+   <name>ite-2</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/ite/ite-2t_2.xml</path>
+   <offsets>
+     <x-m>-8.705</x-m>
+     <y-m>0.00465</y-m>
+     <z-m>-0.2528</z-m>
+	 <heading-deg>0.0</heading-deg>
+   </offsets>
+</model>
+
+<!--ITE2_3-->
+<model>
+   <name>ite-3</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/ite/ite-2t_3.xml</path>
+   <offsets>
+     <x-m>-8.705</x-m>
+     <y-m>0.11425</y-m>
+     <z-m>-0.2528</z-m>
+	 <heading-deg>0.0</heading-deg>
+   </offsets>
+</model>
+<!-- -->
+
+
+<!--UPS-->
+<model>
+   <name>stab-ind</name><!-- Подогнал-->
+   <path>Aircraft/yak-40/Panels/Instruments-3d/stabind/stabind.xml</path>
+   <offsets>
+     <x-m>-8.705</x-m>
+     <y-m>-0.0869</y-m>
+     <z-m>-0.09</z-m>
+	 <heading-deg>0.0</heading-deg>
+   </offsets>
+</model>
+
+<!--UPZ-->
+<model>
+   <name>flaps-ind</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/flapsind/flapsind.xml</path>
+   <offsets>
+     <x-m>-8.71</x-m>
+     <y-m>0.0905</y-m>
+     <z-m>-0.09</z-m>
+	 <heading-deg>0.0</heading-deg>
+   </offsets>
+</model>
+
+
+<!--KPPM-->
+<!--
+<model>
+   <name>kppm</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/gik1/kppm.xml</path>
+   <offsets>
+     <x-m>-8.697</x-m>
+     <y-m>-0.4648</y-m>
+     <z-m>-0.2183</z-m>
+	 <heading-deg>-90.0</heading-deg>
+   </offsets>
+</model>
+-->
+<!--NPP-->
+<model>
+   <name>npp</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/npp/kurs2L.xml</path>
+   <offsets>
+     <x-m>-8.705</x-m><!--вперед с -  -->
+     <y-m>-0.4648</y-m><!--влево с -  -->
+     <z-m>-0.222</z-m><!--вверх с + -->
+	 <heading-deg>90.0</heading-deg>
+   </offsets>
+</model>
+
+<!--aztest-->
+<model>
+   <name>aztest</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs/az_bat_1.xml</path>
+   <offsets>
+     <x-m>-8.705</x-m><!--вперед с -  -->
+     <y-m>-0.4648</y-m><!--влево с -  -->
+     <z-m>-0.3</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+<!--************************** Central panel ***************************-->
+<!--KLN-89-->
+
+
+<!--************************** Captain panel down***************************-->
+<!--ARK-15-1-->
+<model>
+  <name>ark-15-1</name>
+  <path>Aircraft/yak-40/Panels/Instruments-3d/ark-15/ark-15-1.xml</path>
+  <offsets>
+    <x-m>-8.25</x-m>
+    <y-m>-0.955</y-m>
+    <z-m>-0.4</z-m>
+    <pitch-deg>-90.0</pitch-deg>
+    
+  </offsets>
+  
+</model>
+
+
+<!--********************* Central Console panel **********************-->
+
+
+<!--********************* BM panel **********************-->
+<!--AP-40-->
+ <model>
+   <name>ap40</name><!-- Подогнал-->
+   <path>Aircraft/yak-40/Panels/Instruments-3d/ap40/ap.xml</path>
+   <offsets>
+     <x-m>-8.280</x-m>
+     <y-m>-0.03</y-m>
+     <z-m>-0.59</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>-32.0</pitch-deg>
+   </offsets>
+</model>
+
+<!--azvk_ap-->
+ <model>
+   <name>vk_ap</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/vk_ap.xml</path>
+   <offsets>
+     <x-m>-8.280</x-m>
+     <y-m>-0.106</y-m>
+     <z-m>-0.588</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>-32.0</pitch-deg>
+   </offsets>
+</model>
+
+<!--t_ap-->
+ <model>
+   <name>t_ap</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/t_ap.xml</path>
+   <offsets>
+     <x-m>-8.280</x-m>
+     <y-m>0.047</y-m>
+     <z-m>-0.588</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>-32.0</pitch-deg>
+   </offsets>
+</model>
+
+
+
+
+
+<!--************************** Co-pilot panel ***************************-->
+<!--KUS-->
+ <model>
+   <name>kus730-1100</name><!-- Подогнал-->
+   <path>Aircraft/yak-40/Panels/Instruments-3d/kus730-1100/kus730-1100.xml</path>
+   <offsets>
+     <x-m>-8.700</x-m>
+     <y-m>0.345</y-m>
+     <z-m>-0.068</z-m>
+	 <heading-deg>-90.0</heading-deg>
+   </offsets>
+</model>
+
+<!--VD-10-->
+
+<model>
+   <name>vd10</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/vd10/vd10.xml</path>
+   <offsets>
+     <x-m>-8.7</x-m>
+     <y-m>0.24</y-m>
+     <z-m>-0.172</z-m>
+	 <heading-deg>-90.0</heading-deg>
+   </offsets>
+</model>
+
+
+<!--UVID-15-R-->
+<model>
+   <name>uvid-15-feet</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/uvid-15/uvid-15-ft.xml</path>
+   <offsets>
+     <x-m>-8.707</x-m>
+     <y-m>0.345</y-m>
+     <z-m>-0.170</z-m>
+	 <heading-deg>0.0</heading-deg>
+   </offsets>
+</model>
+
+<!--************************** Co-pilot panel down ***************************-->
+<!--ARK-15-2-->
+<model>
+  <name>ark-15-2</name>
+  <path>Aircraft/yak-40/Panels/Instruments-3d/ark-15/ark-15-2.xml</path>
+  <offsets>
+    <x-m>-8.25</x-m>
+    <y-m>0.94</y-m>
+    <z-m>-0.4</z-m>
+    <pitch-deg>-90.0</pitch-deg>
+  </offsets>
+</model>
+
+
+<!--************************** АЗС ПРАВЫЙ ЩИТОК***************************-->
+
+<!--az_ukv_2-->
+<model>
+   <name>az_ukv_2</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_ukv_2.xml</path>
+   <offsets>
+     <x-m>-7.5725</x-m><!--вперед с -  -->
+     <y-m>0.9495</y-m><!--влево с -  -->
+     <z-m>-0.09735</z-m><!--вверх с + -->
+	 <heading-deg>180.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+
+<!--az_adp-->
+<model>
+   <name>az_agd_r</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_adp.xml</path>
+   <offsets>
+     <x-m>-7.5725</x-m><!--вперед с -  -->
+     <y-m>0.9223</y-m><!--влево с -  -->
+     <z-m>-0.09733</z-m><!--вверх с + -->
+	 <heading-deg>180.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+
+<!--az_agd_r-->
+<model>
+   <name>az_agd_r</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_agd_r.xml</path>
+   <offsets>
+     <x-m>-7.5725</x-m><!--вперед с -  -->
+     <y-m>0.894</y-m><!--влево с -  -->
+     <z-m>-0.09733</z-m><!--вверх с + -->
+	 <heading-deg>180.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+
+<!--az_gmk-->
+<model>
+   <name>az_gmk</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_gmk.xml</path>
+   <offsets>
+     <x-m>-7.5725</x-m><!--вперед с -  -->
+     <y-m>0.8655</y-m><!--влево с -  -->
+     <z-m>-0.09731</z-m><!--вверх с + -->
+	 <heading-deg>180.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+
+<!--az_gidro-->
+<model>
+   <name>az_gidro</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_gidro.xml</path>
+   <offsets>
+     <x-m>-7.5725</x-m><!--вперед с -  -->
+     <y-m>0.8375</y-m><!--влево с -  -->
+     <z-m>-0.09731</z-m><!--вверх с + -->
+	 <heading-deg>180.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+
+<!--az_ap-->
+<model>
+   <name>az_ap</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_ap.xml</path>
+   <offsets>
+     <x-m>-7.5725</x-m><!--вперед с -  -->
+     <y-m>0.8095</y-m><!--влево с -  -->
+     <z-m>-0.09731</z-m><!--вверх с + -->
+	 <heading-deg>180.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+
+<!--az_sig_gear-->
+<model>
+   <name>az_sig_gear</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_sig_gear.xml</path>
+   <offsets>
+     <x-m>-7.5725</x-m><!--вперед с -  -->
+     <y-m>0.782</y-m><!--влево с -  -->
+     <z-m>-0.09731</z-m><!--вверх с + -->
+	 <heading-deg>180.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+
+<!--az_raketi-->
+<model>
+   <name>az_rak</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_rak.xml</path>
+   <offsets>
+     <x-m>-7.5725</x-m>
+     <y-m>0.754</y-m>
+     <z-m>-0.09731</z-m>
+	 <heading-deg>180.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+
+<!--az_so_72-->
+<model>
+   <name>az_so_72</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_so_72.xml</path>
+   <offsets>
+     <x-m>-7.5725</x-m><!--вперед с -  -->
+     <y-m>0.726</y-m><!--влево с -  -->
+     <z-m>-0.09729</z-m><!--вверх с + -->
+	 <heading-deg>180.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+
+
+
+<!--*************************** END PANELS ****************************-->
+<!--Group all in VC-->
+<!--
+<animation>
+  <type>none</type>
+  <name>virtualcockpit</name>
+</animation>
+-->
+<!--Hide VC on external views-->
+<!--
+<animation>
+  <type>select</type>
+  <object-name>cockpit</object-name>
+  <object-name>virtualcockpit</object-name>
+  <condition>
+      <property>/sim/current-view/internal</property>
+  </condition>
+  <nopreview/>
+</animation>
+-->
+<!-- ************************ Cabin animation *****************************-->
+
+<!-- Руды-->
+
+<!-- Педали-->
+
+<!-- Штурвал-->
+
+
+<!--******************************** ANIMATIONS *******************************-->
+<!--++++++++++++++++++++++++++Поверхности ++++++++++++++++++++++++++++++++++++ -->
+<!-- Руль высоты-->
+<animation>
+  <type>rotate</type>
+  <object-name>elevator_M</object-name>
+  <object-name>elevator_0</object-name>
+	<property>/surface-positions/elevator-pos-norm</property>-->  
+  <interpolation>
+- <entry>
+  <ind>1</ind> 
+  <dep>25</dep>
+  </entry>
+- <entry>
+  <ind>0</ind> 
+  <dep>0</dep> 
+  </entry>
+- <entry>
+  <ind>-1</ind> 
+  <dep>-25</dep> 
+  </entry>
+  </interpolation>
+  <center>
+   <x-m>9.370</x-m>
+   <y-m>0.000</y-m>
+   <z-m>4.020</z-m>
+ </center>
+   <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+   </axis>
+</animation>
+
+<!-- левый элерон -->
+
+<animation>
+  <type>rotate</type>
+  <object-name>left_aile0</object-name>
+  <object-name>left_aile1</object-name>
+  <object-name>left_ailer</object-name>
+  <property>/surface-positions/left-aileron-pos-norm</property>
+ <interpolation>
+- <entry>
+  <ind>-1</ind> 
+  <dep>-19</dep> 
+  </entry>
+- <entry>
+  <ind>0</ind> 
+  <dep>0</dep> 
+  </entry>
+- <entry>
+  <ind>1</ind> 
+  <dep>15</dep> 
+  </entry>
+- 
+  </interpolation>
+  <axis>    
+	<x1-m>0.44</x1-m>
+    <y1-m>-12.25</y1-m>
+    <z1-m >-0.18</z1-m>
+	
+	<x2-m>0.73</x2-m>
+    <y2-m>-8.42</y2-m>
+    <z2-m>-0.57</z2-m> 	
+  </axis>
+</animation>
+
+<!-- правый элерон -->
+
+<animation>
+  <type>rotate</type>
+  <object-name>right_ail0</object-name>
+  <object-name>right_ail1</object-name>
+  <object-name>right_aile</object-name>
+  <property>/surface-positions/right-aileron-pos-norm</property>
+ <interpolation>
+- <entry>
+  <ind>-1</ind> 
+  <dep>15</dep> 
+  </entry>
+- <entry>
+  <ind>0</ind> 
+  <dep>0</dep> 
+  </entry>
+	<entry>
+  <ind>1</ind> 
+  <dep>-19</dep> 
+  </entry>
+- 
+  </interpolation>
+  <axis>
+    <x1-m>0.73</x1-m>
+    <y1-m>8.46</y1-m>
+    <z1-m>-0.57</z1-m> 	
+	
+    <x2-m>0.45</x2-m>
+    <y2-m>12.30</y2-m>
+    <z2-m>-0.18</z2-m>
+  </axis>
+</animation>
+
+<!-- Руль направления -->
+
+<animation>
+  <type>rotate</type>
+  <object-name>rudder_ME0</object-name>
+  <object-name>rudder_MES</object-name>
+  <property>/surface-positions/rudder-pos-norm</property>
+   <interpolation>
+	<entry>
+  <ind>1</ind> 
+  <dep>30</dep>
+  </entry>
+- <entry>
+  <ind>0</ind> 
+  <dep>0</dep> 
+  </entry>
+- <entry>
+  <ind>-1</ind> 
+  <dep>-30</dep> 
+  </entry>
+  </interpolation>
+  <axis>
+    <x1-m>7.15</x1-m>
+    <y1-m>0.00</y1-m>
+    <z1-m>1.41</z1-m>
+    
+    <x2-m>8.93</x2-m>
+    <y2-m>0.00</y2-m>
+    <z2-m>3.71</z2-m>    
+  </axis>
+</animation>
+
+<!-- Стабилизатор -->
+
+<animation>
+  <type>rotate</type>
+  <object-name>elevator_M</object-name>
+  <object-name>elevator_0</object-name>
+  <object-name>MESH77</object-name>
+  <object-name>MESH73</object-name>  
+  <property>/surface-positions/pitch-trim-pos-norm</property>
+ <interpolation>
+- <entry>
+  <ind>1</ind> 
+  <dep>6</dep> 
+  </entry>
+- <entry>
+  <ind>0</ind> 
+  <dep>0</dep> 
+  </entry>
+- <entry>
+  <ind>-1</ind> 
+  <dep>-3</dep> 
+  </entry>
+  </interpolation>
+	<center>
+   <x-m>8.840</x-m>
+   <y-m>0.000</y-m>
+   <z-m>4.020</z-m>
+	</center>
+   <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+   </axis>
+</animation>
+
+<!--++++++++++++++++++++++++++Закрылки ++++++++++++++++++++++++++++++++++++ -->
+<!-- левые -->
+
+<animation>
+  <type>rotate</type>
+  <object-name>l_flap_ke0</object-name>
+  <object-name>l_flap_ke1</object-name>
+  <object-name>l_flap_ke2</object-name>
+  <object-name>l_flap_ke4</object-name>
+  <object-name>l_flap_ke5</object-name>
+  <object-name>l_flap_ke7</object-name>
+  <object-name>l_flap_ke8</object-name>
+  <object-name>l_flap_ke9</object-name>
+  <property>/fdm/jsbsim/fcs/flap-pos-deg</property>
+ <interpolation>
+- <entry>
+  <ind>0</ind> 
+  <dep>0</dep> 
+  </entry>
+- <entry>
+  <ind>20</ind> 
+  <dep>20</dep> 
+  </entry>
+- <entry>
+  <ind>35</ind> 
+  <dep>35</dep> 
+  </entry>
+- 
+  </interpolation>
+  <axis>    
+	<x1-m>0.7</x1-m>
+    <y1-m>-8.2</y1-m>
+    <z1-m >-0.6</z1-m>
+	
+	<x2-m>1.1</x2-m>
+    <y2-m>-1.6</y2-m>
+    <z2-m>-1.3</z2-m> 	
+  </axis>
+</animation>
+
+<!-- правые -->
+
+<animation>
+  <type>rotate</type>
+  <object-name>r_flap_ke0</object-name>
+  <object-name>r_flap_ke1</object-name>
+  <object-name>r_flap_ke2</object-name>
+  <object-name>r_flap_ke4</object-name>
+  <object-name>r_flap_ke5</object-name>
+  <object-name>r_flap_ke7</object-name>
+  <object-name>r_flap_ke8</object-name>
+  <object-name>r_flap_ke9</object-name>
+  <property>/fdm/jsbsim/fcs/flap-pos-deg</property>
+ <interpolation>
+- <entry>
+  <ind>0</ind> 
+  <dep>0</dep> 
+  </entry>
+- <entry>
+  <ind>20</ind> 
+  <dep>-20</dep> 
+  </entry>
+- <entry>
+  <ind>35</ind> 
+  <dep>-35</dep> 
+  </entry> 
+  </interpolation>
+  <axis>
+    <x1-m>0.70</x1-m>
+    <y1-m>8.20</y1-m>
+    <z1-m>-0.6</z1-m> 	
+	
+    <x2-m>1.1</x2-m>
+    <y2-m>1.6</y2-m>
+    <z2-m>-1.3</z2-m>
+  </axis>
+</animation>
+
+<!--++++++++++++++++++++++++++Переднее шасси ++++++++++++++++++++++++++++++++++++ -->
+<!--Переднее шасси поворот-->
+
+
+
+<!--Переднее шасси обжатие стойки-->
+
+
+<!--Створка большая левая-->
+<animation>
+<type>rotate</type>
+  <object-name>c_gear_M14</object-name>
+  <property>gear/gear/position-norm</property>
+	  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>0.0</dep></entry>
+		<entry><ind>	0.5</ind>	<dep>120</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>	0.0</dep></entry>
+  </interpolation>
+   <axis>
+    <x1-m>-8.218</x1-m>
+    <y1-m>-0.278</y1-m>
+    <z1-m>-1.556</z1-m>
+    
+    <x2-m>-9.368</x2-m>
+    <y2-m>-0.202</y2-m>
+    <z2-m>-1.427</z2-m>    
+   </axis>
+</animation>
+
+<!--Створка большая правая-->
+<animation>
+<type>rotate</type>
+	<object-name>c_gear_ME7</object-name>
+  <property>gear/gear/position-norm</property>
+	  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>0.0</dep></entry>
+    <entry><ind>	0.5</ind>	<dep>-120</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>	0.0</dep></entry>
+  </interpolation>
+   <axis>
+    <x1-m>-8.218</x1-m>
+    <y1-m>0.321</y1-m>
+    <z1-m>-1.556</z1-m>
+    
+    <x2-m>-9.368</x2-m>
+    <y2-m>0.244</y2-m>
+    <z2-m>-1.427</z2-m>    
+   </axis>
+</animation>
+
+<!--Переднее шасси целиком-->
+<animation>
+<type>rotate</type>
+	<object-name>c_gear_ME6</object-name>
+	<object-name>c_gear_ME5</object-name>
+	<object-name>c_gear_ME4</object-name>
+	<object-name>c_gear_MES</object-name>
+	<object-name>c_gear_ME1</object-name>
+	<object-name>c_gear_ME0</object-name>
+	<object-name>rudder_ME1</object-name>
+	<object-name>rudder_ME2</object-name>
+	<object-name>c_tire_ME0</object-name>
+	<object-name>c_tire_MES</object-name>
+  <property>gear/gear/position-norm</property>
+	  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>118.0</dep></entry>
+    <entry><ind>	0.5</ind>	<dep>118.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>	0.0</dep></entry>
+  </interpolation>
+	<center>
+   <x-m>-7.8</x-m>
+   <y-m>0.000</y-m>
+   <z-m>-1.44</z-m>
+	</center>
+   <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+   </axis>
+</animation>
+
+<!--Переднее шасси вращение-->
+<animation>
+<type>spin</type>
+	<object-name>c_tire_ME0</object-name>
+	<object-name>c_tire_MES</object-name>
+  <condition>
+      <property>gear/gear/compression-norm</property>
+  </condition>
+  <property>gear/gear/rollspeed-ms</property>
+	<factor>12.28</factor>
+	<center>
+   <x-m>-7.498</x-m>
+   <y-m>0.021</y-m>
+   <z-m>-2.68714</z-m>
+	</center>
+   <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+   </axis>
+</animation>
+
+<!--Переднее шасси подкос-->
+<animation>
+<type>rotate</type>
+	<object-name>c_gear_ME3</object-name>
+	<object-name>c_gear_ME2</object-name>
+  <property>gear/gear/position-norm</property>
+	  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>-90.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>	0.0</dep></entry>
+  </interpolation>
+	<center>
+   <x-m>-8.3</x-m>
+   <y-m>0.000</y-m>
+   <z-m>-1.4</z-m>
+	</center>
+   <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+   </axis>
+</animation>
+
+<!--Створка малая левая-->
+<animation>
+<type>rotate</type>
+  <object-name>stvor_per_lev</object-name>
+  <property>gear/gear/position-norm</property>
+	  <interpolation>
+		<entry><ind>	0.0</ind>	<dep>-80</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>	0.0</dep></entry>
+  </interpolation>
+   <axis>
+    <x1-m>-7.752</x1-m>
+    <y1-m>-0.2977</y1-m>
+    <z1-m>-1.549</z1-m>
+    
+    <x2-m>-8.218</x2-m>
+    <y2-m>-0.2783</y2-m>
+    <z2-m>-1.556</z2-m>    
+   </axis>
+</animation>
+
+<!--Створка малая правая-->
+<animation>
+<type>rotate</type>
+  <object-name>stvor_per_prav</object-name>
+  <property>gear/gear/position-norm</property>
+	  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>80</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>	0.0</dep></entry>
+  </interpolation>
+   <axis>
+    <x1-m>-7.752</x1-m>
+    <y1-m>0.340</y1-m>
+    <z1-m>-1.546</z1-m>
+    
+    <x2-m>-8.217</x2-m>
+    <y2-m>0.319</y2-m>
+    <z2-m>-1.555</z2-m>    
+   </axis>
+</animation>
+
+
+
+<!--++++++++++++++++++++++++++Правое шасси ++++++++++++++++++++++++++++++++++++ -->
+
+<!--+Створка ++++++++++++++++++++++++++++++++++++ -->
+
+<animation>
+<type>rotate</type>
+	<object-name>r_gear_ME2</object-name><!--Правая створка верх боковина-->
+	<object-name>r_gear_ME0</object-name><!--Правая створка внешняя-->
+	<object-name>r_gear_ME1</object-name><!--Правая створка верхний тонкий-->
+	<object-name>r_gear_MES</object-name><!--Правая створка подкос нижний тонкий-->
+	<object-name>r_gear_ME3</object-name><!--Правая створка верх-->
+  <property>gear/gear/position-norm</property>
+	  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>160.0</dep></entry>
+    <entry><ind>	0.5</ind>	<dep>80.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>0.0</dep></entry>
+  </interpolation>
+	<center>
+   <x-m>0.0</x-m>
+   <y-m>2.7</y-m>
+   <z-m>-1.45</z-m>
+	</center>
+   <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+   </axis>
+</animation>
+
+
+<animation>
+<type>rotate</type>
+	<object-name>r_gear_ME0</object-name><!--Правая створка внешняя-->
+  <property>gear/gear/position-norm</property>
+	  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>-90.0</dep></entry>
+    <entry><ind>	0.5</ind>	<dep>-45.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>0.0</dep></entry>
+  </interpolation>
+	<center>
+   <x-m>0.1</x-m>
+   <y-m>3.7</y-m>
+   <z-m>-1.6</z-m>
+	</center>
+   <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+   </axis>
+</animation>
+
+
+<animation>
+<type>rotate</type>
+	<object-name>r_gear_ME1</object-name><!--Правая створка верхний тонкий-->
+  <property>gear/gear/position-norm</property>
+	  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>40</dep></entry>
+    <entry><ind>	0.5</ind>	<dep>20.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>0.0</dep></entry>
+  </interpolation>
+	<center>
+   <x-m>0.0</x-m>
+   <y-m>3.10</y-m>
+   <z-m>-1.6</z-m>
+	</center>
+   <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+   </axis>
+</animation>
+
+<animation>
+<type>rotate</type>
+	<object-name>r_gear_MES</object-name><!--Правая створка подкос нижний тонкий-->
+  <property>gear/gear/position-norm</property>
+	  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>-10.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>0.0</dep></entry>
+  </interpolation>
+	<center>
+   <x-m>0.1</x-m>
+   <y-m>3.5</y-m>
+   <z-m>-2.0</z-m>
+	</center>
+   <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+   </axis>
+</animation>
+
+<animation>
+<type>rotate</type>
+	<object-name>r_gear_ME6</object-name><!--Правая створка подкос верх-->
+	<object-name>r_gear_ME7</object-name>
+  <property>gear/gear/position-norm</property>
+	  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>-20.0</dep></entry>
+    <entry><ind>	0.5</ind>	<dep>-10.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>0.0</dep></entry>
+  </interpolation>
+	<center>
+   <x-m>0.1</x-m>
+   <y-m>1.0</y-m>
+   <z-m>-1.4</z-m>
+	</center>
+   <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+   </axis>
+</animation>
+
+<!--+Уборка ++++++++++++++++++++++++++++++++++++ -->
+<animation>
+<type>rotate</type>
+	<object-name>r_tire_MES</object-name><!--Правое колесо-->
+	<object-name>r_gear_ME4</object-name><!--Правая стойка низ перед-->
+	<object-name>r_gear_ME5</object-name><!--Правая стойка низ перед-->
+	<object-name>r_gear_M11</object-name><!--Правая стойка низ перед-->
+	<object-name>r_gear_ME8</object-name><!--Правая стойка низ-->
+	<object-name>r_gear_ME9</object-name><!--Правая стойка низ-->
+	<object-name>r_gear_M12</object-name><!--Правая стойка середина-->
+	<object-name>r_gear_M13</object-name><!--Правая стойка середина-->
+	<object-name>r_gear_M10</object-name><!--Правая стойка верх-->
+
+  <property>gear/gear/position-norm</property>
+	  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>82.0</dep></entry>
+    <entry><ind>	0.5</ind>	<dep>60.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>	0.0</dep></entry>
+  </interpolation>
+	<center>
+   <x-m>0.1</x-m>
+   <y-m>2.4</y-m>
+   <z-m>-1.1</z-m>
+	</center>
+   <axis>
+    <x>-1</x>
+    <y>0.1</y>
+    <z>0</z>
+   </axis>
+</animation>
+<!--+Вращение колеса ++++++++++++++++++++++++++++++++++++ -->
+<animation>
+<type>spin</type>
+	<object-name>r_tire_MES</object-name>
+  <condition>
+      <property>gear/gear[1]/compression-norm</property>
+  </condition>
+  <property>gear/gear/rollspeed-ms</property>
+	<factor>12.28</factor>
+	<center>
+   <x-m>0.68665</x-m>
+   <y-m>2.66458</y-m>
+   <z-m>-2.39241</z-m>
+	</center>
+   <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+   </axis>
+</animation>
+<!--Обжатие стойки-->
+
+
+
+<!--++++++++++++++++++++++++++Левое шасси ++++++++++++++++++++++++++++++++++++ -->
+
+<!--+Створка ++++++++++++++++++++++++++++++++++++ -->
+<animation>
+<type>rotate</type>
+	<object-name>l_gear_ME2</object-name><!--Левая створка верх боковина-->
+	<object-name>l_gear_ME0</object-name><!--Левая створка внешняя-->
+	<object-name>l_gear_ME1</object-name><!--Левая створка верхний тонкий-->
+	<object-name>l_gear_MES</object-name><!--Левая створка подкос нижний тонкий-->
+	<object-name>l_gear_ME3</object-name><!--Левая створка верх-->
+  <property>gear/gear/position-norm</property>
+	  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>160.0</dep></entry>
+    <entry><ind>	0.5</ind>	<dep>80.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>0.0</dep></entry>
+  </interpolation>
+	<center>
+   <x-m>0.0</x-m>
+   <y-m>-2.7</y-m>
+   <z-m>-1.45</z-m>
+	</center>
+   <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+   </axis>
+</animation>
+
+
+<animation>
+<type>rotate</type>
+	<object-name>l_gear_ME0</object-name><!--Левая створка внешняя-->
+  <property>gear/gear/position-norm</property>
+	  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>-90.0</dep></entry>
+    <entry><ind>	0.5</ind>	<dep>-45.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>0.0</dep></entry>
+  </interpolation>
+	<center>
+   <x-m>0.1</x-m>
+   <y-m>-3.7</y-m>
+   <z-m>-1.6</z-m>
+	</center>
+   <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+   </axis>
+</animation>
+
+
+<animation>
+<type>rotate</type>
+	<object-name>l_gear_ME1</object-name><!--Левая створка верхний тонкий-->
+  <property>gear/gear/position-norm</property>
+	  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>40</dep></entry>
+    <entry><ind>	0.5</ind>	<dep>20.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>0.0</dep></entry>
+  </interpolation>
+	<center>
+   <x-m>0.0</x-m>
+   <y-m>-3.10</y-m>
+   <z-m>-1.6</z-m>
+	</center>
+   <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+   </axis>
+</animation>
+
+<animation>
+<type>rotate</type>
+	<object-name>l_gear_MES</object-name><!--Левая створка подкос нижний тонкий-->
+  <property>gear/gear/position-norm</property>
+	  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>-10.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>0.0</dep></entry>
+  </interpolation>
+	<center>
+   <x-m>0.1</x-m>
+   <y-m>-3.5</y-m>
+   <z-m>-2.0</z-m>
+	</center>
+   <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+   </axis>
+</animation>
+
+<animation>
+<type>rotate</type>
+	<object-name>l_gear_ME6</object-name><!--Левая створка подкос верх-->
+	<object-name>l_gear_ME7</object-name>
+  <property>gear/gear/position-norm</property>
+	  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>-20.0</dep></entry>
+    <entry><ind>	0.5</ind>	<dep>-10.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>0.0</dep></entry>
+  </interpolation>
+	<center>
+   <x-m>0.1</x-m>
+   <y-m>-1.0</y-m>
+   <z-m>-1.4</z-m>
+	</center>
+   <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+   </axis>
+</animation>
+
+<!--+Уборка ++++++++++++++++++++++++++++++++++++ -->
+<animation>
+<type>rotate</type>
+	<object-name>l_tire_MES</object-name><!--Левое колесо-->
+	<object-name>l_gear_ME4</object-name><!--Левая стойка низ перед-->
+	<object-name>l_gear_ME5</object-name><!--Левая стойка низ перед-->
+	<object-name>l_gear_M11</object-name><!--Левая стойка низ перед-->
+	<object-name>l_gear_ME8</object-name><!--Левая стойка низ-->
+	<object-name>l_gear_ME9</object-name><!--Левая стойка низ-->
+	<object-name>l_gear_M12</object-name><!--Левая стойка середина-->
+	<object-name>l_gear_M13</object-name><!--Левая стойка середина-->
+	<object-name>l_gear_M10</object-name><!--Левая стойка верх-->
+
+  <property>gear/gear/position-norm</property>
+	  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>82.0</dep></entry>
+    <entry><ind>	0.5</ind>	<dep>60.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>	0.0</dep></entry>
+  </interpolation>
+	<center>
+   <x-m>0.1</x-m>
+   <y-m>-2.4</y-m>
+   <z-m>-1.1</z-m>
+	</center>
+   <axis>
+    <x>1</x>
+    <y>0.1</y>
+    <z>0</z>
+   </axis>
+</animation>
+
+<!--+Вращение колеса ++++++++++++++++++++++++++++++++++++ -->
+<animation>
+<type>spin</type>
+	<object-name>l_tire_MES</object-name>
+  <condition>
+      <property>gear/gear[2]/compression-norm</property>
+  </condition>
+  <property>gear/gear/rollspeed-ms</property>
+	<factor>12.28</factor>
+	<center>
+   <x-m>0.65793</x-m>
+   <y-m>-2.68673</y-m>
+   <z-m>-2.38546</z-m>
+	</center>
+   <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+   </axis>
+</animation> 
+<!--Обжатие стойки-->
+
+</PropertyList>
