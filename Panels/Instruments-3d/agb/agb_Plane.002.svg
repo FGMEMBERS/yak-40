@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="256"
+   height="256"
+   viewBox="0 0 256 256"
+   version="1.0"
+   id="svg2489"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   sodipodi:docname="agb_Plane.002.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:export-filename="/home/specter/Projects/Yak-40/Instruments-3d/agb/agb_Plane.002.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
+   style="display:inline">
+  <metadata
+     id="metadata2534">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2532">
+    <linearGradient
+       id="linearGradient3312">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop3314" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop3316" />
+    </linearGradient>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 128 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="256 : 128 : 1"
+       inkscape:persp3d-origin="128 : 85.333333 : 1"
+       id="perspective2536" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3312"
+       id="linearGradient3318"
+       x1="32.551723"
+       y1="40.413792"
+       x2="80.275864"
+       y2="53.379311"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:window-height="719"
+     inkscape:window-width="1273"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     guidetolerance="10000"
+     gridtolerance="10.0"
+     objecttolerance="10.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-global="true"
+     inkscape:object-paths="false"
+     inkscape:object-nodes="false"
+     inkscape:snap-bbox="true"
+     inkscape:zoom="5.1265242"
+     inkscape:cx="66.172554"
+     inkscape:cy="245.12616"
+     inkscape:window-x="0"
+     inkscape:window-y="-3"
+     inkscape:current-layer="svg2489">
+    <sodipodi:guide
+       orientation="0,1"
+       position="34.482759,234.2069"
+       id="guide3320" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="37.241379,225.65517"
+       id="guide3322" />
+  </sodipodi:namedview>
+  <desc
+     id="desc2491">UV-Map from Object: Plane.002. Exported from Blender3D with UV Exportscript</desc>
+  <rect
+     x="0"
+     y="0"
+     width="256"
+     height="256"
+     id="rect2493"
+     style="fill:none;stroke:#0000ff;stroke-width:1px" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="1"
+     style="display:inline">
+    <rect
+       style="opacity:1;fill:#483e37;fill-opacity:1;fill-rule:nonzero;stroke:#483e37;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3337"
+       width="86.023201"
+       height="8.5517302"
+       x="17.555754"
+       y="21.7931" />
+  </g>
+  <rect
+     style="opacity:0.90671638;fill:#df170b;fill-opacity:1;fill-rule:nonzero;stroke:#df170b;stroke-width:2.48945904;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect3324"
+     width="6.1220322"
+     height="9.9883108"
+     x="90.142036"
+     y="34.834194"
+     transform="matrix(1,0,-0.7560335,0.6545329,0,0)"
+     ry="0" />
+  <rect
+     style="opacity:0.90671638;fill:#df170b;fill-opacity:1;fill-rule:nonzero;stroke:#df170b;stroke-width:2.48945904;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect3326"
+     width="6.1220322"
+     height="9.9883108"
+     x="107.53331"
+     y="34.834194"
+     transform="matrix(1,0,-0.7560335,0.6545329,0,0)"
+     ry="0" />
+  <rect
+     style="opacity:0.90671638;fill:#df170b;fill-opacity:1;fill-rule:nonzero;stroke:#df170b;stroke-width:2.48945904;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect3328"
+     width="6.1220322"
+     height="9.9883108"
+     x="124.49883"
+     y="34.834194"
+     transform="matrix(1,0,-0.7560335,0.6545329,0,0)"
+     ry="0" />
+  <rect
+     style="opacity:0.90671638;fill:#df170b;fill-opacity:1;fill-rule:nonzero;stroke:#df170b;stroke-width:2.48945904;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect3330"
+     width="6.1220322"
+     height="9.9883108"
+     x="72.705719"
+     y="34.834194"
+     transform="matrix(1,0,-0.7560335,0.6545329,0,0)"
+     ry="0" />
+  <rect
+     style="opacity:0.90671638;fill:#df170b;fill-opacity:1;fill-rule:nonzero;stroke:#df170b;stroke-width:2.48945904;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect3332"
+     width="6.1220322"
+     height="9.9883108"
+     x="55.324383"
+     y="34.834194"
+     transform="matrix(1,0,-0.7560335,0.6545329,0,0)"
+     ry="0" />
+  <path
+     sodipodi:type="arc"
+     style="opacity:1;fill:#df170b;fill-opacity:1;fill-rule:nonzero;stroke:#483e37;stroke-width:7.27161407000000004;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="path2538"
+     sodipodi:cx="115.31035"
+     sodipodi:cy="28.965517"
+     sodipodi:rx="12.965517"
+     sodipodi:ry="12.689655"
+     d="M 128.27587,28.965517 A 12.965517,12.689655 0 1 1 102.34483,28.965517 A 12.965517,12.689655 0 1 1 128.27587,28.965517 z"
+     transform="matrix(0.8869056,0,0,0.9061863,11.937494,9.6673877e-2)"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+</svg>

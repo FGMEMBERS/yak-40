@@ -1,0 +1,68 @@
+<PropertyList>
+  <path>agb.ac</path>
+  <!--External panel lighting-->
+ 
+  
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>glass.png</texture>
+    <object-name>Vitre</object-name>
+  </animation>
+  
+  <!--Roll-->
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>PitchScale</object-name>
+    <property>/yak-40/instrumentation/agd-l/tang-deg</property>
+    <factor>0.0053</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+
+<!--Attitude-->
+<animation>
+  <type>rotate</type>
+  <object-name>Plane</object-name>
+  <property>/yak-40/instrumentation/agd-l/kren-deg</property>
+  <max-deg>70.0</max-deg>
+  <min-deg>-70.0</min-deg>
+  <center>
+    <x-m>0.0</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.0</z-m>
+  </center>
+  <axis>
+    <x>-1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+
+<!--Slip-->
+<animation>
+  <type>rotate</type>
+  <object-name>slip_ball</object-name>
+  <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
+  <max-deg>10.0</max-deg>
+  <min-deg>-10.0</min-deg>
+  <center>
+    <x-m>0.0</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.006</z-m>
+  </center>
+  <axis>
+    <x>-1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+
+
+
+</PropertyList>
