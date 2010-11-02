@@ -1,0 +1,840 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+<sim>
+	<description>Yakovlev-40</description>
+	<author>Yak40devels</author>
+	<status>devel</status>
+	<help>
+		<title>yak-40</title>
+			<key>
+			<name>N/n/Ctrl+N</name>
+			<desc>Set nominal/0.85/0.7 thrust</desc>
+			</key>
+	</help>
+
+		<flight-model>jsb</flight-model>
+		<aero>yak-40</aero>
+		<model>
+			<path>Aircraft/yak-40/Model/yak-40.xml</path>
+		</model>
+
+		<sound>
+			<path>Aircraft/yak-40/Sounds/sound.xml</path>
+		</sound>
+
+		<startup>
+			<splash-texture>Aircraft/yak-40/plane.png</splash-texture>
+		</startup>
+		
+		<instrumentation>
+    <path>Aircraft/yak-40/Systems/instrumentation-config.xml</path>
+  	</instrumentation>
+ 	
+  <systems>
+    <autopilot>
+      <path>Aircraft/yak-40/Systems/ap40.xml</path>
+    </autopilot>
+  </systems>
+
+
+  <flaps>
+	  <setting>0.0</setting>
+	  <setting>0.572</setting>
+	  <setting>1.0</setting>
+  </flaps>
+
+<virtual-cockpit archive="y">true</virtual-cockpit>
+<view>
+    <name>Captain View</name>
+  <internal archive="y">true</internal>
+  <config>
+    <x-offset-m archive="y">-0.49</x-offset-m>
+    <y-offset-m archive="y">1.8</y-offset-m>
+    <z-offset-m archive="y">-7.45</z-offset-m>
+    <pitch-offset-deg type="double">-6.0</pitch-offset-deg>
+    <default-field-of-view-deg type="double">65.0</default-field-of-view-deg>
+  </config>
+ </view>
+
+<!--Custom views-->
+ <view n="101">
+  <name>Copilot View</name>
+<type>lookfrom</type>
+<internal type="bool">true</internal>
+	<config>
+		<from-model type="bool">true</from-model>
+  	<x-offset-m archive="y">0.49</x-offset-m>
+  	<y-offset-m archive="y">1.8</y-offset-m>
+  	<z-offset-m archive="y">-7.45</z-offset-m>
+  	<pitch-offset-deg type="double">-6.0</pitch-offset-deg>
+  	<default-field-of-view-deg type="double">65.0</default-field-of-view-deg>
+	<limits>
+	  <enabled type="bool">true</enabled>
+	  <left>
+	    <heading-max-deg type="double">140</heading-max-deg>
+	    <x-offset-max-m type="double">0.15</x-offset-max-m>
+	    <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+	  </left>
+	  <right>
+	    <heading-max-deg type="double">140</heading-max-deg>
+	    <x-offset-max-m type="double">0.15</x-offset-max-m>
+	    <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+	  </right>
+	 </limits>
+	 <dynamic-view type="bool">true</dynamic-view>
+    </config>
+</view>
+
+  <view n="102">
+  <name>BM View</name>
+	<type>lookfrom</type>
+  <internal type="bool">true</internal>
+  	<config>
+	<from-model type="bool">true</from-model>
+    	<x-offset-m archive="y">0.0</x-offset-m>
+    	<y-offset-m archive="y">1.6</y-offset-m>
+    	<z-offset-m archive="y">-7.22</z-offset-m>
+    	<pitch-offset-deg type="double">-30.7</pitch-offset-deg>
+	<default-field-of-view-deg type="double">65.0</default-field-of-view-deg>
+	<dynamic-view type="bool">true</dynamic-view>
+	<limits>
+	  <enabled type="bool">true</enabled>
+	  <left>
+	    <heading-max-deg type="double">140</heading-max-deg>
+	    <x-offset-max-m type="double">0.15</x-offset-max-m>
+	    <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+	  </left>
+	  <right>
+	    <heading-max-deg type="double">140</heading-max-deg>
+	    <x-offset-max-m type="double">0.15</x-offset-max-m>
+	    <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+	  </right>
+	 </limits>
+    </config>
+</view>
+
+
+  <view n="103">
+  <name>LEFT AZS View</name>
+	<type>lookfrom</type>
+  <internal type="bool">true</internal>
+  	<config>
+			<from-model type="bool">true</from-model>
+    <x-offset-m archive="y">-0.74</x-offset-m>
+    <y-offset-m archive="y">1.8</y-offset-m>
+    <z-offset-m archive="y">-7.45</z-offset-m>
+    	<pitch-offset-deg type="double">-45.0</pitch-offset-deg>
+    	<heading-offset-deg type="double">163.0</heading-offset-deg>
+			<from-model-idx type="int">0</from-model-idx>
+			<default-field-of-view-deg type="double">75.0</default-field-of-view-deg>
+			<dynamic-view type="bool">true</dynamic-view>
+		</config>
+  </view>
+  
+    <view n="104">
+  <name>RIGHT AZS View</name>
+	<type>lookfrom</type>
+  <internal type="bool">true</internal>
+  	<config>
+			<from-model type="bool">true</from-model>
+    <x-offset-m archive="y">0.74</x-offset-m>
+    <y-offset-m archive="y">1.80</y-offset-m>
+    <z-offset-m archive="y">-7.45</z-offset-m>
+    	<pitch-offset-deg type="double">-45.0</pitch-offset-deg>
+    	<heading-offset-deg type="double">196.3</heading-offset-deg>
+			<from-model-idx type="int">0</from-model-idx>
+			<default-field-of-view-deg type="double">75.0</default-field-of-view-deg>
+			<dynamic-view type="bool">true</dynamic-view>
+		</config>
+  </view>
+  
+</sim>
+
+<engines>
+  <engine n="0">
+    <running>true</running>
+  </engine>
+  <engine n="1">
+    <running>true</running>
+  </engine>
+  <engine n="2">
+    <running>true</running>
+  </engine>
+</engines>
+
+<nasal>
+	<Yak-40>
+		<file>Aircraft/yak-40/Nasal/electrical.nas</file>
+	</Yak-40>
+		<view>
+			<file>Aircraft/yak-40/Nasal/view.nas</file>
+		</view>
+		
+		<instruments>
+					<file>Aircraft/yak-40/Nasal/instruments.nas</file>
+		</instruments>
+		
+	<help>
+		<file>Aircraft/yak-40/Nasal/help.nas</file>
+	</help>
+	
+		<warn>
+		<file>Aircraft/yak-40/Nasal/warn.nas</file>
+	</warn>
+	<sliding>
+	    <file>Aircraft/yak-40/Nasal/sliding.nas</file>
+	</sliding>
+	
+	
+</nasal>
+
+<input>
+  <keyboard>
+
+<!-- Nominal -->
+    <key n="78">
+      <name>N</name>
+      <desc>Nominal thrust 95</desc>
+      <binding>
+	<command>property-assign</command>
+	<property>/controls/engines/engine[0]/throttle</property>
+	<value>0.880</value>
+      </binding>
+      <binding>
+	<command>property-assign</command>
+	<property>/controls/engines/engine[1]/throttle</property>
+	<value>0.880</value>
+      </binding>
+      <binding>
+	<command>property-assign</command>
+	<property>/controls/engines/engine[2]/throttle</property>
+	<value>0.880</value>
+      </binding>
+    </key>
+
+    <key n="110">
+      <name>n</name>
+      <desc>90</desc>
+      <binding>
+	<command>property-assign</command>
+	<property>/controls/engines/engine[0]/throttle</property>
+	<value>0.778</value>
+      </binding>
+      <binding>
+	<command>property-assign</command>
+	<property>/controls/engines/engine[1]/throttle</property>
+	<value>0.778</value>
+      </binding>
+      <binding>
+	<command>property-assign</command>
+	<property>/controls/engines/engine[2]/throttle</property>
+	<value>0.778</value>
+      </binding>
+    </key>
+
+    <key n="14">
+      <name>Ctrl+N</name>
+      <desc>78</desc>
+      <binding>
+	<command>property-assign</command>
+	<property>/controls/engines/engine[0]/throttle</property>
+	<value>0.5248</value>
+      </binding>
+      <binding>
+	<command>property-assign</command>
+	<property>/controls/engines/engine[1]/throttle</property>
+	<value>0.5248</value>
+      </binding>
+      <binding>
+	<command>property-assign</command>
+	<property>/controls/engines/engine[2]/throttle</property>
+	<value>0.5248</value>
+      </binding>
+    </key>
+    
+<!--View shortcuts-->
+    <key n="96">
+      <name>~</name>
+      <desc>Custom view modifier</desc>
+      <binding>
+        <command>nasal</command>
+        <script>view.modView(1)</script>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>nasal</command>
+          <script>view.modView(0)</script>
+        </binding>
+      </mod-up>
+    </key>
+    
+       <key n="49">
+      <name>1</name>
+      <desc>Captain view</desc>
+      <binding>
+        <command>nasal</command>
+        <script>view.forceView(0);</script>
+      </binding>
+    </key>
+    
+    <key n="50">
+      <name>2</name>
+      <desc>BM View</desc>
+      <binding>
+        <command>nasal</command>
+        <script>view.forceView(1);</script>
+      </binding>
+    </key>
+    
+        <key n="52">
+      <name>4</name>
+      <desc>Copilot view</desc>
+      <binding>
+        <command>nasal</command>
+        <script>view.forceView(2);</script>
+      </binding>
+    </key>
+    
+       <key n="54">
+      <name>6</name>
+      <desc>LEFT AZS View</desc>
+      <binding>
+        <command>nasal</command>
+        <script>view.forceView(3);</script>
+      </binding>
+    </key>
+    
+      <key n="55">
+      <name>7</name>
+      <desc>RIGHT AZS View</desc>
+      <binding>
+        <command>nasal</command>
+        <script>view.forceView(4);</script>
+      </binding>
+    </key>
+
+<!-- Reverser -->
+<key n="258">
+  <name>F2</name>
+  <desc>Full Reverser</desc>
+  <repeatable>true</repeatable>
+  <!--Start reverser-->
+  <binding>
+    <command>nasal</command>
+    <script>setprop("/engines/engine[1]/reversed",1.0);</script>
+  </binding>
+  <!--Stop reverser-->
+  <mod-up>
+    <binding>
+      <command>nasal</command>
+      <script>setprop("/engines/engine[1]/reversed",0.0);</script>
+    </binding>
+  </mod-up>
+
+
+  <mod-shift>
+  <desc>Save flight.</desc>
+  <binding>
+    <command>save</command>
+    <write-all>false</write-all>
+  </binding>
+  </mod-shift>
+</key>
+
+<!-- AP commands -->
+<!--On-->
+    <key n="121">
+      <name>y</name>
+      <desc>AP on</desc>
+     <binding>
+      <command>nasal</command>
+      <script>
+      setprop("yak-40/switches/vkl_ap", 1);
+      instruments.ap_on()
+      </script>
+    </binding>
+    </key>
+    
+      <key n="89">
+      <name>Y</name>
+      <desc>AP off</desc>
+    <binding>
+      <command>nasal</command>
+      <script>
+      setprop("yak-40/switches/vkl_ap", 0);
+      setprop("yak-40/switches/h_ap", 0);
+      instruments.ap_on()
+      </script>
+    </binding>
+    </key>    
+    
+<!--КВ-->
+      <key n="105">
+      <name>i</name>
+      <desc>AP Althold On</desc>
+    <binding>
+      <command>nasal</command>
+      <script>
+        setprop("yak-40/switches/h_ap", 1);
+        instruments.ap_althold()
+      </script>
+    </binding>
+    </key>
+    
+      <key n="73">
+      <name>I</name>
+      <desc>AP Althold Off</desc>
+    <binding>
+      <command>nasal</command>
+      <script>
+        setprop("yak-40/switches/h_ap", 0);
+        instruments.ap_althold()
+      </script>
+    </binding>
+    </key>        
+
+<!--Left-->
+      <key n="104">
+      <name>h</name>
+      <desc>Left Command</desc>
+      <repeatable>true</repeatable>
+      <interval-sec>0.2</interval-sec>
+    <binding>
+      <command>nasal</command>
+      <script>
+      	setprop("/autopilot/locks/heading", "roll" );
+        setprop("/autopilot/internal/target-roll-deg",(getprop("autopilot/internal/target-roll-deg") - 1.0));
+      </script>
+    </binding>
+    </key>        
+<!--Right-->
+      <key n="107">
+      <name>k</name>
+      <desc>Right Command</desc>
+      <repeatable>true</repeatable>
+      <interval-sec>0.2</interval-sec>
+    <binding>
+      <command>nasal</command>
+      <script>
+      	setprop("/autopilot/locks/heading", "roll" );
+        setprop("/autopilot/internal/target-roll-deg",(getprop("autopilot/internal/target-roll-deg") + 1.0));
+      </script>
+    </binding>
+    </key>        
+
+<!--Nol-->
+      <key n="109">
+      <name>m</name>
+      <desc>Neytral</desc>
+     <binding>
+      <command>nasal</command>
+      <script>
+      setprop("/autopilot/settings/heading-bug-deg", getprop("yak-40/instrumentation/npp/left/indicated-heading-deg") );
+	    setprop("/autopilot/locks/heading", "dg-heading-hold" );
+	   </script>
+    </binding>
+    </key>        
+
+<!--Up-->
+      <key n="106">
+      <name>j</name>
+      <desc>Up Command</desc>
+    <binding>
+      <command>nasal</command>
+      <script>
+        setprop("autopilot/settings/target-pitch-deg",(getprop("autopilot/settings/target-pitch-deg") + 0.5));
+        setprop("yak-40/switches/h_ap", 0);
+        instruments.ap_althold()
+        </script>
+    </binding>
+    </key>
+            
+<!--Down-->
+      <key n="117">
+      <name>u</name>
+      <desc>Down Command</desc>
+    <binding>
+      <command>nasal</command>
+      <script>
+        setprop("autopilot/settings/target-pitch-deg",(getprop("autopilot/settings/target-pitch-deg") - 0.5));
+        setprop("yak-40/switches/h_ap", 0);
+        instruments.ap_althold()
+      </script>
+    </binding>
+    </key>        
+<!-- AP commands END-->
+  </keyboard>
+</input>
+
+<controls>
+    <gear>
+	<steering>55.0</steering>
+        <nose-wheel-steering type="bool">true</nose-wheel-steering>
+    </gear>
+</controls>
+
+<instrumentation>
+  <adf n="0">
+        <frequencies>
+    			<selected-khz type="double">325.0</selected-khz>
+    			<standby-khz type="double">668.0</standby-khz>
+   		</frequencies>
+    <error-deg type="double" archive="y">0.0</error-deg>
+    <mode type="string" archive="y">adf</mode>
+    <volume-norm type="double" archive="y">0.2</volume-norm>
+  </adf>
+  
+  <adf n="1">
+        <frequencies>
+    			<selected-khz type="double">325.0</selected-khz>
+    			<standby-khz type="double">668.0</standby-khz>
+   		</frequencies>
+    <error-deg type="double" archive="y">0.0</error-deg>
+    <mode type="string" archive="y">adf</mode>
+    <volume-norm type="double" archive="y">0.2</volume-norm>
+  </adf>
+  
+   <altimeter n="1">
+    <serviceable type="bool" archive="y">true</serviceable>
+  </altimeter>
+  
+</instrumentation>
+
+<yak-40>
+
+ <light>
+    <instruments>
+      <int-red-def type="double" archive="y">0.8</int-red-def>
+      <int-green-def type="double" archive="y">0.8</int-green-def>
+      <int-blue-def type="double" archive="y">0.7</int-blue-def>
+    </instruments>
+    <panel>
+      <ext-red-def type="double" archive="y">0.6</ext-red-def>
+      <ext-green-def type="double" archive="y">0.6</ext-green-def>
+      <ext-blue-def type="double" archive="y">0.6</ext-blue-def>
+      <amb-red-def type="double" archive="y">0.3</amb-red-def>
+      <amb-green-def type="double" archive="y">0.3</amb-green-def>
+      <amb-blue-def type="double" archive="y">0.3</amb-blue-def>      
+    </panel>
+    <!--<window-alpha type="double" archive="y">0.3</window-alpha>      -->
+  </light>
+
+<instrumentation>
+
+    <ark-15 n="0">
+      <powered type="bool" archive="y">false</powered>
+    </ark-15>
+    <ark-15 n="1">
+      <powered type="bool" archive="y">false</powered>
+    </ark-15>
+      
+      <!--Kurs_MP2 -->
+	<nav n="0">
+   <frequencies>
+    <selected-mhz type="double">109.1</selected-mhz>
+    <standby-mhz type="double">111.70</standby-mhz>
+   </frequencies>
+   <radials>
+    <selected-deg type="double">0.0</selected-deg>
+   </radials>
+   <serviceable>true</serviceable>
+   <cdi>
+    <serviceable>true</serviceable>
+   </cdi>
+   <gs>
+    <serviceable>true</serviceable>
+   </gs>
+   <to-from>
+    <serviceable>true</serviceable>
+   </to-from>
+   <slaved-to-gps type="bool">false</slaved-to-gps>
+   <powered type="bool" archive="y">true</powered>
+   <volume type="double" archive="y">0.2</volume>
+  </nav>
+  
+  <nav n="1">
+   <frequencies>
+    <selected-mhz type="double">108.0</selected-mhz>
+    <standby-mhz type="double">111.70</standby-mhz>
+   </frequencies>
+   <radials>
+    <selected-deg type="double">0.0</selected-deg>
+   </radials>
+   <serviceable>true</serviceable>
+   <cdi>
+    <serviceable>true</serviceable>
+   </cdi>
+   <gs>
+    <serviceable>true</serviceable>
+   </gs>
+   <to-from>
+    <serviceable>true</serviceable>
+   </to-from>
+   <slaved-to-gps type="bool">false</slaved-to-gps>
+   <powered type="bool" archive="y">true</powered>
+   <volume type="double" archive="y">0.2</volume>
+  </nav>  
+  
+  <!--Kurs_MP2 --> 
+
+
+
+    <rv-5m>
+      <warn type="bool" archive="y">false</warn>
+      <caged-flag type="bool" archive="y">false</caged-flag>
+      <serviceable type="bool" archive="y">true</serviceable>
+      <index-m type="double" archive="y">60.0</index-m>
+    </rv-5m>
+
+	<agd-l>
+		<serviceable type="bool" archive="y">true</serviceable>
+	</agd-l>
+
+	<var-30>
+		<serviceable type="bool" archive="y">true</serviceable>
+	</var-30>
+
+	<tvg-164-1>
+		<serviceable type="bool" archive="y">true</serviceable>
+	</tvg-164-1>
+
+	<tvg-164-2>
+		<serviceable type="bool" archive="y">true</serviceable>
+	</tvg-164-2>
+
+	<tvg-164-3>
+		<serviceable type="bool" archive="y">true</serviceable>
+	</tvg-164-3>
+
+	<tnv-15>
+		<serviceable type="bool" archive="y">true</serviceable>
+	</tnv-15>
+
+	<uvid-15>
+		<serviceable type="bool" archive="y">true</serviceable>
+	</uvid-15>
+	
+	<iku>
+		<serviceable type="bool" archive="y">true</serviceable>
+	</iku>
+	
+	<npp>
+		<serviceable type="bool" archive="y">true</serviceable>
+	</npp>
+	
+	<vph>
+		<serviceable type="bool" archive="y">true</serviceable>
+	</vph>
+
+	<achs>
+		<serviceable type="bool" archive="y">true</serviceable>
+	</achs>
+
+  <marker-beacon>
+    <serviceable type="bool" archive="y">true</serviceable>
+    <power-btn type="bool" archive="y">true</power-btn>
+    <audio-btn type="bool" archive="y">false</audio-btn>
+    <volume type="double" archive="y">1.0</volume>
+  </marker-beacon>
+
+  <msrp>
+		<serviceable type="bool" archive="y">true</serviceable>
+  </msrp>
+  
+	<ap40>
+		<serviceable type="bool" archive="y">false</serviceable>
+		<althold type="bool" archive="y">false</althold>
+		<tangag type="bool" archive="y">false</tangag>
+		<ap_on type="bool" archive="y">false</ap_on>
+ 	</ap40>
+
+</instrumentation>
+
+	<switches>
+	<!--ark-15-->
+	<adf-1-selector type="double" archive="y">0.0</adf-1-selector>
+	<adf-2-selector type="double" archive="y">0.0</adf-2-selector>
+	<adf-power-1 type="double" archive="y">1.0</adf-power-1>
+	<adf-power-2 type="double" archive="y">1.0</adf-power-2>
+	
+<rv-5-1 type="double" archive="y">1.0</rv-5-1><!--азс рв-5 лев ниж-->
+
+<az_rap type="double" archive="y">0.0</az_rap><!--рап-->
+
+<!--акб-->
+<az_bat_1 type="double" archive="y">0.0</az_bat_1><!--акб-1-->
+<az_bat_2 type="double" archive="y">0.0</az_bat_2><!--акб-2-->
+
+<!--генераторы-->
+<az_vg_1 type="double" archive="y">1.0</az_vg_1><!--генератор-1-->
+<az_vg_2 type="double" archive="y">1.0</az_vg_2><!--генератор-1-->
+<az_vg_3 type="double" archive="y">1.0</az_vg_3><!--генератор-3-->
+
+<!--пт-->
+<az_pt_rls type="double" archive="y">1.0</az_pt_rls><!--пт-рлс 36в-->
+<az_pt_ap type="double" archive="y">1.0</az_pt_ap><!--пт-ап 36в-->
+<az_pt_125 type="double" archive="y">1.0</az_pt_125><!--пт-125 36в-->
+
+<!--по-->
+<az_po_rad type="double" archive="y">1.0</az_po_rad><!--по-радио 115в-->
+<az_po_stek type="double" archive="y">1.0</az_po_stek><!--по-стекло 115в-->
+
+<!--азс правый щиток-->
+<az_ukv_2 type="double" archive="y">1.0</az_ukv_2><!--азс укв-2 пщ-->
+<az_adp type="double" archive="y">1.0</az_adp><!--азс укв-2 пщ-->
+<az_agd_r type="double" archive="y">1.0</az_agd_r><!--азс агд правый пщ-->
+<az_gmk type="double" archive="y">1.0</az_gmk><!--азс гмк-1г пщ-->
+<az_gidro type="double" archive="y">1.0</az_gidro><!--азс гидросист пщ-->
+<az_ap type="double" archive="y">1.0</az_ap><!--азс автопилот пщ-->
+<az_sig_gear type="double" archive="y">1.0</az_sig_gear><!--азс сигн шасси пщ-->
+<az_rak type="double" archive="y">1.0</az_rak><!--азс ракеты пщ-->
+<az_so_72 type="double" archive="y">1.0</az_so_72><!--азс со-72 пщ-->
+<az_stab type="double" archive="y">1.0</az_stab><!--азс стабил основн пщ-->
+<az_stab_a type="double" archive="y">1.0</az_stab_a><!--азс авар управ стабил пщ-->
+<az_flaps type="double" archive="y">1.0</az_flaps><!--азс закрыл основн пщ-->
+<az_flaps_a type="double" archive="y">1.0</az_flaps_a><!--азс аварийный выпуск закрылки пщ-->
+<az_gear type="double" archive="y">1.0</az_gear><!--азс шасси основн пщ-->
+<az_gear_a type="double" archive="y">1.0</az_gear_a><!--азс аварийный выпуск шасси пщ-->
+<az_buster type="double" archive="y">1.0</az_buster><!--азс бустер пьедестал-->
+<az_nasos type="double" archive="y">1.0</az_nasos><!--азс насосная станция пщ-->
+<az_break type="double" archive="y">1.0</az_break><!--азс управ тормоз пщ-->
+<az_ob_kab type="double" archive="y">1.0</az_ob_kab><!--азс обогрев кабины пщ-->
+<az_ob_salon type="double" archive="y">1.0</az_ob_salon><!--азс обогрев салон пщ-->
+<az_ob_bspk type="double" archive="y">1.0</az_ob_bspk><!--азс обогрев бспк пщ-->
+<az_trim_aler type="double" archive="y">1.0</az_trim_aler><!--азс триммер элер пщ-->
+<az_trim_rud type="double" archive="y">1.0</az_trim_rud><!--азс триммер рн пщ-->
+<az_turbo type="double" archive="y">1.0</az_turbo><!--азс турбохолод пщ-->
+<az_kond type="double" archive="y">1.0</az_kond><!--азс кондиционир пщ-->
+<az_pos type="double" archive="y">1.0</az_pos><!--азс противооблед пщ-->
+<az_ob_eng_1 type="double" archive="y">1.0</az_ob_eng_1><!--азс обогрев двиг лев пщ-->
+<az_ob_eng_2 type="double" archive="y">1.0</az_ob_eng_2><!--азс обогрев двиг сред пщ-->
+<az_ob_eng_3 type="double" archive="y">1.0</az_ob_eng_3><!--азс обогрев двиг прав пщ-->
+<az_fara_r_r type="double" archive="y">1.0</az_fara_r_r><!--азс правая фара рулёж пщ-->
+<az_fara_l_r type="double" archive="y">1.0</az_fara_l_r><!--азс левая фара рулёж пщ-->
+<az_fara_l_p type="double" archive="y">1.0</az_fara_l_p><!--азс левая фара посад пщ-->
+<az_fara_r_p type="double" archive="y">1.0</az_fara_r_p><!--азс правая фара посад пщ-->
+
+<!--азс левый щиток-->
+<az_ukv_1 type="double" archive="y">1.0</az_ukv_1><!--азс укв-1 лщ-->
+<az_sign_agd_l type="double" archive="y">1.0</az_sign_agd_l><!--азс сигн агд левый лщ-->
+<az_da type="double" archive="y">1.0</az_da><!--азс da-30 лщ-->
+<az_agd_l type="double" archive="y">1.0</az_agd_l><!--азс агд левый лщ-->
+<az_fuel_lev type="double" archive="y">1.0</az_fuel_lev><!--азс топливомер лщ-->
+<az_kl type="double" archive="y">1.0</az_kl><!--азс контроль ламп лщ-->
+<az_pr_eng_1 type="double" archive="y">1.0</az_pr_eng_1><!--азс приборы двигателей лев лщ-->
+<az_pr_eng_2 type="double" archive="y">1.0</az_pr_eng_2><!--азс приборы двигателей сред лщ-->
+<az_pr_eng_3 type="double" archive="y">1.0</az_pr_eng_3><!--азс приборы двигателей прав лщ-->
+<az_signal_1 type="double" archive="y">1.0</az_signal_1><!--азс сигнализация 1 лщ-->
+<az_signal_2 type="double" archive="y">1.0</az_signal_2><!--азс сигнализация 2 лщ-->
+<az_signal_3 type="double" archive="y">1.0</az_signal_3><!--азс сигнализация 3 лщ-->
+<az_stall type="double" archive="y">1.0</az_stall><!--азс сигнал срывн лщ-->
+<az_kol type="double" archive="y">1.0</az_kol><!--азс кольцевание лщ-->
+<az_ob type="double" archive="y">1.0</az_ob><!--азс обьединение лщ-->
+<az_pk_l type="double" archive="y">1.0</az_pk_l><!--азс пожарные краны лев лщ-->
+<az_pk_s type="double" archive="y">1.0</az_pk_s ><!--азс пожарные краны сред лщ-->
+<az_pk_r type="double" archive="y">1.0</az_pk_r><!--азс пожарные краны прав лщ-->
+<az_ps_1 type="double" archive="y">1.0</az_ps_1><!--азс очереди пожаротушения 1 лщ-->
+<az_ps_2 type="double" archive="y">1.0</az_ps_2><!--азс очереди пожаротушения 2 лщ-->
+<az_ps_3 type="double" archive="y">1.0</az_ps_3><!--азс очереди пожаротушения 3 лщ-->
+<az_s_zap type="double" archive="y">1.0</az_s_zap><!--азс сигнал запуск лщ-->
+<az_po_bez type="double" archive="y">1.0</az_po_bez><!--азс посад без лщ-->
+<az_z_ai_9 type="double" archive="y">1.0</az_z_ai_9><!--азс зажиг аи-9 лщ-->
+<az_star_1 type="double" archive="y">1.0</az_star_1><!--азс зажигание аи-25 лев лщ-->
+<az_star_2 type="double" archive="y">1.0</az_star_2><!--азс зажигание аи-25 сред лщ-->
+<az_star_3 type="double" archive="y">1.0</az_star_3><!--азс зажигание аи-25 прав лщ-->
+<az_pkl_1 type="double" archive="y">1.0</az_pkl_1><!--азс пожарные клапаны 1 лщ-->
+<az_pkl_2 type="double" archive="y">1.0</az_pkl_2><!--азс пожарные клапаны 2 лщ-->
+<az_pkl_3 type="double" archive="y">1.0</az_pkl_3><!--азс пожарные клапаны 3 лщ-->
+
+<!--азс верх-->
+<az_ark_1 type="double" archive="y">1.0</az_ark_1><!--азс арк-1 оверхед-->
+<az_ark_2 type="double" archive="y">1.0</az_ark_2><!--азс арк-2 оверхед-->
+<az_kmp_1 type="double" archive="y">1.0</az_kmp_1><!--азс курсмп-1 оверхед-->
+<az_kmp_2 type="double" archive="y">1.0</az_kmp_2><!--азс курсмп-2 оверхед-->
+<az_obstek_sil_l type="double" archive="y">0.0</az_obstek_sil_l><!--азс об стекла сил лев оверхед-->
+<az_obstek_sil_r type="double" archive="y">0.0</az_obstek_sil_r><!--азс об стекла сил прав оверхед-->
+<az_obstek_slab_l type="double" archive="y">0.0</az_obstek_slab_l><!--азс об стекла слаб лев оверхед-->
+<az_obstek_slab_r type="double" archive="y">0.0</az_obstek_slab_r><!--азс об стекла слаб прав оверхед-->
+<az_obstek_prin type="double" archive="y">0.0</az_obstek_prin><!--азс об стекла прин прав оверхед-->
+
+<!--азс левый низ-->
+<az_rv_3 type="double" archive="y">1.0</az_rv_3><!--азс рв-3 лев ниж-->
+<vk_so_72 type="double" archive="y">1.0</vk_so_72><!--вк со-72 лев ниж-->
+
+<!--азс правый низ-->
+<vk_ob_msrp type="double" archive="y">1.0</vk_ob_msrp><!--обогрев мсрп-->
+<vk_msrp type="double" archive="y">1.0</vk_msrp><!--вкл мсрп-->
+
+<!--азс пьедестал-->
+<vk_ap type="double" archive="y">0.0</vk_ap><!--азс автопилот пьедестал-->
+<vkl_ap type="double" archive="y">0.0</vkl_ap><!--кнопка вкл автопилот пьедестал-->
+<t_ap type="double" archive="y">0.0</t_ap><!--кнопка тангаж автопилот пьедестал-->
+<h_ap type="double" archive="y">0.0</h_ap><!--кнопка высота автопилот пьедестал-->
+<vk_tmer type="double" archive="y">0.0</vk_tmer><!--вк топливомер пьедестал-->
+
+<!--азс левая панель-->
+
+<!--азс центр панель-->
+<vk_groza type="double" archive="y">1.0</vk_groza><!--вк рлс-гроза-->
+
+<!--азс правая панель-->
+
+	</switches>
+	
+	  <mod-views>
+    <mod-view>
+    <x-offset-m archive="y">-0.4</x-offset-m>
+    <y-offset-m archive="y">0.2</y-offset-m>
+    <z-offset-m archive="y">-8.0</z-offset-m>
+      <field-of-view archive="y">50.0</field-of-view>
+      <heading-offset-deg type="double">0.0</heading-offset-deg>
+      <pitch-offset-deg type="double">-25.0</pitch-offset-deg>
+      <roll-offset-deg type="double">0.0</roll-offset-deg>
+    </mod-view>
+    
+    <mod-view>
+  	<x-offset-m archive="y">0.40</x-offset-m>
+  	<y-offset-m archive="y">0.30</y-offset-m>
+  	<z-offset-m archive="y">-8.00</z-offset-m>
+      <field-of-view archive="y">50.0</field-of-view>
+      <heading-offset-deg type="double">0.0</heading-offset-deg>
+      <pitch-offset-deg type="double">-30.0</pitch-offset-deg>
+      <roll-offset-deg type="double">0.0</roll-offset-deg>
+    </mod-view>
+    
+    <mod-view>
+    	<x-offset-m archive="y">0.0</x-offset-m>
+    	<y-offset-m archive="y">0.2</y-offset-m>
+    	<z-offset-m archive="y">-8.0</z-offset-m>
+      <field-of-view archive="y">50.0</field-of-view>
+      <heading-offset-deg type="double">0.0</heading-offset-deg>
+      <pitch-offset-deg type="double">-30.0</pitch-offset-deg>
+      <roll-offset-deg type="double">0.0</roll-offset-deg>
+    </mod-view>
+    
+    <mod-view>
+    <x-offset-m archive="y">-0.8</x-offset-m>
+    <y-offset-m archive="y">0.1</y-offset-m>
+    <z-offset-m archive="y">-8.0</z-offset-m>
+      <field-of-view archive="y">60.0</field-of-view>
+      <heading-offset-deg type="double">180.0</heading-offset-deg>
+      <pitch-offset-deg type="double">-30.0</pitch-offset-deg>
+      <roll-offset-deg type="double">0.0</roll-offset-deg>
+    </mod-view>
+    
+    <mod-view>
+    <x-offset-m archive="y">0.8</x-offset-m>
+    <y-offset-m archive="y">0.1</y-offset-m>
+    <z-offset-m archive="y">-8.0</z-offset-m>
+      <field-of-view archive="y">60.0</field-of-view>
+      <heading-offset-deg type="double">180.0</heading-offset-deg>
+      <pitch-offset-deg type="double">-30.0</pitch-offset-deg>
+      <roll-offset-deg type="double">0.0</roll-offset-deg>
+    </mod-view>
+ 
+ 
+  </mod-views>
+
+</yak-40>
+
+</PropertyList>

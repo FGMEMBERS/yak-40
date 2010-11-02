@@ -1,0 +1,23 @@
+Visual Model and Textures:
+yaroslav.zavarzin, pilot40 from http://code.google.com/p/yak40-fg/
+a.a.babichev, FelisLeopard from http://code.google.com/p/yk40/
+http://www.yak-40.nm.ru/
+##################
+Avioniks
+yaroslav.zavarzin, pilot40 from http://code.google.com/p/yak40-fg/
+and
+yurik_nsk, CAXAP from http://www.flightgear.ru/forum
+and
+http://www.yak-40.nm.ru/
+and
+DaniarAtajanov
+##################
+Aerodinamiks
+yaroslav.zavarzin, pilot40 from http://code.google.com/p/yak40-fg/
+and
+yurik_nsk, CAXAP from http://www.flightgear.ru/forum
+##################
+
+
+
+
