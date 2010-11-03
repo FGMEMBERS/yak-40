@@ -34,11 +34,14 @@
 
 <!--Lamp-->
  
- <animation>
-  <type>select</type>
-  <object-name>ready_lamp</object-name>
-  <condition>
-	   		<property>yak-40/instrumentation/ap40/serviceable</property>
+<animation>
+  <type>material</type>
+  <object-name>ready_btn</object-name>
+  <emission>
+    <red>1</red>
+    <green>1</green>
+    <blue>1</blue>
+    <factor-prop>yak-40/instrumentation/ap40/serviceable</factor-prop>
  </condition>
 </animation>
 
