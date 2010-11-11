@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<path>kus730-1100.ac</path>
+
+<animation>
+	<type>material</type>
+	<object-name>Plane.005</object-name>
+	<object-name>Plane.007</object-name>
+	<object-name>Plane.008</object-name>
+	<emission>
+		<red>0.9</red>
+		<green>0.25</green>
+		<blue>0.2</blue>
+		<factor-prop>/controls/switches/map-lights</factor-prop>
+	</emission>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>Plane.004</object-name>
+	<emission>
+		<red>0.2</red>
+		<green>0.2</green>
+		<blue>0.2</blue>
+		<factor-prop>/controls/switches/map-lights</factor-prop>
+	</emission>
+</animation>
+
+<animation>
+    <type>rotate</type>
+    <object-name>Plane.005</object-name>
+    <property>/yak-40/instrumentation/kus-730/indicated-speed-kmh</property>
+    <min>50</min>
+    <max>650</max>
+    <interpolation>
+	<!--
+	    <entry><ind>	0</ind><dep>	0</dep></entry>
+	    <entry><ind>	27</ind><dep>	-5</dep></entry>
+	    <entry><ind>	54</ind><dep>	-23</dep></entry>
+	    <entry><ind>	81</ind><dep>	-48</dep></entry>
+	    <entry><ind>	108</ind><dep>	-73</dep></entry>
+	    <entry><ind>	135</ind><dep>	-100</dep></entry>
+	    <entry><ind>	162</ind><dep>	-127</dep></entry>
+	    <entry><ind>	189</ind><dep>	-153</dep></entry>
+	    <entry><ind>	216</ind><dep>	-180</dep></entry>
+	    <entry><ind>	243</ind><dep>	-204</dep></entry>
+	    <entry><ind>	270</ind><dep>	-228</dep></entry>
+	    <entry><ind>	297</ind><dep>	-253</dep></entry>
+	    <entry><ind>	324</ind><dep>	-277</dep></entry>
+	    <entry><ind>	351</ind><dep>	-300</dep></entry>
+	    <entry><ind>	378</ind><dep>	-322</dep></entry>
+	    <entry><ind>	395</ind><dep>	-336</dep></entry>
+		-->
+		<entry><ind>	0</ind><dep>	0</dep></entry>
+		<entry><ind>	50</ind><dep>	-5</dep></entry>
+		<entry><ind>	100</ind><dep>	-23</dep></entry>
+		<entry><ind>	150</ind><dep>	-46</dep></entry>
+		<entry><ind>	200</ind><dep>	-70</dep></entry>
+		<entry><ind>	250</ind><dep>	-97</dep></entry>
+		<entry><ind>	300</ind><dep>	-124</dep></entry>
+		<entry><ind>	350</ind><dep>	-150</dep></entry>
+		<entry><ind>	400</ind><dep>	-180</dep></entry>
+		<entry><ind>	450</ind><dep>	-204</dep></entry>
+		<entry><ind>	500</ind><dep>	-228</dep></entry>
+		<entry><ind>	550</ind><dep>	-253</dep></entry>
+		<entry><ind>	600</ind><dep>	-277</dep></entry>
+		<entry><ind>	650</ind><dep>	-300</dep></entry>
+		
+    </interpolation>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+</animation>
+<animation>
+  <type>rotate</type>
+  <object-name>Plane.007</object-name>
+  <property>/yak-40/instrumentation/kus-730/true-speed-kmh</property>
+  <min>400</min>
+  <max>750</max>
+  <interpolation>
+	  <entry><ind>	0</ind><dep>	0</dep></entry>
+	  <entry><ind>	400</ind><dep>	-17</dep></entry>
+	  <entry><ind>	450</ind><dep>	-40</dep></entry>
+	  <entry><ind>	500</ind><dep>	-63</dep></entry>
+	  <entry><ind>	550</ind><dep>	-86</dep></entry>
+	  <entry><ind>	600</ind><dep>	-110</dep></entry>
+	  <entry><ind>	650</ind><dep>	-133</dep></entry>
+	  <entry><ind>	700</ind><dep>	-156</dep></entry>
+	  <entry><ind>	750</ind><dep>	-180</dep></entry>
+  </interpolation>
+  <axis>
+    <x>0.0</x>
+    <y>1.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+
+</PropertyList>
