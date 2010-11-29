@@ -217,9 +217,9 @@
    <name>tvg_1</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_1.xml</path>
    <offsets>
-     <x-m>-8.705</x-m>
-     <y-m>-0.08</y-m>
-     <z-m>-0.16</z-m>
+     <x-m>-8.153</x-m>
+     <y-m>-0.086</y-m>
+     <z-m>1.331</z-m>
 	 <heading-deg>0.0</heading-deg>
    </offsets>
 </model>
@@ -244,7 +244,7 @@
    <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_3.xml</path>
    <offsets>
      <x-m>-8.705</x-m>
-     <y-m>0.083</y-m>
+     <y-m>0.086</y-m>
      <z-m>-0.16</z-m>
 	 <heading-deg>0.0</heading-deg>
    </offsets>
@@ -255,9 +255,9 @@
    <name>ite-1</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/ite/ite-2t_1.xml</path>
    <offsets>
-     <x-m>-8.705</x-m>
-     <y-m>-0.1076</y-m>
-     <z-m>-0.2528</z-m>
+     <x-m>-8.158</x-m>
+     <y-m>-0.086</y-m>
+     <z-m>1.251</z-m>
 	 <heading-deg>0.0</heading-deg>
    </offsets>
 </model>
