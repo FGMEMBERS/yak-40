@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- Autopilot tablo for Tu-134
+3D instrument for Tu-134-->
+<PropertyList>
+ <path>tablo.ac</path>
+
+  <animation>
+   <type>material</type>
+   <object-name>Lamp</object-name>
+   <texture>tablo_ap_anu.png</texture>
+  </animation>
+</PropertyList>
