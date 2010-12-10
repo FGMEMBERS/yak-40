@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!--
+    #############################################################################
+    #    (C) 2007 by Yurik V. Nikiforoff - port for FGFS,  FDM, 	  	#
+    #	2d & 3d instruments, animations, systems and over.		   	#
+    #    	yurik@megasignal.com					   	#
+    #############################################################################	  
+    -->
+
+<!-- Turbine turn indicator ITE-2t (two needles)
+3D instrument for Tu-154 -->
+<PropertyList>
+ <path>ite-2t.ac</path>
+<!-- Internal instruments lighting -->
+<animation>
+  <type>material</type>
+  <object-name>base</object-name>
+  <object-name>needle_1</object-name>
+  <object-name>needle_2</object-name>
+</animation>
+
+  
+<!--Needles-->
+
+<animation>
+    <type>rotate</type>
+    <object-name>needle_1</object-name>
+    <condition>
+      <and>
+	<not>
+	  <property>/instrumentation/ite2t_1/fail</property>
+	</not>
+	<greater-than>
+	  <property>/instrumentation/ite2t_1/volts</property>
+	  <value>20.0</value>
+	</greater-than>
+      </and>
+    </condition>
+   <property>/fdm/jsbsim/propulsion/engine[0]/n1</property>
+    <interpolation>
+      <entry><ind>	0.0</ind>	<dep>	51.0</dep></entry>
+      <entry><ind>	60.0</ind>	<dep>	236.0</dep></entry>
+      <entry><ind>	100.0</ind>	<dep>	360.0</dep></entry>
+      <entry><ind>	110.0</ind>	<dep>	392.0</dep></entry>
+    </interpolation>
+    <axis>
+      <x>-1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>needle_2</object-name>
+  <condition>
+      <and>
+	<not>
+	  <property>/instrumentation/ite2t_1/fail</property>
+	</not>
+	<greater-than>
+	  <property>/instrumentation/ite2t_1/volts</property>
+	  <value>20.0</value>
+	</greater-than>
+      </and>
+  </condition>
+  <property>engines/engine[0]/n2</property>
+  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>	51.0</dep></entry>
+    <entry><ind>	60.0</ind>	<dep>	236.0</dep></entry>
+    <entry><ind>	100.0</ind>	<dep>	360.0</dep></entry>
+    <entry><ind>	110.0</ind>	<dep>	392.0</dep></entry>
+  </interpolation>
+  <axis>
+    <x>-1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+
+
+</PropertyList>
