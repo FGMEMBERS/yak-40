@@ -2,11 +2,25 @@
 <!-- Autopilot tablo for Tu-134
 3D instrument for Tu-134-->
 <PropertyList>
- <path>tablo.ac</path>
+ <path>t1.ac</path>
 
   <animation>
    <type>material</type>
    <object-name>Lamp</object-name>
-   <texture>tablo_ap_anu.png</texture>
+   <texture>t1.png</texture>
   </animation>
+  
+  <animation>
+    <type>texttranlate</type>
+    <object-name>Lamp</object-name>
+    <property>yak-40/t1</property>
+    <factor>1</factor>
+    <step>1</step>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+  
 </PropertyList>
