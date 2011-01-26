@@ -230,9 +230,9 @@
    <name>tvg_2</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_2.xml</path>
    <offsets>
-     <x-m>-8.705</x-m>
-     <y-m>0.00461</y-m>
-     <z-m>-0.16</z-m>
+     <x-m>-8.158</x-m>
+     <y-m>0.00</y-m>
+     <z-m>1.399</z-m>
 	 <heading-deg>0.0</heading-deg>
    </offsets>
 </model>
@@ -249,43 +249,6 @@
 	 <heading-deg>0.0</heading-deg>
    </offsets>
 </model>
-
-<!--ITE2_1-->
-<model>
-   <name>ite-1</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/ite/ite-2t_1.xml</path>
-   <offsets>
-     <x-m>-8.158</x-m>
-     <y-m>-0.086</y-m>
-     <z-m>1.251</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
-
-<!--ITE2_2-->
-<model>
-   <name>ite-2</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/ite/ite-2t_2.xml</path>
-   <offsets>
-     <x-m>-8.705</x-m>
-     <y-m>0.00465</y-m>
-     <z-m>-0.2528</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
-
-<!--ITE2_3-->
-<model>
-   <name>ite-3</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/ite/ite-2t_3.xml</path>
-   <offsets>
-     <x-m>-8.705</x-m>
-     <y-m>0.11425</y-m>
-     <z-m>-0.2528</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
-<!-- -->
 
 
 <!--UPS-->
@@ -352,7 +315,73 @@
 </model>
 <!--************************** Central panel ***************************-->
 <!--KLN-89-->
+<model>
+   <name>EMI-3K-1</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/emi-3k/emi-3k_1.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m><!--вперед с -  -->
+     <y-m>-0.086</y-m><!--влево с -  -->
+     <z-m>1.251</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+<model>
+   <name>EMI-3K-2</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/emi-3k/emi-3k_2.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m><!--вперед с -  -->
+     <y-m>0.0</y-m><!--влево с -  -->
+     <z-m>1.251</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+<model>
+   <name>EMI-3K-3</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/emi-3k/emi-3k_3.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m><!--вперед с -  -->
+     <y-m>0.085</y-m><!--влево с -  -->
+     <z-m>1.251</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
 
+<model>
+   <name>ITE-2T-1</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/ite/ite-2t_1.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m><!--вперед с -  -->
+     <y-m>-0.086</y-m><!--влево с -  -->
+     <z-m>1.331</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+<model>
+   <name>ITE-2T-2</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/ite/ite-2t_2.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m><!--вперед с -  -->
+     <y-m>0.0</y-m><!--влево с -  -->
+     <z-m>1.331</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+<model>
+   <name>ITE-2T-3</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/ite/ite-2t_3.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m><!--вперед с -  -->
+     <y-m>0.085</y-m><!--влево с -  -->
+     <z-m>1.331</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
 
 <!--************************** Captain panel down***************************-->
 <!--ARK-15-1-->
