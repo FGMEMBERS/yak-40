@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<path>tvg.ac</path>
+
+<animation>
+	<type>material</type>
+	<object-name>Plane.127</object-name>
+	<object-name>Plane.126</object-name>
+	<emission>
+		<red>0.9</red>
+		<green>0.25</green>
+		<blue>0.2</blue>
+		<factor-prop>/controls/switches/map-lights</factor-prop>
+	</emission>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>Plane.128</object-name>
+	<emission>
+		<red>0.2</red>
+		<green>0.2</green>
+		<blue>0.2</blue>
+		<factor-prop>/controls/switches/map-lights</factor-prop>
+	</emission>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>Plane.127</object-name>
+	<property>yak-40/instrumentation/tvg_3/egt-degc</property>
+	<min>0</min>
+	<max>1100</max>
+	<interpolation>
+		<entry><ind>	0</ind><dep>	0</dep></entry>
+		<entry><ind>	200</ind><dep>	5</dep></entry>
+		<entry><ind>	300</ind><dep>	29</dep></entry>
+		<entry><ind>	400</ind><dep>	53</dep></entry>
+		<entry><ind>	600</ind><dep>	78</dep></entry>
+		<entry><ind>	800</ind><dep>	153</dep></entry>
+		<entry><ind>	1000</ind><dep>	206</dep></entry>
+		<entry><ind>	1050</ind><dep>	215</dep></entry>
+		<entry><ind>	1100</ind><dep>	226</dep></entry>
+	</interpolation>
+	<axis>
+		<x>-1.0</x>
+		<y>0.0</y>
+		<z>0.0</z>
+	</axis>
+</animation>
+
+</PropertyList>
