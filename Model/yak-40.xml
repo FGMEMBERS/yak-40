@@ -212,45 +212,6 @@
 
 <!--Приборы двигателя-->
 
-<!--TVG_1-->
-<model>
-   <name>tvg_1</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_1.xml</path>
-   <offsets>
-     <x-m>-8.153</x-m>
-     <y-m>-0.086</y-m>
-     <z-m>1.331</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
-
-
-<!--TVG_2-->
-<model>
-   <name>tvg_2</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_2.xml</path>
-   <offsets>
-     <x-m>-8.158</x-m>
-     <y-m>0.00</y-m>
-     <z-m>1.399</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
-
-
-<!--TVG_3-->
-<model>
-   <name>tvg_3</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_3.xml</path>
-   <offsets>
-     <x-m>-8.705</x-m>
-     <y-m>0.086</y-m>
-     <z-m>-0.16</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
-
-
 <!--UPS-->
 <model>
    <name>stab-ind</name><!-- Подогнал-->
@@ -383,6 +344,39 @@
    </offsets>
 </model>
 
+<model>
+   <name>TVG-1</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_1.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m><!--вперед с -  -->
+     <y-m>-0.065</y-m><!--влево с -  -->
+     <z-m>1.399</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+<model>
+   <name>TVG-2</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_2.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m><!--вперед с -  -->
+     <y-m>0.0</y-m><!--влево с -  -->
+     <z-m>1.399</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+<model>
+   <name>TVG-3</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_3.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m><!--вперед с -  -->
+     <y-m>0.061</y-m><!--влево с -  -->
+     <z-m>1.399</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
 <!--************************** Captain panel down***************************-->
 <!--ARK-15-1-->
 <model>
