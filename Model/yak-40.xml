@@ -377,6 +377,17 @@
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
 </model>
+<model>
+   <name>Gear_tab</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/gear/gear.xml</path>
+   <offsets>
+     <x-m>-8.152</x-m><!--вперед с -  -->
+     <y-m>0.0</y-m><!--влево с -  -->
+     <z-m>1.460</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
 <!--************************** Captain panel down***************************-->
 <!--ARK-15-1-->
 <model>
