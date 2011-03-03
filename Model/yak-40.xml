@@ -45,7 +45,24 @@
 </animation>
  
  <!--End VC section-->
- 
+ <model>
+    <path>Aircraft/yak-40/Model/light/beacon.xml</path>
+    <offsets>
+      <x-m> 3.334 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m>-0.044 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/yak-40/Model/light/beacon.xml</path>
+    <offsets>
+      <x-m> 7.901 </x-m>
+      <y-m> 0.041 </y-m>
+      <z-m> 5.225 </z-m>
+    </offsets>
+  </model>
+
  <!--Instruments-->
 
 <!--************************** Captain panel ***************************-->
