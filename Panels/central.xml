@@ -1,0 +1,113 @@
+<PropertyList>
+  <model>
+   <name>EMI-3K-1</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/emi-3k/emi-3k_1.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m>
+     <y-m>-0.086</y-m>
+     <z-m>1.251</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  <model>	
+   <name>EMI-3K-2</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/emi-3k/emi-3k_2.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m>
+     <y-m>0.0</y-m>
+     <z-m>1.251</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  <model>
+   <name>EMI-3K-3</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/emi-3k/emi-3k_3.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m>
+     <y-m>0.085</y-m>
+     <z-m>1.251</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  <model>
+   <name>ITE-2T-1</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/ite/ite-2t_1.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m><!--вперед с -  -->
+     <y-m>-0.086</y-m><!--влево с -  -->
+     <z-m>1.331</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+<model>
+   <name>ITE-2T-2</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/ite/ite-2t_2.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m><!--вперед с -  -->
+     <y-m>0.0</y-m><!--влево с -  -->
+     <z-m>1.331</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+<model>
+   <name>ITE-2T-3</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/ite/ite-2t_3.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m><!--вперед с -  -->
+     <y-m>0.085</y-m><!--влево с -  -->
+     <z-m>1.331</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+
+<model>
+   <name>TVG-1</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_1.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m><!--вперед с -  -->
+     <y-m>-0.065</y-m><!--влево с -  -->
+     <z-m>1.399</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+<model>
+   <name>TVG-2</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_2.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m><!--вперед с -  -->
+     <y-m>0.0</y-m><!--влево с -  -->
+     <z-m>1.399</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+<model>
+   <name>TVG-3</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_3.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m><!--вперед с -  -->
+     <y-m>0.061</y-m><!--влево с -  -->
+     <z-m>1.399</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+<model>
+   <name>Gear_tab</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/gear/gear.xml</path>
+   <offsets>
+     <x-m>-8.152</x-m><!--вперед с -  -->
+     <y-m>0.0</y-m><!--влево с -  -->
+     <z-m>1.460</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+</PropertyList>
