@@ -66,7 +66,16 @@
  <!--Instruments-->
 
 <!--************************** Captain panel ***************************-->
- 
+<model>
+  <name>panel_left</name>
+  <path>Aircraft/yak-40/Panels/left.xml</path>
+</model>
+
+<!--******************** Right panel ******************** -->
+<model>
+  <name>panel_right</name>
+  <path>Aircraft/yak-40/Panels/right.xml</path>
+</model>
 <!--AGB--> 
 <!--
  <model>
