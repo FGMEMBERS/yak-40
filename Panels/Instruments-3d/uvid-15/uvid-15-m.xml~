@@ -40,7 +40,7 @@
       <z-m>0.000</z-m>
     </center>
     <condition>
-     <property>yak-40/instrumentation/uvid-15m-l/serviceable</property>
+     <property>yak-40/instrumentation/uvid-15/serviceable</property>
     </condition>
     <axis>
       <x>-1.0</x>
