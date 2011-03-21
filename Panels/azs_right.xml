@@ -4,9 +4,9 @@
    <name>az_ukv_2</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_ukv_2.xml</path>
    <offsets>
-     <x-m>-7.070</x-m><!--вперед с -  -->
-     <y-m>0.984</y-m><!--влево с -  -->
-     <z-m>1.479</z-m><!--вверх с + -->
+     <x-m>-7.070</x-m>
+     <y-m>0.984</y-m>
+     <z-m>1.479</z-m>
 	 <heading-deg>180.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
@@ -14,12 +14,12 @@
 
 <!--az_adp-->
 <model>
-   <name>az_agd_r</name>
+   <name>az_adp</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_adp.xml</path>
    <offsets>
-     <x-m>-7.070</x-m><!--вперед с -  -->
-     <y-m>0.960</y-m><!--влево с -  -->
-     <z-m>1.479</z-m><!--вверх с + -->
+     <x-m>-7.070</x-m>
+     <y-m>0.960</y-m>
+     <z-m>1.479</z-m>
 	 <heading-deg>180.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
@@ -30,9 +30,9 @@
    <name>az_agd_r</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_agd_r.xml</path>
    <offsets>
-     <x-m>-7.070</x-m><!--вперед с -  -->
-     <y-m>0.936</y-m><!--влево с -  -->
-     <z-m>1.479</z-m><!--вверх с + -->
+     <x-m>-7.070</x-m>
+     <y-m>0.936</y-m>
+     <z-m>1.479</z-m>
 	 <heading-deg>180.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
@@ -43,9 +43,9 @@
    <name>az_gmk</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_gmk.xml</path>
    <offsets>
-     <x-m>-7.070</x-m><!--вперед с -  -->
-     <y-m>0.911</y-m><!--влево с -  -->
-     <z-m>1.479</z-m><!--вверх с + -->
+     <x-m>-7.070</x-m>
+     <y-m>0.911</y-m>
+     <z-m>1.479</z-m>
 	 <heading-deg>180.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
@@ -56,9 +56,9 @@
    <name>az_gidro</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_gidro.xml</path>
    <offsets>
-     <x-m>-7.070</x-m><!--вперед с -  -->
-     <y-m>0.887</y-m><!--влево с -  -->
-     <z-m>1.479</z-m><!--вверх с + -->
+     <x-m>-7.070</x-m>
+     <y-m>0.887</y-m>
+     <z-m>1.479</z-m>
 	 <heading-deg>180.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
@@ -69,9 +69,9 @@
    <name>az_ap</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_ap.xml</path>
    <offsets>
-     <x-m>-7.070</x-m><!--вперед с -  -->
-     <y-m>0.863</y-m><!--влево с -  -->
-     <z-m>1.479</z-m><!--вверх с + -->
+     <x-m>-7.070</x-m>
+     <y-m>0.863</y-m>
+     <z-m>1.479</z-m>
 	 <heading-deg>180.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
@@ -82,9 +82,9 @@
    <name>az_sig_gear</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_sig_gear.xml</path>
    <offsets>
-     <x-m>-7.070</x-m><!--вперед с -  -->
-     <y-m>0.838</y-m><!--влево с -  -->
-     <z-m>1.479</z-m><!--вверх с + -->
+     <x-m>-7.070</x-m>
+     <y-m>0.838</y-m>
+     <z-m>1.479</z-m>
 	 <heading-deg>180.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
@@ -108,9 +108,9 @@
    <name>az_020</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_020.xml</path>
    <offsets>
-     <x-m>-7.070</x-m><!--вперед с -  -->
-     <y-m>0.790</y-m><!--влево с -  -->
-     <z-m>1.479</z-m><!--вверх с + -->
+     <x-m>-7.070</x-m>
+     <y-m>0.790</y-m>
+     <z-m>1.479</z-m>
 	 <heading-deg>180.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
@@ -183,8 +183,8 @@
 
 <!--az deicing-->
 <model>
-   <name>az_deicicng</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_deicicng.xml</path>
+   <name>az_deicing</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_deicing.xml</path>
    <offsets>
      <x-m>-7.070</x-m>
      <y-m>0.863</y-m>
@@ -237,8 +237,8 @@
 
 <!-- az turboholod -->
 <model>
-   <name>az_tubohol</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_tubohol.xml</path>
+   <name>az_turbohol</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_turbohol.xml</path>
    <offsets>
      <x-m>-7.070</x-m>
      <y-m>0.984</y-m>
@@ -328,8 +328,8 @@
 
 <!--az obogrev kabiny-->
 <model>
-   <name>az_obogr_kab</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_obogr_kab.xml</path>
+   <name>az_obogr_cab</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_obogr_cab.xml</path>
    <offsets>
      <x-m>-7.070</x-m>
      <y-m>0.814</y-m>
@@ -367,117 +367,105 @@
    </offsets>
 </model>
 
-<!--az fara levaya rulezh-->
+<!--az fara levaya posadochnaya-->
 <model>
-   <name>az_avar_115</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_avar_115.xml</path>
+   <name>az_fara_l_pos</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_fara_l_pos.xml</path>
    <offsets>
      <x-m>-7.070</x-m>
      <y-m>0.960</y-m>
-     <z-m>1.408</z-m>
+     <z-m>1.253</z-m>
 	 <heading-deg>180.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
 </model>
 
-<!--az avar stab-->
+<!--az fara pravaya rulezh-->
 <model>
-   <name>az_avar_stab</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_avar_stab.xml</path>
+   <name>az_fara_r_rul</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_fara_r_rul.xml</path>
    <offsets>
      <x-m>-7.070</x-m>
      <y-m>0.936</y-m>
-     <z-m>1.408</z-m>
+     <z-m>1.253</z-m>
 	 <heading-deg>180.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
 </model>
 
-<!--az avar zakr-->
+<!--az fara pravaya posadochnaya-->
 <model>
-   <name>az_avar_zakr</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_avar_zakr.xml</path>
+   <name>az_fara_r_pos</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_fara_r_pos.xml</path>
    <offsets>
      <x-m>-7.070</x-m>
      <y-m>0.911</y-m>
-     <z-m>1.408</z-m>
+     <z-m>1.253</z-m>
 	 <heading-deg>180.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
 </model>
 
-<!--az avar shassi-->
+<!--az trimmery eleronov-->
 <model>
-   <name>az_avar_gear</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_avar_gear.xml</path>
+   <name>az_trim_eler</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_trim_eler.xml</path>
    <offsets>
      <x-m>-7.070</x-m>
      <y-m>0.887</y-m>
-     <z-m>1.408</z-m>
+     <z-m>1.253</z-m>
 	 <heading-deg>180.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
 </model>
 
-<!--az deicing-->
+<!--az trimmery rp-->
 <model>
-   <name>az_deicicng</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_deicicng.xml</path>
+   <name>az_trim_rp</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_trim_rp.xml</path>
    <offsets>
      <x-m>-7.070</x-m>
      <y-m>0.863</y-m>
-     <z-m>1.408</z-m>
+     <z-m>1.253</z-m>
 	 <heading-deg>180.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
 </model>
 
-<!--az torm shit-->
+<!--az stab osnovnoy-->
 <model>
-   <name>az_torm_shit</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_torm_shit.xml</path>
+   <name>az_stab_osn</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_stab_osn.xml</path>
    <offsets>
      <x-m>-7.070</x-m>
      <y-m>0.838</y-m>
-     <z-m>1.408</z-m>
+     <z-m>1.253</z-m>
 	 <heading-deg>180.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
 </model>
 
-<!--az kondic-->
+<!--az zakr osnovnoy-->
 <model>
-   <name>az_condic</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_condic.xml</path>
+   <name>az_zakr_osn</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_zakr_osn.xml</path>
    <offsets>
      <x-m>-7.070</x-m>
      <y-m>0.814</y-m>
-     <z-m>1.408</z-m>
+     <z-m>1.253</z-m>
 	 <heading-deg>180.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
 </model>
 
-<!--az tual pompa-->
+<!--az shassi osnovnoy-->
 <model>
-   <name>az_tual_pompa</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_tual_pompa.xml</path>
+   <name>az_gear_osn</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_gear_osn.xml</path>
    <offsets>
      <x-m>-7.070</x-m>
      <y-m>0.790</y-m>
-     <z-m>1.408</z-m>
-	 <heading-deg>180.0</heading-deg>
-	 <pitch-deg>0.0</pitch-deg>
-   </offsets>
-</model>
-
-<model>
-   <name>az_so_72</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_020.xml</path>
-   <offsets>
-     <x-m>-7.070</x-m><!--вперед с -  -->
-     <y-m>0.984</y-m><!--влево с -  -->
-     <z-m>1.253</z-m><!--вверх с + -->
+     <z-m>1.253</z-m>
 	 <heading-deg>180.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
