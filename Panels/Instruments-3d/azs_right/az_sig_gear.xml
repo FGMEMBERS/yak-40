@@ -14,7 +14,7 @@
  <path>sw.ac</path>
 
 
-<!-- **************************** Handle **************************** -->
+<!-- **************************** handle **************************** -->
 <animation>
     <type>rotate</type>
     <object-name>handle</object-name>
@@ -66,5 +66,20 @@
 	</action>
 </animation>
 
+<animation>
+	<type>pick</type>
+	<object-name>handle</object-name>
+	<visible>true</visible>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>
+			if (getprop("yak-40/switches/az_sig_gear")==0) {setprop("yak-40/switches/az_sig_gear", 1);} else {setprop("yak-40/switches/az_sig_gear", 0);}
+			</script>
+		</binding>
+	</action>
+</animation>
 
 </PropertyList>
