@@ -9,25 +9,28 @@
 <PropertyList>
  <path>uvid-15m.ac</path>
 <!-- Internal instruments lighting -->
-<!--
 <animation>
   <type>material</type>
-  <object-name>base</object-name>
-  <object-name>dig_a_dec</object-name>
-  <object-name>dig_a_hund</object-name>
-  <object-name>dig_a_ths</object-name>
-  <object-name>dig_a_decths</object-name>
-  <object-name>dig_p_ones</object-name>
-  <object-name>dig_p_dec</object-name>
-  <object-name>dig_p_hund</object-name>
-  <object-name>needle</object-name>
+    <object-name>Circle</object-name>
+    <object-name>Circle.002</object-name>
+    <object-name>Knob</object-name>
+    <object-name>Plane</object-name>
+    <object-name>bezel</object-name>
+    <object-name>dig_a_dec</object-name>
+    <object-name>dig_a_hund</object-name>
+    <object-name>dig_a_ths</object-name>
+    <object-name>dig_a_decths</object-name>
+    <object-name>dig_p_ones</object-name>
+    <object-name>dig_p_dec</object-name>
+    <object-name>dig_p_hund</object-name>
+    <object-name>needle</object-name>
   <emission>
     <red-prop>yak-40/light/instruments/int-red</red-prop>
     <green-prop>yak-40/light/instruments/int-green</green-prop>
     <blue-prop>yak-40/light/instruments/int-blue</blue-prop>
   </emission>
 </animation>
--->
+
 <!--Needles-->
 <animation>
     <type>rotate</type>
