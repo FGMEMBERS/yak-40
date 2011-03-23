@@ -11,10 +11,10 @@
    </offsets>
   </model>
   <model>
-   <name>UVID-15m</name>
+   <name>UVID-15m-l</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/uvid-15/uvid-15m-l.xml</path>
    <offsets>
-     <x-m>-8.158</x-m>
+     <x-m>-8.156</x-m>
      <y-m>-0.523</y-m>
      <z-m>1.417</z-m>
 	 <heading-deg>0.0</heading-deg>
