@@ -32,7 +32,7 @@
 <animation>
     <type>rotate</type>
     <object-name>needle</object-name>
-    <property>instrumentation/altimeter/indicated-altitude-ft</property>
+    <property>instrumentation/altimeter[1]/indicated-altitude-ft</property>
     <factor>0.10973</factor>
     <center>
       <x-m>0.0002</x-m>
@@ -40,7 +40,7 @@
       <z-m>0.000</z-m>
     </center>
     <condition>
-     <property>instrumentation/altimeter/serviceable</property>
+     <property>instrumentation/altimeter[1]/serviceable</property>
     </condition>
     <axis>
       <x>-1.0</x>
@@ -53,7 +53,7 @@
 <animation>
   <type>rotate</type>
   <object-name>dig_a_dec</object-name>
-  <property>yak-40/instrumentation/uvid-15m-l/indicated-wheels_dec_m</property>
+  <property>yak-40/instrumentation/uvid-15m-r/indicated-wheels_dec_m</property>
   <factor>36</factor>
   <center>
     <x-m>-0.01669</x-m>
@@ -69,7 +69,7 @@
 <animation>
   <type>rotate</type>
   <object-name>dig_a_hund</object-name>
-  <property>yak-40/instrumentation/uvid-15m-l/indicated-wheels_hund_m</property>
+  <property>yak-40/instrumentation/uvid-15m-r/indicated-wheels_hund_m</property>
   <interpolation>
     <entry><ind>	0.0</ind>	<dep>	0.0</dep></entry>
     <entry><ind>	0.9</ind>	<dep>	0.1</dep></entry>
@@ -108,7 +108,7 @@
 <animation>
   <type>rotate</type>
   <object-name>dig_a_ths</object-name>
-  <property>yak-40/instrumentation/uvid-15m-l/indicated-wheels_ths_m</property>
+  <property>yak-40/instrumentation/uvid-15m-r/indicated-wheels_ths_m</property>
   <interpolation>
     <entry><ind>	0.0</ind>	<dep>	0.0</dep></entry>
     <entry><ind>	0.99</ind>	<dep>	0.1</dep></entry>
@@ -147,7 +147,7 @@
 <animation>
   <type>rotate</type>
   <object-name>dig_a_decths</object-name>
-  <property>yak-40/instrumentation/uvid-15m-l/indicated-wheels_decths_m</property>
+  <property>yak-40/instrumentation/uvid-15m-r/indicated-wheels_decths_m</property>
   <interpolation>
     <entry><ind>	0.0</ind>	<dep>	0.0</dep></entry>
     <entry><ind>	0.999</ind>	<dep>	0.1</dep></entry>
@@ -188,7 +188,7 @@
 <animation>
   <type>rotate</type>
   <object-name>dig_p_ones</object-name>
-  <property>yak-40/instrumentation/uvid-15m-l/mmhg</property>
+  <property>yak-40/instrumentation/uvid-15m-r/mmhg</property>
   <factor>36.0</factor>
   <center>
     <x-m>-0.01061</x-m>
@@ -205,7 +205,7 @@
 <animation>
   <type>rotate</type>
   <object-name>dig_p_dec</object-name>
-  <property>yak-40/instrumentation/uvid-15m-l/mmhg-wheels_dec</property>  
+  <property>yak-40/instrumentation/uvid-15m-r/mmhg-wheels_dec</property>  
   
   <interpolation>
     <entry><ind>	0.0</ind>	<dep>	0.0</dep></entry>
@@ -246,7 +246,7 @@
 <animation>
   <type>rotate</type>
   <object-name>dig_p_hund</object-name>
-  <property>yak-40/instrumentation/uvid-15m-l/mmhg-wheels_hund</property>  
+  <property>yak-40/instrumentation/uvid-15m-r/mmhg-wheels_hund</property>  
   <interpolation>
     <entry><ind>	0.0</ind>	<dep>	0.0</dep></entry>
     <entry><ind>	0.99</ind>	<dep>	0.1</dep></entry>
@@ -287,7 +287,7 @@
 <animation>
   <type>rotate</type>
   <object-name>Knob</object-name>
-  <property>instrumentation/altimeter/setting-inhg</property>  
+  <property>instrumentation/altimeter[1]/setting-inhg</property>  
   <factor>300</factor>
   <center>
     <x-m>0.0</x-m>
@@ -310,7 +310,7 @@
     <repeatable>false</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>instrumentation/altimeter/setting-inhg</property>
+      <property>instrumentation/altimeter[1]/setting-inhg</property>
       <step>0.01</step>
       <min>10.0</min>
       <max>40.0</max>
@@ -326,7 +326,7 @@
     <repeatable>false</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>instrumentation/altimeter/setting-inhg</property>
+      <property>instrumentation/altimeter[1]/setting-inhg</property>
       <step>-0.01</step>
       <min>10.0</min>
       <max>40.0</max>
