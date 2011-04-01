@@ -76,6 +76,12 @@
   <name>panel_right</name>
   <path>Aircraft/yak-40/Panels/right.xml</path>
 </model>
+
+<!-- Big panel -->
+<model>
+  <name>panel_right</name>
+  <path>Aircraft/yak-40/Panels/big_panel.xml</path>
+</model> 
 <!--AGB--> 
 <!--
  <model>

@@ -497,6 +497,23 @@
    <altimeter n="1">
     <serviceable type="bool" archive="y">true</serviceable>
   </altimeter>
+  <radar >
+    <serviceable>true</serviceable>
+  </radar>
+<tcas>
+                        <serviceable type="bool">true</serviceable>
+                        <inputs>
+                                <mode type="int">3</mode>
+                        </inputs>
+                        <voice>
+                                <file-prefix>Sounds/tcas/female/</file-prefix>
+                        </voice>
+                        <speaker>
+                                <max-dist>2</max-dist>
+                                <reference-dist>1</reference-dist>
+                                <volume>1</volume>
+                        </speaker>
+                </tcas>
   
 </instrumentation>
 

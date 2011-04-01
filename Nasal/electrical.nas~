@@ -4,8 +4,8 @@ print("Initializing Electrical System");
 
 var UPDATE_PERIOD = 0.3;
 
-var enode="/yak-40/systems/electrical/";
-var swnode = "/yak-40/switches/";
+var enode="yak-40/systems/electrical/";
+var swnode = "yak-40/switches/";
 
 var battery1 = nil;
 var battery2 = nil;
@@ -88,10 +88,10 @@ init_switches = func{
 }
 
 init_users = func{
-    ite2t_1 = UserClass.new("/instrumentation", "ite2t_1");
-    ite2t_2 = UserClass.new("/instrumentation", "ite2t_2");
-    ite2t_3 = UserClass.new("/instrumentation", "ite2t_3");
-    adp = UserClass.new("/instrumentation", "adp");
+    ite2t_1 = UserClass.new("instrumentation", "ite2t_1");
+    ite2t_2 = UserClass.new("instrumentation", "ite2t_2");
+    ite2t_3 = UserClass.new("instrumentation", "ite2t_3");
+    adp = UserClass.new("instrumentation", "adp");
 
     setlistener("yak-40/switches/po1500_1", PO1500_1_on_bus_handler);
     setlistener("yak-40/switches/az_ob_eng_1", az_ob_eng_1_handler);
@@ -212,7 +212,7 @@ az_ob_eng_3_handler = func {
     }
 }
 	
-az_agd_handler = func {
+az_adp_handler = func {
   if( getprop("yak-40/switches/az_adp")==1 ){
 	bus27.add_output(adp, 10);
 	adp.add_input( bus27 );

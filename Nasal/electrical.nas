@@ -32,6 +32,9 @@ var ite2t_2 = nil;
 var ite2t_3 = nil;
 var adp = nil;
 
+var beacon = aircraft.light.new( "/sim/model/lights/beacon", [0.05, 0.05] );
+beacon.interval = 0;
+
 init_electrical = func {
     
     print("Initializing Nasal Electrical System");

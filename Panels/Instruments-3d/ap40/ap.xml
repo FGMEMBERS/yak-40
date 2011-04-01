@@ -33,7 +33,7 @@
 <!--Power-->
 
 <!--Lamp-->
- 
+<!--Ready Lamp--> 
 <animation>
   <type>material</type>
   <object-name>ready_btn</object-name>
@@ -42,7 +42,7 @@
     <green>1</green>
     <blue>1</blue>
     <factor-prop>yak-40/instrumentation/ap40/serviceable</factor-prop>
- </condition>
+ </emission>
 </animation>
 
 

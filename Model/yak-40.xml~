@@ -45,11 +45,37 @@
 </animation>
  
  <!--End VC section-->
- 
+ <model>
+    <path>Aircraft/yak-40/Model/light/beacon.xml</path>
+    <offsets>
+      <x-m> 3.334 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m>-0.044 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/yak-40/Model/light/beacon.xml</path>
+    <offsets>
+      <x-m> 7.901 </x-m>
+      <y-m> 0.041 </y-m>
+      <z-m> 5.225 </z-m>
+    </offsets>
+  </model>
+
  <!--Instruments-->
 
 <!--************************** Captain panel ***************************-->
- 
+<model>
+  <name>panel_left</name>
+  <path>Aircraft/yak-40/Panels/left.xml</path>
+</model>
+
+<!--******************** Right panel ******************** -->
+<model>
+  <name>panel_right</name>
+  <path>Aircraft/yak-40/Panels/right.xml</path>
+</model>
 <!--AGB--> 
 <!--
  <model>
@@ -65,7 +91,7 @@
  </model>
  -->
  <effect>
-    <inherits-from>Aircraft/yakovlev-40/Model/Effects/bumpspec-rs-r</inherits-from>
+    <inherits-from>Aircraft/yak-40/Model/Effects/bumpspec-rs-r</inherits-from>
     <object-name>reshetka_r</object-name>
  </effect>
  <!--KPP-1234--> 
@@ -80,7 +106,38 @@
 	 <heading-deg>180.0</heading-deg>
 	 </offsets>
  </model>
- 
+
+<!-- Panels -->
+ <model>
+   <name>tablo1</name><!-- Подогнал-->
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/tablo1.xml</path>
+   <offsets>
+     <x-m>-8.150</x-m>
+     <y-m>-0.226</y-m>
+     <z-m>1.599</z-m>
+   </offsets>
+</model>
+
+<model>
+   <name>tablo3</name><!-- Подогнал-->
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/tablo2.xml</path>
+   <offsets>   
+     <x-m>-8.150</x-m>
+     <y-m>-0.258</y-m>
+     <z-m>1.599</z-m>
+   </offsets>
+</model>
+
+<model>
+   <name>tablo2</name><!-- Подогнал-->
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/tablo3.xml</path>
+   <offsets>   
+     <x-m>-8.150</x-m>
+     <y-m>-0.290</y-m>
+     <z-m>1.599</z-m>
+   </offsets>
+</model>
+
 <!--KUS-->
  <model>
    <name>kus730-1100</name><!-- Подогнал-->
@@ -181,82 +238,6 @@
 
 <!--Приборы двигателя-->
 
-<!--TVG_1-->
-<model>
-   <name>tvg_1</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_1.xml</path>
-   <offsets>
-     <x-m>-8.705</x-m>
-     <y-m>-0.08</y-m>
-     <z-m>-0.16</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
-
-
-<!--TVG_2-->
-<model>
-   <name>tvg_2</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_2.xml</path>
-   <offsets>
-     <x-m>-8.705</x-m>
-     <y-m>0.00461</y-m>
-     <z-m>-0.16</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
-
-
-<!--TVG_3-->
-<model>
-   <name>tvg_3</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_3.xml</path>
-   <offsets>
-     <x-m>-8.705</x-m>
-     <y-m>0.083</y-m>
-     <z-m>-0.16</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
-
-<!--ITE2_1-->
-<model>
-   <name>ite-1</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/ite/ite-2t_1.xml</path>
-   <offsets>
-     <x-m>-8.705</x-m>
-     <y-m>-0.1076</y-m>
-     <z-m>-0.2528</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
-
-<!--ITE2_2-->
-<model>
-   <name>ite-2</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/ite/ite-2t_2.xml</path>
-   <offsets>
-     <x-m>-8.705</x-m>
-     <y-m>0.00465</y-m>
-     <z-m>-0.2528</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
-
-<!--ITE2_3-->
-<model>
-   <name>ite-3</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/ite/ite-2t_3.xml</path>
-   <offsets>
-     <x-m>-8.705</x-m>
-     <y-m>0.11425</y-m>
-     <z-m>-0.2528</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
-<!-- -->
-
-
 <!--UPS-->
 <model>
    <name>stab-ind</name><!-- Подогнал-->
@@ -321,6 +302,10 @@
 </model>
 <!--************************** Central panel ***************************-->
 <!--KLN-89-->
+<model>
+  <name>Central_panel</name>
+  <path>Aircraft/yak-40/Panels/central.xml</path>
+</model>
 
 
 <!--************************** Captain panel down***************************-->
@@ -443,134 +428,9 @@
 
 <!--az_ukv_2-->
 <model>
-   <name>az_ukv_2</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_ukv_2.xml</path>
-   <offsets>
-     <x-m>-7.5725</x-m><!--вперед с -  -->
-     <y-m>0.9495</y-m><!--влево с -  -->
-     <z-m>-0.09735</z-m><!--вверх с + -->
-	 <heading-deg>180.0</heading-deg>
-	 <pitch-deg>0.0</pitch-deg>
-   </offsets>
+  <name>AZS_right</name>
+  <path>Aircraft/yak-40/Panels/azs_right.xml</path>
 </model>
-
-<!--az_adp-->
-<model>
-   <name>az_agd_r</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_adp.xml</path>
-   <offsets>
-     <x-m>-7.5725</x-m><!--вперед с -  -->
-     <y-m>0.9223</y-m><!--влево с -  -->
-     <z-m>-0.09733</z-m><!--вверх с + -->
-	 <heading-deg>180.0</heading-deg>
-	 <pitch-deg>0.0</pitch-deg>
-   </offsets>
-</model>
-
-<!--az_agd_r-->
-<model>
-   <name>az_agd_r</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_agd_r.xml</path>
-   <offsets>
-     <x-m>-7.5725</x-m><!--вперед с -  -->
-     <y-m>0.894</y-m><!--влево с -  -->
-     <z-m>-0.09733</z-m><!--вверх с + -->
-	 <heading-deg>180.0</heading-deg>
-	 <pitch-deg>0.0</pitch-deg>
-   </offsets>
-</model>
-
-<!--az_gmk-->
-<model>
-   <name>az_gmk</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_gmk.xml</path>
-   <offsets>
-     <x-m>-7.5725</x-m><!--вперед с -  -->
-     <y-m>0.8655</y-m><!--влево с -  -->
-     <z-m>-0.09731</z-m><!--вверх с + -->
-	 <heading-deg>180.0</heading-deg>
-	 <pitch-deg>0.0</pitch-deg>
-   </offsets>
-</model>
-
-<!--az_gidro-->
-<model>
-   <name>az_gidro</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_gidro.xml</path>
-   <offsets>
-     <x-m>-7.5725</x-m><!--вперед с -  -->
-     <y-m>0.8375</y-m><!--влево с -  -->
-     <z-m>-0.09731</z-m><!--вверх с + -->
-	 <heading-deg>180.0</heading-deg>
-	 <pitch-deg>0.0</pitch-deg>
-   </offsets>
-</model>
-
-<!--az_ap-->
-<model>
-   <name>az_ap</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_ap.xml</path>
-   <offsets>
-     <x-m>-7.5725</x-m><!--вперед с -  -->
-     <y-m>0.8095</y-m><!--влево с -  -->
-     <z-m>-0.09731</z-m><!--вверх с + -->
-	 <heading-deg>180.0</heading-deg>
-	 <pitch-deg>0.0</pitch-deg>
-   </offsets>
-</model>
-
-<!--az_sig_gear-->
-<model>
-   <name>az_sig_gear</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_sig_gear.xml</path>
-   <offsets>
-     <x-m>-7.5725</x-m><!--вперед с -  -->
-     <y-m>0.782</y-m><!--влево с -  -->
-     <z-m>-0.09731</z-m><!--вверх с + -->
-	 <heading-deg>180.0</heading-deg>
-	 <pitch-deg>0.0</pitch-deg>
-   </offsets>
-</model>
-
-<!--az_raketi-->
-<model>
-   <name>az_rak</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_rak.xml</path>
-   <offsets>
-     <x-m>-7.5725</x-m>
-     <y-m>0.754</y-m>
-     <z-m>-0.09731</z-m>
-	 <heading-deg>180.0</heading-deg>
-	 <pitch-deg>0.0</pitch-deg>
-   </offsets>
-</model>
-
-<!--az_so_72-->
-<model>
-   <name>az_so_72</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_so_72.xml</path>
-   <offsets>
-     <x-m>-7.5725</x-m><!--вперед с -  -->
-     <y-m>0.726</y-m><!--влево с -  -->
-     <z-m>-0.09729</z-m><!--вверх с + -->
-	 <heading-deg>180.0</heading-deg>
-	 <pitch-deg>0.0</pitch-deg>
-   </offsets>
-</model>
-
-<!--az_test-->
-<model>
-   <name>az_test</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_so_72.xml</path>
-   <offsets>
-     <x-m>-7.5725</x-m><!--вперед с -  -->
-     <y-m>0.726</y-m><!--влево с -  -->
-     <z-m>-0.19229</z-m><!--вверх с + -->
-	 <heading-deg>180.0</heading-deg>
-	 <pitch-deg>0.0</pitch-deg>
-   </offsets>
-</model>
-
 
 <!--*************************** END PANELS ****************************-->
 <!--Group all in VC-->
