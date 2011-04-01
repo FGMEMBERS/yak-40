@@ -1,0 +1,136 @@
+<PropertyList>
+  <model>
+   <name>Knob_plafon</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/knobs/knob_plafon.xml</path>
+   <offsets>
+     <x-m>-8.159</x-m>
+     <y-m>-0.745</y-m>
+     <z-m>1.267</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  <model>
+   <name>Knob_board_left</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/knobs/knob_boar_left.xml</path>
+   <offsets>
+     <x-m>-8.159</x-m>
+     <y-m>-0.795</y-m>
+     <z-m>1.267</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  <model>
+   <name>Knob_bort_left</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/knobs/knob_bort_left.xml</path>
+   <offsets>
+     <x-m>-8.159</x-m>
+     <y-m>-0.847</y-m>
+     <z-m>1.267</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <!-- AZSes -->
+  <!--az_pozh_sign-->
+  <model>
+    <name>az_pozh_sign</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_big/az_pozh_sign.xml</path>
+    <offsets>
+      <x-m>-8.158</x-m>
+      <y-m>-0.776</y-m>
+      <z-m>1.362</z-m>
+    </offsets>
+  </model>
+
+  <!--az_avar_gear_sign-->
+  <model>
+    <name>az_avar_gear_sign</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_big/az_avar_gear_sign.xml</path>
+    <offsets>
+      <x-m>-8.158</x-m>
+      <y-m>-0.748</y-m>
+      <z-m>1.362</z-m>
+    </offsets>
+  </model>
+  
+  <!--az_auto_debrack-->
+  <model>
+    <name>az_auto_debrack</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_big/az_auto_debrack.xml</path>
+    <offsets>
+      <x-m>-8.158</x-m>
+      <y-m>-0.721</y-m>
+      <z-m>1.362</z-m>
+    </offsets>
+  </model>
+  
+  <!--sw_agb-->
+  <model>
+    <name>sw_agb</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_big/sw_agb.xml</path>
+    <offsets>
+      <x-m>-8.158</x-m>
+      <y-m>-0.693</y-m>
+      <z-m>1.362</z-m>
+    </offsets>
+  </model>
+  
+  <!--az_pk_ai9-->
+  <model>
+    <name>az_pk_ai9</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_big/az_pk_ai9.xml</path>
+    <offsets>
+      <x-m>-8.158</x-m>
+      <y-m>-0.668</y-m>
+      <z-m>1.362</z-m>
+    </offsets>
+  </model>
+  
+  <!--sw_tablo-->
+  <model>
+    <name>sw_tablo</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_big/sw_tablo.xml</path>
+    <offsets>
+      <x-m>-8.158</x-m>
+      <y-m>-0.644</y-m>
+      <z-m>1.362</z-m>
+    </offsets>
+  </model>
+  
+  <!--az_emerg_exit-->
+  <model>
+    <name>az_emerg_exit</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_big/az_emerg_exit.xml</path>
+    <offsets>
+      <x-m>-8.158</x-m>
+      <y-m>-0.620</y-m>
+      <z-m>1.362</z-m>
+    </offsets>
+  </model>
+  
+  <!--az_plafon-->
+  <model>
+    <name>az_plafon</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_big/az_plafon.xml</path>
+    <offsets>
+      <x-m>-8.158</x-m>
+      <y-m>-0.703</y-m>
+      <z-m>1.266</z-m>
+    </offsets>
+  </model>
+  
+  <!--az_bort_left-->
+  <model>
+    <name>az_bort_left</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_big/az_bort_left.xml</path>
+    <offsets>
+      <x-m>-8.158</x-m>
+      <y-m>-0.680</y-m>
+      <z-m>1.266</z-m>
+    </offsets>
+  </model>
+  
+</PropertyList>
