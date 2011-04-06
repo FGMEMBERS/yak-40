@@ -71,8 +71,8 @@
    <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_1.xml</path>
    <offsets>
      <x-m>-8.158</x-m><!--вперед с -  -->
-     <y-m>-0.065</y-m><!--влево с -  -->
-     <z-m>1.399</z-m><!--вверх с + -->
+     <y-m>-0.092</y-m><!--влево с -  -->
+     <z-m>1.403</z-m><!--вверх с + -->
 	 <heading-deg>0.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
@@ -82,8 +82,8 @@
    <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_2.xml</path>
    <offsets>
      <x-m>-8.158</x-m><!--вперед с -  -->
-     <y-m>0.0</y-m><!--влево с -  -->
-     <z-m>1.399</z-m><!--вверх с + -->
+     <y-m>-0.026</y-m><!--влево с -  -->
+     <z-m>1.403</z-m><!--вверх с + -->
 	 <heading-deg>0.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
@@ -93,8 +93,8 @@
    <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_3.xml</path>
    <offsets>
      <x-m>-8.158</x-m><!--вперед с -  -->
-     <y-m>0.061</y-m><!--влево с -  -->
-     <z-m>1.399</z-m><!--вверх с + -->
+     <y-m>0.034</y-m><!--влево с -  -->
+     <z-m>1.403</z-m><!--вверх с + -->
 	 <heading-deg>0.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
