@@ -20,7 +20,13 @@ TU154B project
     <name>adf</name>
     <number>1</number>
   </adf>
- 
+  
+  <attitude-indicator>
+    <name>attitude-indicator</name>
+    <number>0</number>
+    <suction>yak-40/systems/mgv/one</suction>
+  </attitude-indicator>
+  
   <airspeed-indicator>
     <name>airspeed-indicator</name>
     <number>0</number>
