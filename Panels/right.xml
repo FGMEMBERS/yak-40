@@ -1,4 +1,5 @@
 <PropertyList>
+   
   <model>
    <name>KUS730-1100</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/kus730-1100/kus730-1100-r.xml</path>
@@ -17,6 +18,18 @@
      <x-m>-8.156</x-m>
      <y-m>0.282</y-m>
      <z-m>1.431</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
+   <name>VAR30-r</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/var/var-30-r.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>0.519</y-m>
+     <z-m>1.488</z-m>
 	 <heading-deg>0.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>

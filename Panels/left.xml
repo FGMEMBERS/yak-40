@@ -1,5 +1,17 @@
 <PropertyList>
   <model>
+   <name>AGB-l</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/agb/agb-l.xml</path>
+   <offsets>
+     <x-m>-8.141</x-m>
+     <y-m>-0.407</y-m>
+     <z-m>1.500</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
    <name>EMI-3K-1</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/kus730-1100/kus730-1100.xml</path>
    <offsets>
