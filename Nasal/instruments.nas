@@ -202,6 +202,28 @@ usis ();
 # ###########################################
 # # digit wheels support for UVO-15 SVS altimeter
 # # meters
+rv5m-l : func (step){
+  var rv_alt = getprop("instrumentation/altimeter/indicated-altitude-ft");
+  rv_alt = rv_alt * 0.3048;
+  var ind_alt = getprop("yak-40/instrumentation/rv-5m/index-m");
+  if ((ind_alt < 701) and (ind_alt > 0){
+  if ( step < 0) {
+    if (rv_alt > 99) {
+      ind_alt = ind_alt + 10;
+    } else {
+      ind_alt = ind_alt + 1;
+    }
+  } else {
+    if (rv_alt > 99) {
+      ind_alt = ind_alt - 10;
+    } else {
+      ind_alt = ind_alt - 1;
+    }
+  }
+  }
+  setprop("yak-40/instrumentation/rv-5m/index-m",ind_alt);
+}
+
 altimeter_l_handler=func {
 settimer( altimeter_l_handler, 0 );
   #if( getprop("tu154/systems/svs/powered") != 1 ) return;

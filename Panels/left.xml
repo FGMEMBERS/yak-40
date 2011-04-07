@@ -44,4 +44,28 @@
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
   </model>
+  
+  <model>
+   <name>EUP-l</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/eup/eup-l.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>-0.286</y-m>
+     <z-m>1.426</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
+   <name>RV-5M-l</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/rv-5m/rv-5m.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>-0.286</y-m>
+     <z-m>1.350</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
 </PropertyList>

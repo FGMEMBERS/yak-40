@@ -118,6 +118,25 @@ TU154B project
     <number>0</number>
   </turn-indicator>
   
+  <turn-indicator>
+    <name>turn-indicator</name>
+    <number>1</number>
+  </turn-indicator>
+  
+  <radar-altimeter>
+                        <switch type="string">ON</switch>
+                        <serviceable type="bool">true</serviceable>
+                        <antenna>
+                                <x-offset-m type="double">-2.660540</x-offset-m>
+                                <y-offset-m type="double">0</y-offset-m>
+                                <z-offset-m type="double">-0.6275650</z-offset-m>
+                        </antenna>
+                        <set-height-ft>1000</set-height-ft>
+                        <set-excursion-percent>5</set-excursion-percent>
+                        <beamwidth-deg>10</beamwidth-deg>
+                </radar-altimeter>
+
+  
   <vertical-speed-indicator>
     <name>vertical-speed-indicator</name>
     <number>0</number>

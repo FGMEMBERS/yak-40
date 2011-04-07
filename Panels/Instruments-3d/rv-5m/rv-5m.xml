@@ -95,18 +95,35 @@
 </animation>
 
 <!--Controls-->
+<animation>
+  <type>rotate</type>
+  <object-name>hs</object-name>
+  <property>yak-40/instrumentation/rv-5m/knob</property>  
+  <factor>0.3</factor>
+  <center>
+    <x-m>0.0</x-m>
+    <y-m>-0.03055</y-m>
+    <z-m>-0.02676</z-m>
+  </center>
+  <axis>
+    <x>1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+
 
 <animation>
   <type>pick</type>
   <object-name>hs</object-name>
-  <visible>false</visible>
+  <visible>true</visible>
   <action>
     <button>4</button>
     <repeatable>false</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>yak-40/instrumentation/rv-5m/index-m</property>
-      <step>-5.0</step>
+      <property>yak-40/instrumentation/rv-5m/knob</property>
+      <step>-10.0</step>
       <min>0.0</min>
     </binding>
   </action>
@@ -114,15 +131,13 @@
 <animation>
   <type>pick</type>
   <object-name>hs</object-name>
-  <visible>false</visible>
+  <visible>true</visible>
   <action>
     <button>3</button>
     <repeatable>false</repeatable>
     <binding>
-      <command>property-adjust</command>
-      <property>yak-40/instrumentation/rv-5m/index-m</property>
-      <step>5.0</step>
-      <max>700.0</max>
+      <command>nasal</command>
+      <script>yak-40.instruments.rv5m-l(1);</script>
     </binding>
     
   </action>
