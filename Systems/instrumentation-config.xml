@@ -24,7 +24,13 @@ TU154B project
   <attitude-indicator>
     <name>attitude-indicator</name>
     <number>0</number>
-    <suction>yak-40/systems/mgv/one</suction>
+    <suction>yak-40/systems/agb/one</suction>
+  </attitude-indicator>
+  
+  <attitude-indicator>
+    <name>attitude-indicator</name>
+    <number>1</number>
+    <suction>yak-40/systems/agb/two</suction>
   </attitude-indicator>
   
   <airspeed-indicator>
@@ -106,12 +112,12 @@ TU154B project
     <number>0</number>
     <mode-c-altitude>/instrumentation/encoder/mode-c-alt-ft</mode-c-altitude>
   </transponder>
- <!-- 
+  
   <turn-indicator>
     <name>turn-indicator</name>
     <number>0</number>
   </turn-indicator>
--->  
+  
   <vertical-speed-indicator>
     <name>vertical-speed-indicator</name>
     <number>0</number>

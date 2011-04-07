@@ -1,5 +1,16 @@
 <PropertyList>
-   
+  <model>
+   <name>AGB-l</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/agb/agb-r.xml</path>
+   <offsets>
+     <x-m>-8.141</x-m>
+     <y-m>0.402</y-m>
+     <z-m>1.500</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
   <model>
    <name>KUS730-1100</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/kus730-1100/kus730-1100-r.xml</path>
