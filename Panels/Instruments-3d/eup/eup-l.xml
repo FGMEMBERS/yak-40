@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!--
+    #############################################################################
+    #    (C) 2007 by Yurik V. Nikiforoff - port for FGFS,  FDM, 	  	#
+    #	2d & 3d instruments, animations, systems and over.		   	#
+    #    	yurik@megasignal.com					   	#
+    #############################################################################	  
+    -->
+
+<!-- Electrical turn indicator EUP
+3D instrument for Tu-154 -->
+<PropertyList>
+ <path>eup.ac</path>
+<!-- Internal instruments lighting -->
+<animation>
+  <type>material</type>
+  <object-name>back</object-name>
+  <object-name>text</object-name>
+  <object-name>needle</object-name>
+  <emission>
+    <red-prop>tu154/light/instruments/int-red</red-prop>
+    <green-prop>tu154/light/instruments/int-green</green-prop>
+    <blue-prop>tu154/light/instruments/int-blue</blue-prop>
+  </emission>
+</animation>
+
+  
+<!--Needle-->
+<animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>instrumentation/turn-indicator/indicated-turn-rate</property>
+    <condition>
+      <property>yak-40/instrumentation/eup-l/powered</property>
+    </condition>
+    <!-- 0.313 15 град
+	0.7 30 град
+	  1.21 45 град -->
+    <interpolation>
+      <entry><ind>	-1.21</ind>	<dep>	-27.0</dep></entry> 
+      <entry><ind>	-0.7</ind>	<dep>	-17.4</dep></entry>
+      <entry><ind>	-0.313</ind>	<dep>	-8.4</dep></entry>
+       <entry><ind>	0.0</ind>	<dep>	0.0</dep></entry> 
+      <entry><ind>	0.313</ind>	<dep>	9.0</dep></entry> 
+      <entry><ind>	0.7</ind>	<dep>	18.3</dep></entry> 
+      <entry><ind>	1.21</ind>	<dep>	26.0</dep></entry> 
+    </interpolation>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>-0.023</z-m>
+    </center>
+    <axis>
+      <x>-1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>ball</object-name>
+  <property>instrumentation/slip-skid-ball/indicated-slip-skid</property>
+  <interpolation>
+    <entry><ind>	-3.0</ind>	<dep>	-10.0</dep></entry>
+    <entry><ind>	3.0</ind>	<dep>	10.0</dep></entry>
+  </interpolation>
+  <center>
+    <x-m>0.0</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.070</z-m>
+  </center>
+  <axis>
+    <x>-1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+
+
+
+</PropertyList>
