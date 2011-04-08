@@ -6,6 +6,8 @@
 # Rebuild for yak-40 by Mikhail Zuev april 2010
 print("Initializing instruments system");
 
+var radar_low_pass = aircraft.lowpass.new(1.5);
+
 init_instruments = func {	
   setprop("/instrumentation/airspeed-indicator/serviceable", 1);
 	setprop("/instrumentation/altimeter/serviceable", 1);
@@ -31,7 +33,8 @@ init_instruments = func {
 	setprop("yak-40/instrumentation/npp/left/zpu", 0.0);
 	setprop("yak-40/instrumentation/npp/left/mode", 1);
 	setprop("yak-40/instrumentation/uvid-15m-l/powered", 1);
-
+	setprop("yak-40/instrumentation/rv-5m/indicated-altitude-m",0);
+#	rv5m_handler();
 	altimeter_l_handler();
  	altimeter_r_handler();
 	altimeter_l_pressure_handler();
@@ -202,26 +205,51 @@ usis ();
 # ###########################################
 # # digit wheels support for UVO-15 SVS altimeter
 # # meters
-rv5m-l : func (step){
+rv5m_l = func(step) {
   var rv_alt = getprop("instrumentation/altimeter/indicated-altitude-ft");
   rv_alt = rv_alt * 0.3048;
   var ind_alt = getprop("yak-40/instrumentation/rv-5m/index-m");
-  if ((ind_alt < 701) and (ind_alt > 0){
   if ( step < 0) {
-    if (rv_alt > 99) {
+    if (ind_alt > 99) {
       ind_alt = ind_alt + 10;
     } else {
       ind_alt = ind_alt + 1;
     }
   } else {
-    if (rv_alt > 99) {
+    if (ind_alt > 99) {
       ind_alt = ind_alt - 10;
     } else {
       ind_alt = ind_alt - 1;
     }
   }
-  }
+  if (ind_alt > 700){ ind_alt = 700;}
+  if (ind_alt < 0) { ind_alt = 0;}
+  
   setprop("yak-40/instrumentation/rv-5m/index-m",ind_alt);
+}
+var radar_low_pass = aircraft.lowpass.new(1.5);
+var radar_alt = props.globals.getNode("/instrumentation/radar-altimeter/radar-altitude-ft", 1);
+var radar_alt_lowpass = props.globals.getNode("/instrumentation/radar-altimeter/radar-altitude-lowpass-ft", 1);
+
+radar_altimeter = func {
+
+  if (radar_alt.getValue() != nil)
+    {
+      radar_low_pass.filter(radar_alt.getValue());
+      radar_alt_lowpass.setValue(radar_low_pass.get());
+      setprop("yak-40/instrumentation/rv-5m/indicated-altitude-m",getprop("/instrumentation/radar-altimeter/radar-altitude-lowpass-ft") * 0.3048);
+    }
+  settimer(radar_altimeter, 0);
+}
+
+settimer(radar_altimeter, 0);
+
+rv5m_handler = func {
+settimer( rv5m_handler,0);
+ var rv_alt = getprop("instrumentation/radar/radar-altitude-ft");
+ if (rv_alt == nil ) {return};
+  rv_alt = rv_alt * 0.3048;
+ setprop("yak-40/instrumentation/rv-5m/indicated-altitude-m",rv_alt); 
 }
 
 altimeter_l_handler=func {
