@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<!--
+    #############################################################################
+    #    (C) 2007 by Yurik V. Nikiforoff			 	  	#
+    #    	yurik@megasignal.com					   	#
+    #    	Jul 2007						   	#
+    #############################################################################	  
+    -->
+
+<!-- Radio altimeter
+3D instrument for Tu-154 -->
+<PropertyList>
+ <path>rv-5m.ac</path>
+<!-- Internal instruments lighting -->
+<!-- altitude-->
+
+<!--Warning lamp
+<animation>
+  <type>material</type>
+  <object-name>lamp</object-name>
+  <emission>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+    <factor-prop>tu154/systems/electrical/checking-lamps/lamps-power</factor-prop>
+  </emission>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>lamp</object-name>
+  <condition>
+    <or>
+  	<property>tu154/instrumentation/rv-5m/warn</property>
+        <property>tu154/systems/electrical/checking-lamps/main-panel</property>
+    </or>
+  </condition>
+</animation>
+-->
+<!--Needles-->
+<animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>yak-40/instrumentation/rv-5m/indicated-altitude-m</property>
+    <interpolation>
+      <entry><ind>	0.0</ind>	<dep>	0.0</dep></entry>
+      <entry><ind>	10.0</ind>	<dep>	14.0</dep></entry>
+      <entry><ind>	20.0</ind>	<dep>	27.8</dep></entry>
+      <entry><ind>	40.0</ind>	<dep>	58.45</dep></entry>
+      <entry><ind>	60.0</ind>	<dep>	90.3</dep></entry>
+      <entry><ind>	100.0</ind>	<dep>	155.9</dep></entry>
+      <entry><ind>	300.0</ind>	<dep>	202.7</dep></entry>
+      <entry><ind>	500.0</ind>	<dep>	251.7</dep></entry>
+      <entry><ind>	800.0</ind>	<dep>	325.0</dep></entry>
+    </interpolation>
+    <axis>
+      <x>-1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>index</object-name>
+  <property>yak-40/instrumentation/rv-5m/index-m</property>
+  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>	0.0</dep></entry>
+      <entry><ind>	10.0</ind>	<dep>	14.0</dep></entry>
+      <entry><ind>	20.0</ind>	<dep>	27.8</dep></entry>
+      <entry><ind>	40.0</ind>	<dep>	58.45</dep></entry>
+      <entry><ind>	60.0</ind>	<dep>	90.3</dep></entry>
+      <entry><ind>	100.0</ind>	<dep>	155.9</dep></entry>
+      <entry><ind>	300.0</ind>	<dep>	202.7</dep></entry>
+      <entry><ind>	500.0</ind>	<dep>	251.7</dep></entry>
+      <entry><ind>	800.0</ind>	<dep>	325.0</dep></entry>
+  </interpolation>
+  <axis>
+    <x>-1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+
+<!--Controls-->
+<animation>
+  <type>rotate</type>
+  <object-name>hs</object-name>
+  <property>yak-40/instrumentation/rv-5m/index-m</property>  
+  <factor>0.3</factor>
+  <center>
+    <x-m>0.0</x-m>
+    <y-m>-0.03055</y-m>
+    <z-m>-0.02676</z-m>
+  </center>
+  <axis>
+    <x>1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+
+
+<animation>
+  <type>pick</type>
+  <object-name>hs</object-name>
+  <visible>true</visible>
+  <action>
+    <button>4</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>instruments.rv5m_l(-1);</script>
+    </binding>
+  </action>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>hs</object-name>
+  <visible>true</visible>
+  <action>
+    <button>3</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>instruments.rv5m_l(1);</script>
+    </binding>
+    
+  </action>
+</animation>
+
+
+
+</PropertyList>
