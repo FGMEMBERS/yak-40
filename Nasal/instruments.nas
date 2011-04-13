@@ -8,7 +8,8 @@ print("Initializing instruments system");
 
 var radar_low_pass = aircraft.lowpass.new(1.5);
 
-init_instruments = func {	
+init_instruments = func {
+	  setprop("yak-40/switches/sw_fuel",0);
   setprop("/instrumentation/airspeed-indicator/serviceable", 1);
 	setprop("/instrumentation/altimeter/serviceable", 1);
 	setprop("/instrumentation/inst-vertical-speed-indicator/serviceable", 1);
@@ -35,6 +36,7 @@ init_instruments = func {
 	setprop("yak-40/instrumentation/uvid-15m-l/powered", 1);
 	setprop("yak-40/instrumentation/rv-5m/indicated-altitude-m",0);
 #	rv5m_handler();
+	fuel_meter();
 	altimeter_l_handler();
  	altimeter_r_handler();
 	altimeter_l_pressure_handler();
@@ -197,12 +199,39 @@ usis ();
 # }
 # temptnv();
 # 
-# 
-# 
-# 
-# 
-# 
 # ###########################################
+# Fuel meter check
+#
+fuel_check = func() {
+  setprop("yak-40/switches/sw_fuel_check",0);
+}
+#############################################
+# Fuel meter
+#
+fuel_meter = func {
+  var density = 0;
+  if ( getprop("yak-40/switches/sw_fuel_check")==0) {
+    if (getprop("yak-40/switches/sw_fuel")==0){ density = getprop("consumables/fuel/tank[0]/level-lbs") + getprop("consumables/fuel/tank[1]/level-lbs"); }
+    if (getprop("yak-40/switches/sw_fuel")==-1){ density = getprop("consumables/fuel/tank[0]/level-lbs")*2;}
+    if (getprop("yak-40/switches/sw_fuel")==1){ density = getprop("consumables/fuel/tank[1]/level-lbs")*2;}
+    density = density * 0.454;
+    interpolate("yak-40/instrumentation/fuel/indicated-fuel",density/100,0.2);
+  }
+  if (getprop("yak-40/switches/sw_fuel_check")==-1) {
+    density = 0; 
+    interpolate("yak-40/instrumentation/fuel/indicated-fuel",density/100,0.2);
+    settimer(fuel_check,2);
+  }
+
+  if (getprop("yak-40/switches/sw_fuel_check")==1) {
+    density = 4400;
+    interpolate("yak-40/instrumentation/fuel/indicated-fuel",density/100,0.2);
+    settimer(fuel_check,2);
+  }
+  
+  
+  settimer(fuel_meter,0);
+}
 # # digit wheels support for UVO-15 SVS altimeter
 # # meters
 rv5m_l = func(step) {
