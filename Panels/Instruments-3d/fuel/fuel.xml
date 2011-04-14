@@ -66,13 +66,13 @@
     <repeatable>false</repeatable>
     <binding>
       <command>property-assign</command>
-      <property>yak-40/switches/sw_fuel_check1</property>
+      <property>yak-40/switches/sw_fuel_check</property>
       <value>-1</value>
     </binding>
     <mod-up>
       <binding>
 	<command>property-assign</command>
-	<property>yak-40/switches/sw_fuel_check1</property>
+	<property>yak-40/switches/sw_fuel_check</property>
 	<value>0</value>
       </binding>
     </mod-up>  
@@ -84,12 +84,19 @@
   <visible>true</visible>
   <action>
     <button>0</button>
-    <repeatable>true</repeatable>
+    <repeatable>false</repeatable>
     <binding>
-      <command>nasal</command>
-      <script>setprop("yak-40/switches/sw_fuel_check", 1);</script>
+	<command>property-assign</command>
+      <property>yak-40/switches/sw_fuel_check</property>
+      <value>1</value>
     </binding>
-    
+    <mod-up>
+      <binding>
+	<command>property-assign</command>
+	<property>yak-40/switches/sw_fuel_check</property>
+	<value>0</value>
+      </binding>
+    </mod-up>
   </action>
 </animation>
 

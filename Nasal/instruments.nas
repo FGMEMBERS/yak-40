@@ -200,53 +200,26 @@ usis ();
 # }
 # temptnv();
 # 
-# ###########################################
-# Fuel meter check
-#
-fuel_check = func {
-  print ("Check");
-#  if (getprop("yak-40/switches/sw_fuel_check")==0) { fuel_meter(); }
-  while (getprop("yak-40/switches/sw_fuel_check") != 0){
-      if (getprop("yak-40/switches/sw_fuel_check")==-1) {
-      print ("One");
-      interpolate("yak-40/instrumentation/fuel/indicated-fuel",0,0.2);
-    }
-    if (getprop("yak-40/switches/sw_fuel_check")==1) {
-      print ("Two");
-      interpolate("yak-40/instrumentation/fuel/indicated-fuel",44,0.2);
-    }
-    setprop("yak-40/switches/sw_fuel_check",0);
-  }
-#  setprop("yak-40/switches/sw_fuel_check",0);
-  fuel_meter();
-}
 #############################################
 # Fuel meter
 #
 fuel_meter = func {
   var density = 0;
-  print ("Ffffffooooooo");
-  var fuel_checking = getprop("yak-40/switches/sw_fuel_check");
-  while (fuel_checking != 0){
-    print ("Check");
-      if (getprop(fuel_checking)==-1) {
-      print ("One");
+  var fuel_check = getprop("yak-40/switches/sw_fuel_check");
+    if (fuel_check==-1) {
       interpolate("yak-40/instrumentation/fuel/indicated-fuel",0,0.2);
     }
-    if (getprop(fuel_checking)==1) {
-      print ("Two");
+    if (fuel_check==1) {
       interpolate("yak-40/instrumentation/fuel/indicated-fuel",44,0.2);
     }
-    fuel_checking = 0;
-    settimer(fuel_meter,5);
-    setprop("yak-40/switches/sw_fuel_check",0);
-  }
-    if (getprop("yak-40/switches/sw_fuel")==0){ density = getprop("consumables/fuel/tank[0]/level-lbs") + getprop("consumables/fuel/tank[1]/level-lbs"); }
-    if (getprop("yak-40/switches/sw_fuel")==-1){ density = getprop("consumables/fuel/tank[0]/level-lbs")*2;}
-    if (getprop("yak-40/switches/sw_fuel")==1){ density = getprop("consumables/fuel/tank[1]/level-lbs")*2;}
-    density = density * 0.454;
-    interpolate("yak-40/instrumentation/fuel/indicated-fuel",density/100,0.2);
-   settimer(fuel_meter,2);
+    if (fuel_check==0) {
+        if (getprop("yak-40/switches/sw_fuel")==0){ density = getprop("consumables/fuel/tank[0]/level-lbs") + getprop("consumables/fuel/tank[1]/level-lbs"); }
+	if (getprop("yak-40/switches/sw_fuel")==-1){ density = getprop("consumables/fuel/tank[0]/level-lbs")*2;}
+        if (getprop("yak-40/switches/sw_fuel")==1){ density = getprop("consumables/fuel/tank[1]/level-lbs")*2;}
+	density = density * 0.454;
+	interpolate("yak-40/instrumentation/fuel/indicated-fuel",density/100,0.2);
+    }
+   settimer(fuel_meter,0);
 }
 # # digit wheels support for UVO-15 SVS altimeter
 # # meters
