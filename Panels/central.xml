@@ -100,6 +100,17 @@
    </offsets>
 </model>
 <model>
+   <name>Flaps</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/flaps_ind/flaps.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m><!--вперед с -  -->
+     <y-m>0.1</y-m><!--влево с -  -->
+     <z-m>1.406</z-m><!--вверх с + -->
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+</model>
+<model>
    <name>Gear_tab</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/gear/gear.xml</path>
    <offsets>
