@@ -58,16 +58,58 @@
 </animation>
 
 <animation>
+    <type>translate</type>
+    <object-name>H_btn</object-name>
+    <property>yak-40/instrumentation/fuel/h-btn</property>
+    <interpolation>
+      <entry><ind>      0.0</ind>      <dep>   0.0</dep></entry>
+      <entry><ind>      1.0</ind>      <dep>   -0.0014</dep></entry>
+    </interpolation>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>translate</type>
+    <object-name>P_btn</object-name>
+    <property>yak-40/instrumentation/fuel/h-btn</property>
+    <interpolation>
+      <entry><ind>      0.0</ind>      <dep>   0.0</dep></entry>
+      <entry><ind>      1.0</ind>      <dep>   -0.0014</dep></entry>
+    </interpolation>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+</animation>
+
+<animation>
   <type>pick</type>
   <object-name>H_btn</object-name>
   <visible>true</visible>
   <action>
     <button>0</button>
-    <repeatable>true</repeatable>
+    <repeatable>false</repeatable>
     <binding>
       <command>nasal</command>
-      <script>instruments.fuel_check(1);</script>
+      <script>
+        setprop("yak-40/switches/sw_fuel_check",-1);
+        interpolate("yak-40/instrumentation/fuel/h-btn",1,0.1);
+      </script>
     </binding>
+    <mod-up>
+      <binding>
+	<command>nasal</command>
+	<script>
+          setprop("yak-40/switches/sw_fuel_check",0);
+          interpolate("yak-40/instrumentation/fuel/h-btn",0,0.1);
+        </script>
+      </binding>
+    </mod-up>  
   </action>
 </animation>
 <animation>
@@ -76,12 +118,23 @@
   <visible>true</visible>
   <action>
     <button>0</button>
-    <repeatable>true</repeatable>
+    <repeatable>false</repeatable>
     <binding>
       <command>nasal</command>
-      <script>instruments.fuel_check(2);</script>
+      <script>
+        setprop("yak-40/switches/sw_fuel_check",1);
+        interpolate("yak-40/instrumentation/fuel/p-btn",1,0.1);
+      </script>
     </binding>
-    
+    <mod-up>
+      <binding>
+	<command>nasal</command>
+      <script>
+        setprop("yak-40/switches/sw_fuel_check",0);
+        interpolate("yak-40/instrumentation/fuel/p-btn",0,0.1);
+      </script>
+      </binding>
+    </mod-up>
   </action>
 </animation>
 
