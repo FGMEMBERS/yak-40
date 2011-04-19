@@ -3,39 +3,19 @@
 
 
  
- <animation>
+<animation>
   <type>rotate</type>
-  <object-name>rect1</object-name>
-  <property>/engines/engine/oil-pressure-psi</property>
+  <object-name>needle</object-name>
+  <property>fdm/jsbsim/fcs/flap-pos-deg</property>
   <interpolation>
-   <entry><ind>  0.0</ind><dep>0.0</dep></entry> 
-   <entry><ind> 60</ind><dep>  130</dep></entry>
+    <entry><ind>  0.0</ind><dep>0.0</dep></entry>
+   <entry><ind>  30.0</ind><dep>45.0</dep></entry> 
+   <entry><ind> 60</ind><dep>  89</dep></entry>
   </interpolation>
   <center>
    <x-m>0.0</x-m>
-   <y-m>0.0</y-m>
-   <z-m>0.0071</z-m>
-  </center>
-  <axis>
-   <x>1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
- </animation>
- 
- <animation>
-  <type>rotate</type>
-  <object-name>rect2</object-name>
-  <property>/IL-76/instrumentation/fuel_press/A/press1</property>
-  <interpolation>
-   <entry><ind>  0.0</ind><dep>0.0</dep></entry> 
-
-   <entry><ind> 4</ind><dep>  130</dep></entry>
-  </interpolation>
-  <center>
-   <x-m>0.0</x-m>
-   <y-m>0.0183 </y-m>
-   <z-m>-0.0120</z-m>
+   <y-m>-0.008</y-m>
+   <z-m>0.0</z-m>
   </center>
   <axis>
    <x>-1</x>
@@ -44,26 +24,6 @@
   </axis>
  </animation>
  
-  <animation>
-  <type>rotate</type>
-  <object-name>rect3</object-name>
-  <property>IL-76/systems/apu/oil_t</property>
-  <interpolation>
-   <entry><ind>  0.0</ind><dep>0.0</dep></entry> 
-
-   <entry><ind> 110</ind><dep>  130</dep></entry>
-  </interpolation>
-  <center>
-   <x-m>0.0</x-m>
-   <y-m>-0.0184 </y-m>
-   <z-m>-0.0120</z-m>
-  </center>
-  <axis>
-   <x>1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
- </animation>
  
                <!--Lights-->
                                    
