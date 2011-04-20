@@ -9,6 +9,8 @@ print("Initializing instruments system");
 var radar_low_pass = aircraft.lowpass.new(1.5);
 
 init_instruments = func {
+	setprop("yak-40/instrumentation/gear/knob",0);
+	setprop("yak-40/instrumentation/gear/lamp-light",0.5);
 	  setprop("yak-40/switches/sw_fuel",0);
 setprop("yak-40/switches/sw_fuel_check",0);
   setprop("/instrumentation/airspeed-indicator/serviceable", 1);
