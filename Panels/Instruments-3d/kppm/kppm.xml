@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<path>kppm.ac</path>
+
+<animation>
+	<type>material</type>
+	<object-name>Plane.053</object-name>
+	<object-name>Plane.060</object-name>
+	<object-name>Plane.061</object-name>
+	<object-name>Plane.056</object-name>
+	<object-name>Plane.057</object-name>
+	<object-name>Plane.058</object-name>
+	<object-name>Plane.092</object-name>
+	<object-name>Plane.093</object-name>
+	<emission>
+		<red>0.9</red>
+		<green>0.25</green>
+		<blue>0.2</blue>
+		<factor-prop>/controls/switches/map-lights</factor-prop>
+	</emission>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>Plane.059</object-name>
+	<emission>
+		<red>0.2</red>
+		<green>0.2</green>
+		<blue>0.2</blue>
+		<factor-prop>/controls/switches/map-lights</factor-prop>
+	</emission>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>Plane.058</object-name>
+	<property>/orientation/heading-magnetic-deg</property>
+	<axis>
+		<x>0</x>
+		<y>1</y>
+		<z>0</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>translate</type>
+	<object-name>Plane.060</object-name>
+	<property>instrumentation/nav/heading-needle-deflection</property>
+	<interpolation>
+		<entry><ind>-10.0</ind><dep>-0.0213</dep></entry>
+		<entry><ind>0.0</ind><dep>0.0</dep></entry>
+		<entry><ind>10.0</ind><dep>0.0213</dep></entry>
+	</interpolation>
+	<axis>
+		<x>-1.0</x>
+		<y>0.0</y>
+		<z>0.0</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>translate</type>
+	<object-name>Plane.061</object-name>
+	<property>instrumentation/nav/gs-needle-deflection</property>
+	<interpolation>
+		<!--<entry><ind>-9999.0</ind><dep>-0.0213</dep></entry>-->
+		<entry><ind>-10.0</ind><dep>-0.0213</dep></entry>
+		<entry><ind>0.0</ind><dep>0.0</dep></entry>
+		<entry><ind>10.0</ind><dep>0.0213</dep></entry>
+		<!--<entry><ind>9999.0</ind><dep>0.0213</dep></entry>-->
+	</interpolation>
+	<axis>
+		<x>0.0</x>
+		<y>0.0</y>
+		<z>1.0</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>Plane.092</object-name>
+	<condition>
+		<not>
+			<property>instrumentation/nav/has-gs</property>
+		</not>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>Plane.093</object-name>
+	<condition>
+		<not>
+			<property>instrumentation/nav/in-range</property>
+		</not>
+	</condition>
+</animation>
+
+</PropertyList>
