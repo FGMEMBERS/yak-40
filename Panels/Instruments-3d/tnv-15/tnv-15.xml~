@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+    #############################################################################
+    #    (C) 2006 by Yurik V. Nikiforoff - port for FGFS,  FDM,   	#
+    #	2d & 3d instruments, animations, systems and over.		   	#
+    #    	yurik@megasignal.com					   	#
+    #############################################################################	  
+    -->
+
+<!-- TNV-15 termometer
+3D instrument for Tu-154 -->
+<PropertyList>
+ <path>tnv-15.ac</path>
+<!-- Internal instruments lighting -->
+<animation>
+  <type>material</type>
+  <object-name>base</object-name>
+  <object-name>needle</object-name>
+  <emission>
+    <red-prop>tu154/light/instruments/int-red</red-prop>
+    <green-prop>tu154/light/instruments/int-green</green-prop>
+    <blue-prop>tu154/light/instruments/int-blue</blue-prop>
+  </emission>
+</animation>
+
+  
+<!--Needles-->
+<animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <!--<property>tu154/instrumentation/tnv-15/indicated-t-degc</property>-->
+    <property>environment/temperature-degc</property>
+    <interpolation>
+      <entry><ind>	-60.0</ind>	<dep>	-108.0</dep></entry>
+      <entry><ind>	-50.0</ind>	<dep>	-100.0</dep></entry>
+      <entry><ind>	-40.0</ind>	<dep>	-93.0</dep></entry>
+      <entry><ind>	-30.0</ind>	<dep>	27.0</dep></entry>
+      <entry><ind>	-20.0</ind>	<dep>	19.0</dep></entry>
+      <entry><ind>	-10.0</ind>	<dep>	10.5</dep></entry>
+      <entry><ind>	0.0</ind>	<dep>	0.0</dep></entry>
+      <entry><ind>	10.0</ind>	<dep>	-10.6</dep></entry>
+      <entry><ind>	20.0</ind>	<dep>	-22.1</dep></entry>
+      <entry><ind>	30.0</ind>	<dep>	-37.5</dep></entry>
+      <entry><ind>	40.0</ind>	<dep>	-54.5</dep></entry>
+      <entry><ind>	50.0</ind>	<dep>	 -66.0</dep></entry>
+      <entry><ind>	60.0</ind>	<dep>	 -78.5</dep></entry>
+      <entry><ind>	70.0</ind>	<dep>	 -92.0</dep></entry>
+      <entry><ind>	80.0</ind>	<dep>	 -102.5</dep></entry>
+      <entry><ind>	90.0</ind>	<dep>	 -111.5</dep></entry>
+      <entry><ind>	100.0</ind>	<dep>	 -119.5</dep></entry>
+      <entry><ind>	110.0</ind>	<dep>	 -128.0</dep></entry>
+      <entry><ind>	120.0</ind>	<dep>	 -135.0</dep></entry>
+      <entry><ind>	130.0</ind>	<dep>	 -140.6</dep></entry>
+      <entry><ind>	140.0</ind>	<dep>	 -148.8</dep></entry>
+      <entry><ind>	150.0</ind>	<dep>	 -159.0</dep></entry>
+    </interpolation>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+</animation>
+
+</PropertyList>
