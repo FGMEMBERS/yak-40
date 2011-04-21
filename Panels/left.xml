@@ -12,6 +12,18 @@
   </model>
   
   <model>
+   <name>KPPM</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/kppm/kppm.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>-0.408</y-m>
+     <z-m>1.387</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
    <name>EMI-3K-1</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/kus730-1100/kus730-1100.xml</path>
    <offsets>
@@ -88,6 +100,78 @@
      <x-m>-8.156</x-m>
      <y-m>-0.192</y-m>
      <z-m>1.339</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
+   <name>Stab_ind</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/stabind/stabind.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>-0.208</y-m>
+     <z-m>1.254</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+ 
+  <model>
+   <name>Brake_av</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/2dim-150k/2dim-150k.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>-0.452</y-m>
+     <z-m>1.271</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+ 
+   <model>
+   <name>Brake_osn</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/2dim-150k/2dim-150k.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>-0.377</y-m>
+     <z-m>1.271</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+   <model>
+   <name>Brake_av</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/2dim-150k/2dim-150k.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>-0.452</y-m>
+     <z-m>1.271</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+   <model>
+   <name>Hydro</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/2dim-240k/2dim-240k.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>-0.528</y-m>
+     <z-m>1.259</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
+   <name>TNV</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tnv-15/tnv-15.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>-0.301</y-m>
+     <z-m>1.271</z-m>
 	 <heading-deg>0.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
