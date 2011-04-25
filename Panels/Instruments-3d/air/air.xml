@@ -18,7 +18,7 @@
 		<entry><ind>	10</ind><dep>	266</dep></entry>
 	</interpolation>
 	<axis>
-		<x>1.0</x>
+		<x>-1.0</x>
 		<y>0.0</y>
 		<z>0.0</z>
 	</axis>
