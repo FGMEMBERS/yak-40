@@ -1,5 +1,27 @@
 <PropertyList>
   <model>
+   <name>TVG_VSU</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tvg/tvg_vsu.xml</path>
+   <offsets>
+     <x-m>-8.154</x-m>
+     <y-m>-0.621</y-m>
+     <z-m>1.460</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  <model>
+   <name>AIR</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/air/air.xml</path>
+   <offsets>
+     <x-m>-8.162</x-m>
+     <y-m>-0.626</y-m>
+     <z-m>1.266</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>  
+  <model>
    <name>Knob_plafon</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/knobs/knob_plafon.xml</path>
    <offsets>
@@ -12,7 +34,7 @@
   </model>
   <model>
    <name>Knob_board_left</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/knobs/knob_boar_left.xml</path>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/knobs/knob_board_left.xml</path>
    <offsets>
      <x-m>-8.159</x-m>
      <y-m>-0.795</y-m>
