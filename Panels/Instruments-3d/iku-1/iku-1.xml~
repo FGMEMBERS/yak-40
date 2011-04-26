@@ -129,7 +129,7 @@
     <entry><ind>	1.0</ind>	<dep>	120.0</dep></entry>
   </interpolation>
   <center>
-    <x-m>0.0</x-m>
+    <x-m>0.00045</x-m>
     <y-m>0.015</y-m>
     <z-m>-0.03979</z-m>
   </center>
@@ -148,7 +148,7 @@
     <entry><ind>	1.0</ind>	<dep>	120.0</dep></entry>
   </interpolation>
   <center>
-    <x-m>0.0</x-m>
+    <x-m>0.00045</x-m>
     <y-m>0.015</y-m>
     <z-m>-0.03979</z-m>
   </center>
