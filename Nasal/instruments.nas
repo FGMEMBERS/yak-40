@@ -9,8 +9,15 @@ print("Initializing instruments system");
 var radar_low_pass = aircraft.lowpass.new(1.5);
 
 init_instruments = func {
+	setprop("yak-40/instrumentation/iku/indicated-heading-l",rand()*359);
+	setprop("yak-40/instrumentation/iku/indicated-heading-r",rand()*359);
+	setprop("/instrumentation/adf/indicated-bearing-deg",getprop("yak-40/instrumentation/iku/indicated-heading-l"));
+	setprop("/instrumentation/adf[1]/indicated-bearing-deg",getprop("yak-40/instrumentation/iku/indicated-heading-r"));
+	setprop("yak-40/instrumentation/iku/l-mode",0);
+	setprop("yak-40/instrumentation/iku/r-mode",0);
 	setprop("yak-40/instrumentation/gear/knob",0);
 	setprop("yak-40/instrumentation/gear/lamp-light",0.5);
+	setprop("yak-40/instrumentation/iku/test",0);
 	  setprop("yak-40/switches/sw_fuel",0);
 setprop("yak-40/switches/sw_fuel_check",0);
   setprop("/instrumentation/airspeed-indicator/serviceable", 1);
@@ -39,6 +46,8 @@ setprop("yak-40/switches/sw_fuel_check",0);
 	setprop("yak-40/instrumentation/uvid-15m-l/powered", 1);
 	setprop("yak-40/instrumentation/rv-5m/indicated-altitude-m",0);
 #	rv5m_handler();
+	
+	iku();
 	fuel_meter();
 	altimeter_l_handler();
  	altimeter_r_handler();
@@ -50,6 +59,87 @@ setprop("yak-40/switches/sw_fuel_check",0);
 }
 
 setlistener("/sim/signals/fdm-initialized", init_instruments);
+
+var angular_lowpass = {
+        new: func(coeff) {
+                var m = { parents: [angular_lowpass] };
+                m.sin = aircraft.lowpass.new(coeff);
+                m.cos = aircraft.lowpass.new(coeff);
+                m.value = nil;
+                return m;
+        },
+        filter: func(v) {
+                v *= D2R;
+                me.value = math.atan2(me.sin.filter(math.sin(v)), me.cos.filter(math.cos(v))) * R2D;
+		print(me.value);
+        },
+        set: func(v) {
+                v *= D2R;
+                me.sin.set(math.sin(v));
+                me.cos.set(math.cos(v));
+        },
+        get: func {
+                me.value;
+        },
+};
+
+var needle_l = aircraft.angular_lowpass.new(0.01);
+var needle_r = aircraft.angular_lowpass.new(0.1);
+####################
+# IKU
+####################
+iku = func {
+   if (getprop("/instrumentation/adf/indicated-bearing-deg")==nil){setprop("/instrumentation/adf/indicated-bearing-deg",0.0);}
+   if (getprop("/instrumentation/adf[1]/indicated-bearing-deg")==nil){setprop("/instrumentation/adf[1]/indicated-bearing-deg",0);}
+   if (getprop("instrumentation/nav/radials/reciprocal-radial-deg")==nil){setprop("instrumentation/nav/radials/reciprocal-radial-deg",0);}
+   if (getprop("instrumentation/nav[1]/radials/reciprocal-radial-deg")==nil){setprop("instrumentation/nav[1]/radials/reciprocal-radial-deg",0);}
+
+   #setprop("yak-40/instrumentation/iku/test",test.filter(getprop("yak-40/instrumentation/iku/indicated-heading-r")));
+
+   if (getprop("yak-40/instrumentation/iku/l-mode")==0){
+    if (getprop("/instrumentation/adf/in-range")){
+      if (getprop("/instrumentation/adf/indicated-bearing-deg")>178 and getprop("/instrumentation/adf/indicated-bearing-deg")<181){
+	interpolate("yak-40/instrumentation/iku/indicated-heading-l",getprop("/instrumentation/adf/indicated-bearing-deg"),1);
+	} else {
+	interpolate("yak-40/instrumentation/iku/indicated-heading-l",needle_l.filter(getprop("/instrumentation/adf/indicated-bearing-deg")),1);
+	}
+      } else {
+	if ((getprop("yak-40/instrumentation/iku/indicated-heading-l")-getprop("/instrumentation/adf/indicated-bearing-deg")>1)){
+	  interpolate("yak-40/instrumentation/iku/indicated-heading-l",needle_l.filter(getprop("/instrumentation/adf/indicated-bearing-deg")),1);
+	} else {
+	  setprop("/instrumentation/adf/indicated-bearing-deg",rand()*365);
+	}
+      }
+    }
+
+   if (getprop("yak-40/instrumentation/iku/l-mode")==1){
+      setprop("yak-40/instrumentation/iku/indicated-heading-l",getprop("instrumentation/nav/radials/reciprocal-radial-deg"));
+   }
+
+   if (getprop("yak-40/instrumentation/iku/r-mode")==0){
+      setprop("yak-40/instrumentation/iku/indicated-heading-r",getprop("/instrumentation/adf[1]/indicated-bearing-deg"));
+   }
+
+   if (getprop("yak-40/instrumentation/iku/r-mode")==1){
+    if (getprop("yak-40/instrumentation/iku/test")>=179 and getprop("yak-40/instrumentation/iku/test")<=181){
+	setprop("yak-40/instrumentation/iku/indicated-heading-r",needle_r.filter(getprop("yak-40/instrumentation/iku/test")));
+      } else {
+	interpolate("yak-40/instrumentation/iku/indicated-heading-r",needle_r.filter(getprop("yak-40/instrumentation/iku/test")),1);
+      }
+    
+	
+      
+      #interpolate("yak-40/instrumentation/iku/indicated-heading-r",getprop("instrumentation/nav[1]/radials/reciprocal-radial-deg"),1);
+      #setprop("yak-40/instrumentation/iku/indicated-heading-r",
+   }
+
+   settimer(iku, 0.3); 
+}
+
+
+
+
+
 # 
 # ###########################
 # # RV-5M support
