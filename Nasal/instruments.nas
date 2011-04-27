@@ -83,8 +83,8 @@ var angular_lowpass = {
         },
 };
 
-var needle_l = aircraft.angular_lowpass.new(0.01);
-var needle_r = aircraft.angular_lowpass.new(0.1);
+var needle_l = aircraft.angular_lowpass.new(0.001);
+var needle_r = aircraft.angular_lowpass.new(0.001);
 ####################
 # IKU
 ####################
@@ -97,15 +97,15 @@ iku = func {
    #setprop("yak-40/instrumentation/iku/test",test.filter(getprop("yak-40/instrumentation/iku/indicated-heading-r")));
 
    if (getprop("yak-40/instrumentation/iku/l-mode")==0){
-    if (getprop("/instrumentation/adf/in-range")){
-      if (getprop("/instrumentation/adf/indicated-bearing-deg")>178 and getprop("/instrumentation/adf/indicated-bearing-deg")<181){
-	interpolate("yak-40/instrumentation/iku/indicated-heading-l",getprop("/instrumentation/adf/indicated-bearing-deg"),1);
+    if (getprop("/instrumentation/adf/ident")!=''){
+      if (getprop("/instrumentation/adf/indicated-bearing-deg")>=179 and getprop("/instrumentation/adf/indicated-bearing-deg")<=181){
+	setprop("yak-40/instrumentation/iku/indicated-heading-l",needle_l.filter(getprop("/instrumentation/adf/indicated-bearing-deg")));
 	} else {
-	interpolate("yak-40/instrumentation/iku/indicated-heading-l",needle_l.filter(getprop("/instrumentation/adf/indicated-bearing-deg")),1);
+	interpolate("yak-40/instrumentation/iku/indicated-heading-l",needle_l.filter(getprop("/instrumentation/adf/indicated-bearing-deg")),0.05);
 	}
       } else {
-	if ((getprop("yak-40/instrumentation/iku/indicated-heading-l")-getprop("/instrumentation/adf/indicated-bearing-deg")>1)){
-	  interpolate("yak-40/instrumentation/iku/indicated-heading-l",needle_l.filter(getprop("/instrumentation/adf/indicated-bearing-deg")),1);
+	if (math.abs(getprop("yak-40/instrumentation/iku/indicated-heading-l") - getprop("/instrumentation/adf/indicated-bearing-deg"))>3){
+	  interpolate("yak-40/instrumentation/iku/indicated-heading-l",getprop("/instrumentation/adf/indicated-bearing-deg"),1);
 	} else {
 	  setprop("/instrumentation/adf/indicated-bearing-deg",rand()*365);
 	}
@@ -113,24 +113,51 @@ iku = func {
     }
 
    if (getprop("yak-40/instrumentation/iku/l-mode")==1){
-      setprop("yak-40/instrumentation/iku/indicated-heading-l",getprop("instrumentation/nav/radials/reciprocal-radial-deg"));
+    if (getprop("/instrumentation/nav/nav-id")!=''){
+      if (getprop("/instrumentation/nav/radials/reciprocal-radial-deg")>=179 and getprop("/instrumentation/nav/radials/reciprocal-radial-deg")<=181){
+	setprop("yak-40/instrumentation/iku/indicated-heading-l",needle_l.filter(getprop("/instrumentation/nav/radials/reciprocal-radial-deg")));
+	} else {
+	interpolate("yak-40/instrumentation/iku/indicated-heading-l",needle_l.filter(getprop("/instrumentation/nav/radials/reciprocal-radial-deg")),0.05);
+	}
+      } else {
+	if (math.abs(getprop("yak-40/instrumentation/iku/indicated-heading-l") - getprop("/instrumentation/nav/radials/reciprocal-radial-deg"))>3){
+	  interpolate("yak-40/instrumentation/iku/indicated-heading-l",getprop("/instrumentation/nav/radials/reciprocal-radial-deg"),1);
+	} else {
+	  setprop("/instrumentation/nav/radials/reciprocal-radial-deg",rand()*365);
+	}
+      }
    }
 
    if (getprop("yak-40/instrumentation/iku/r-mode")==0){
-      setprop("yak-40/instrumentation/iku/indicated-heading-r",getprop("/instrumentation/adf[1]/indicated-bearing-deg"));
+     if (getprop("/instrumentation/adf[1]/ident")!=''){
+      if (getprop("/instrumentation/adf[1]/indicated-bearing-deg")>=179 and getprop("/instrumentation/adf[1]/indicated-bearing-deg")<=181){
+	setprop("yak-40/instrumentation/iku/indicated-heading-r",needle_r.filter(getprop("/instrumentation/adf[1]/indicated-bearing-deg")));
+	} else {
+	interpolate("yak-40/instrumentation/iku/indicated-heading-r",needle_r.filter(getprop("/instrumentation/adf[1]/indicated-bearing-deg")),0.05);
+	}
+      } else {
+	if (math.abs(getprop("yak-40/instrumentation/iku/indicated-heading-r") - getprop("/instrumentation/adf[1]/indicated-bearing-deg"))>3){
+	  interpolate("yak-40/instrumentation/iku/indicated-heading-r",getprop("/instrumentation/adf[1]/indicated-bearing-deg"),1);
+	} else {
+	  setprop("/instrumentation/adf[1]/indicated-bearing-deg",rand()*365);
+	}
+      }
    }
 
    if (getprop("yak-40/instrumentation/iku/r-mode")==1){
-    if (getprop("yak-40/instrumentation/iku/test")>=179 and getprop("yak-40/instrumentation/iku/test")<=181){
-	setprop("yak-40/instrumentation/iku/indicated-heading-r",needle_r.filter(getprop("yak-40/instrumentation/iku/test")));
+    if (getprop("/instrumentation/nav[1]/nav-id")!=''){
+      if (getprop("/instrumentation/nav[1]/radials/reciprocal-radial-deg")>=179 and getprop("/instrumentation/nav[1]/radials/reciprocal-radial-deg")<=181){
+	setprop("yak-40/instrumentation/iku/indicated-heading-r",needle_r.filter(getprop("/instrumentation/nav[1]/radials/reciprocal-radial-deg")));
+	} else {
+	interpolate("yak-40/instrumentation/iku/indicated-heading-r",needle_r.filter(getprop("/instrumentation/nav[1]/radials/reciprocal-radial-deg")),0.05);
+	}
       } else {
-	interpolate("yak-40/instrumentation/iku/indicated-heading-r",needle_r.filter(getprop("yak-40/instrumentation/iku/test")),1);
+	if (math.abs(getprop("yak-40/instrumentation/iku/indicated-heading-r") - getprop("/instrumentation/nav[1]/radials/reciprocal-radial-deg"))>3){
+	  interpolate("yak-40/instrumentation/iku/indicated-heading-r",getprop("/instrumentation/nav[1]/radials/reciprocal-radial-deg"),1);
+	} else {
+	  setprop("/instrumentation/nav[1]/radials/reciprocal-radial-deg",rand()*365);
+	}
       }
-    
-	
-      
-      #interpolate("yak-40/instrumentation/iku/indicated-heading-r",getprop("instrumentation/nav[1]/radials/reciprocal-radial-deg"),1);
-      #setprop("yak-40/instrumentation/iku/indicated-heading-r",
    }
 
    settimer(iku, 0.3); 
