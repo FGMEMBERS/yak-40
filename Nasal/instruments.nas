@@ -48,6 +48,7 @@ setprop("yak-40/switches/sw_fuel_check",0);
 #	rv5m_handler();
 	
 	iku();
+	rk();
 	fuel_meter();
 	altimeter_l_handler();
  	altimeter_r_handler();
@@ -160,11 +161,29 @@ iku = func {
       }
    }
 
-   settimer(iku, 0.3); 
+   settimer(iku, 0.1); 
 }
 
+#############################
+# Radio compass
+#############################
+var needle_1 = aircraft.angular_lowpass.new(0.001);
+var needle_2 = aircraft.angular_lowpass.new(0.001);
 
-
+rk = func {
+ 
+  if (getprop("/instrumentation/adf/indicated-bearing-deg")>=179 and getprop("/instrumentation/adf/indicated-bearing-deg")<=181){
+    setprop("yak-40/instrumentation/rk/needle1",needle_1.filter(getprop("/instrumentation/adf/indicated-bearing-deg")));
+  } else {
+    interpolate("yak-40/instrumentation/rk/needle1",needle_1.filter(getprop("/instrumentation/adf/indicated-bearing-deg")),0.05);
+  }
+  if (getprop("/instrumentation/adf[1]/indicated-bearing-deg")>=179 and getprop("/instrumentation/adf[1]/indicated-bearing-deg")<=181){
+    setprop("yak-40/instrumentation/rk/needle2",needle_2.filter(getprop("/instrumentation/adf[1]/indicated-bearing-deg")));
+  } else {
+    interpolate("yak-40/instrumentation/rk/needle2",needle_2.filter(getprop("/instrumentation/adf[1]/indicated-bearing-deg")),0.05);
+  }
+  settimer(rk, 0.5);
+}
 
 
 # 
