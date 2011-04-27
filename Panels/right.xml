@@ -69,4 +69,52 @@
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
   </model>
+  
+  <model>
+   <name>A-500_1</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/electric/amp/a-500_1.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>0.192</y-m>
+     <z-m>1.260</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
+   <name>A-500_2</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/electric/amp/a-500_1.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>0.241</y-m>
+     <z-m>1.260</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
+   <name>A-500_3</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/electric/amp/a-500_1.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>0.291</y-m>
+     <z-m>1.260</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
+   <name>A-500_power</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/electric/amp/a-500_1.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>0.342</y-m>
+     <z-m>1.260</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
 </PropertyList>

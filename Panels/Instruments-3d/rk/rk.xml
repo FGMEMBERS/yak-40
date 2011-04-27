@@ -34,20 +34,9 @@
 
 <!--Needles-->
 <animation>
+    <object-name>needle1</object-name>
     <type>rotate</type>
-    <object-name>needle</object-name>
-    <property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
-    <interpolation>
-  	<entry><ind>	5708.66</ind>	<dep>	177.0</dep></entry>
-	<entry><ind>	3937.0</ind>	<dep>	142.0</dep></entry>
-	<entry><ind>	1968.5</ind>	<dep>	83.0</dep></entry>
-	<entry><ind>	984.25</ind>	<dep>	44.0</dep></entry>
-	<entry><ind>	0.0</ind>	<dep>	0.0</dep></entry>
-        <entry><ind>	-984.25</ind>	<dep>	-44.0</dep></entry>
-        <entry><ind>	-1968.5</ind>	<dep>	-83.0</dep></entry>
-        <entry><ind>	-3937.0</ind>	<dep>	-142.0</dep></entry>
-        <entry><ind>	-5708.66</ind>	<dep>	-177.0</dep></entry>
-    </interpolation>
+    <property>yak-40/instrumentation/rk/needle1</property>
     <axis>
       <x>-1.0</x>
       <y>0.0</y>
@@ -55,6 +44,16 @@
     </axis>
 </animation>
 
+<animation>
+    <object-name>needle2</object-name>
+    <type>rotate</type>
+    <property>yak-40/instrumentation/rk/needle2</property>
+    <axis>
+      <x>-1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+</animation>
 
 
 </PropertyList>
