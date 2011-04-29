@@ -13,7 +13,7 @@
   
   <model>
    <name>KPPM</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/kppm/kppm.xml</path>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/kppm/kppm_l.xml</path>
    <offsets>
      <x-m>-8.156</x-m>
      <y-m>-0.408</y-m>

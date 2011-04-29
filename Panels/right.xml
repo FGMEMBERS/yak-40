@@ -22,6 +22,19 @@
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
   </model>
+  
+  <model>
+   <name>KPPM</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/kppm/kppm_r.xml</path>
+   <offsets>
+     <x-m>-8.158</x-m>
+     <y-m>0.403</y-m>
+     <z-m>1.384</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
   <model>
    <name>UVID-15m-r</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/uvid-15/uvid-15m-r.xml</path>
