@@ -19,6 +19,10 @@ init_instruments = func {
 	setprop("yak-40/instrumentation/gear/lamp-light",0.5);
 	setprop("yak-40/instrumentation/iku/test",0);
 	  setprop("yak-40/switches/sw_fuel",0);
+	setprop("yak-40/instrumentation/kppm/needle",0);
+	setprop("yak-40/instrumentation/kppm[1]/needle",0);
+	setprop("yak-40/instrumentation/kppm/kurs",getprop("/orientation/heading-magnetic-deg"));
+	setprop("yak-40/instrumentation/kppm[1]/kurs",getprop("/orientation/heading-magnetic-deg"));
 setprop("yak-40/switches/sw_fuel_check",0);
   setprop("/instrumentation/airspeed-indicator/serviceable", 1);
 	setprop("/instrumentation/altimeter/serviceable", 1);
@@ -49,6 +53,8 @@ setprop("yak-40/switches/sw_fuel_check",0);
 	
 	iku();
 	rk();
+	kppm_l();
+	kppm_r();
 	fuel_meter();
 	altimeter_l_handler();
  	altimeter_r_handler();
@@ -185,6 +191,21 @@ rk = func {
   settimer(rk, 0.5);
 }
 
+#############################
+#KPPM left
+#############################
+kppm_l = func {
+  setprop("yak-40/instrumentation/kppm/needle",getprop("/orientation/heading-magnetic-deg") - getprop("yak-40/instrumentation/kppm/kurs"));
+  settimer(kppm_l,0);
+}
+
+#############################
+#KPPM right
+#############################
+kppm_r = func {
+  setprop("yak-40/instrumentation/kppm[1]/needle",getprop("/orientation/heading-magnetic-deg") - getprop("yak-40/instrumentation/kppm[1]/kurs"));
+  settimer(kppm_r,0);
+}
 
 # 
 # ###########################
