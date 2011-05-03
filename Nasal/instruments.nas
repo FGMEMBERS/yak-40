@@ -15,6 +15,7 @@ init_instruments = func {
 	setprop("/instrumentation/adf[1]/indicated-bearing-deg",getprop("yak-40/instrumentation/iku/indicated-heading-r"));
 	setprop("yak-40/instrumentation/iku/l-mode",0);
 	setprop("yak-40/instrumentation/iku/r-mode",0);
+	
 	setprop("yak-40/instrumentation/gear/knob",0);
 	setprop("yak-40/instrumentation/gear/lamp-light",0.5);
 	setprop("yak-40/instrumentation/iku/test",0);
@@ -50,9 +51,8 @@ setprop("yak-40/switches/sw_fuel_check",0);
 	setprop("yak-40/instrumentation/uvid-15m-l/powered", 1);
 	setprop("yak-40/instrumentation/rv-5m/indicated-altitude-m",0);
 #	rv5m_handler();
-	
-	iku();
 	rk();
+	iku();
 	kppm_l();
 	kppm_r();
 	fuel_meter();
@@ -101,23 +101,9 @@ iku = func {
    if (getprop("instrumentation/nav/radials/reciprocal-radial-deg")==nil){setprop("instrumentation/nav/radials/reciprocal-radial-deg",0);}
    if (getprop("instrumentation/nav[1]/radials/reciprocal-radial-deg")==nil){setprop("instrumentation/nav[1]/radials/reciprocal-radial-deg",0);}
 
-   #setprop("yak-40/instrumentation/iku/test",test.filter(getprop("yak-40/instrumentation/iku/indicated-heading-r")));
-
    if (getprop("yak-40/instrumentation/iku/l-mode")==0){
-    if (getprop("/instrumentation/adf/ident")!=''){
-      if (getprop("/instrumentation/adf/indicated-bearing-deg")>=179 and getprop("/instrumentation/adf/indicated-bearing-deg")<=181){
-	setprop("yak-40/instrumentation/iku/indicated-heading-l",needle_l.filter(getprop("/instrumentation/adf/indicated-bearing-deg")));
-	} else {
-	interpolate("yak-40/instrumentation/iku/indicated-heading-l",needle_l.filter(getprop("/instrumentation/adf/indicated-bearing-deg")),0.05);
-	}
-      } else {
-	if (math.abs(getprop("yak-40/instrumentation/iku/indicated-heading-l") - getprop("/instrumentation/adf/indicated-bearing-deg"))>3){
-	  interpolate("yak-40/instrumentation/iku/indicated-heading-l",getprop("/instrumentation/adf/indicated-bearing-deg"),1);
-	} else {
-	  setprop("/instrumentation/adf/indicated-bearing-deg",rand()*365);
-	}
-      }
-    }
+    setprop("yak-40/instrumentation/iku/indicated-heading-l",getprop("yak-40/instrumentation/rk/needle1"));
+   }
 
    if (getprop("yak-40/instrumentation/iku/l-mode")==1){
     if (getprop("/instrumentation/nav/nav-id")!=''){
@@ -135,20 +121,8 @@ iku = func {
       }
    }
 
-   if (getprop("yak-40/instrumentation/iku/r-mode")==0){
-     if (getprop("/instrumentation/adf[1]/ident")!=''){
-      if (getprop("/instrumentation/adf[1]/indicated-bearing-deg")>=179 and getprop("/instrumentation/adf[1]/indicated-bearing-deg")<=181){
-	setprop("yak-40/instrumentation/iku/indicated-heading-r",needle_r.filter(getprop("/instrumentation/adf[1]/indicated-bearing-deg")));
-	} else {
-	interpolate("yak-40/instrumentation/iku/indicated-heading-r",needle_r.filter(getprop("/instrumentation/adf[1]/indicated-bearing-deg")),0.05);
-	}
-      } else {
-	if (math.abs(getprop("yak-40/instrumentation/iku/indicated-heading-r") - getprop("/instrumentation/adf[1]/indicated-bearing-deg"))>3){
-	  interpolate("yak-40/instrumentation/iku/indicated-heading-r",getprop("/instrumentation/adf[1]/indicated-bearing-deg"),1);
-	} else {
-	  setprop("/instrumentation/adf[1]/indicated-bearing-deg",rand()*365);
-	}
-      }
+  if (getprop("yak-40/instrumentation/iku/r-mode")==0){
+      setprop("yak-40/instrumentation/iku/indicated-heading-r",getprop("yak-40/instrumentation/rk/needle2")); 
    }
 
    if (getprop("yak-40/instrumentation/iku/r-mode")==1){
@@ -178,16 +152,34 @@ var needle_2 = aircraft.angular_lowpass.new(0.001);
 
 rk = func {
  
-  if (getprop("/instrumentation/adf/indicated-bearing-deg")>=179 and getprop("/instrumentation/adf/indicated-bearing-deg")<=181){
-    setprop("yak-40/instrumentation/rk/needle1",needle_1.filter(getprop("/instrumentation/adf/indicated-bearing-deg")));
-  } else {
-    interpolate("yak-40/instrumentation/rk/needle1",needle_1.filter(getprop("/instrumentation/adf/indicated-bearing-deg")),0.05);
-  }
-  if (getprop("/instrumentation/adf[1]/indicated-bearing-deg")>=179 and getprop("/instrumentation/adf[1]/indicated-bearing-deg")<=181){
-    setprop("yak-40/instrumentation/rk/needle2",needle_2.filter(getprop("/instrumentation/adf[1]/indicated-bearing-deg")));
-  } else {
-    interpolate("yak-40/instrumentation/rk/needle2",needle_2.filter(getprop("/instrumentation/adf[1]/indicated-bearing-deg")),0.05);
-  }
+  if (getprop("/instrumentation/adf/ident")!=''){
+      if (getprop("/instrumentation/adf/indicated-bearing-deg")>=179 and getprop("/instrumentation/adf/indicated-bearing-deg")<=181){
+	setprop("yak-40/instrumentation/rk/needle1",needle_r.filter(getprop("/instrumentation/adf/indicated-bearing-deg")));
+	} else {
+	interpolate("yak-40/instrumentation/rk/needle1",needle_r.filter(getprop("/instrumentation/adf/indicated-bearing-deg")),0.05);
+	}
+      } else {
+	if (math.abs(getprop("yak-40/instrumentation/rk/needle1") - getprop("/instrumentation/adf/indicated-bearing-deg"))>3){
+	  interpolate("yak-40/instrumentation/rk/needle1",getprop("/instrumentation/adf/indicated-bearing-deg"),1);
+	} else {
+	  setprop("/instrumentation/adf/indicated-bearing-deg",rand()*365);
+      }
+    }
+
+  if (getprop("/instrumentation/adf[1]/ident")!=''){
+      if (getprop("/instrumentation/adf[1]/indicated-bearing-deg")>=179 and getprop("/instrumentation/adf[1]/indicated-bearing-deg")<=181){
+	setprop("yak-40/instrumentation/rk/needle2",needle_r.filter(getprop("/instrumentation/adf[1]/indicated-bearing-deg")));
+	} else {
+	interpolate("yak-40/instrumentation/rk/needle2",needle_r.filter(getprop("/instrumentation/adf[1]/indicated-bearing-deg")),0.05);
+	}
+      } else {
+	if (math.abs(getprop("yak-40/instrumentation/rk/needle2") - getprop("/instrumentation/adf[1]/indicated-bearing-deg"))>3){
+	  interpolate("yak-40/instrumentation/rk/needle2",getprop("/instrumentation/adf[1]/indicated-bearing-deg"),1);
+	} else {
+	  setprop("/instrumentation/adf[1]/indicated-bearing-deg",rand()*365);
+      }
+    }
+  
   settimer(rk, 0.5);
 }
 
@@ -195,7 +187,7 @@ rk = func {
 #KPPM left
 #############################
 kppm_l = func {
-  setprop("yak-40/instrumentation/kppm/needle",getprop("/orientation/heading-magnetic-deg") - getprop("yak-40/instrumentation/kppm/kurs"));
+  setprop("yak-40/instrumentation/kppm/kurs",getprop("/orientation/heading-magnetic-deg") - getprop("yak-40/instrumentation/kppm/needle"));
   settimer(kppm_l,0);
 }
 
