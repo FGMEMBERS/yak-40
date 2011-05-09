@@ -130,4 +130,16 @@
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
   </model>
+  
+  <model>
+   <name>V-30_power</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/electric/volt/30_v.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>0.391</y-m>
+     <z-m>1.260</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
 </PropertyList>
