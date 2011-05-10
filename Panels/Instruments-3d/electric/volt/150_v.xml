@@ -10,7 +10,7 @@
 <!-- Check lamps on captain panel button
 3D instrument for Tu-154 -->
 <PropertyList>
- <path>a_500.ac</path>
+ <path>150_v.ac</path>
  <!-- Internal instruments lighting -->
  <animation>
    <type>material</type>
@@ -38,15 +38,13 @@
 <animation>
     <type>rotate</type>
     <object-name>needle</object-name>
-    <property>yak-40/instrumentation/electrical/150_v</property>
+    <property>yak-40/instrumentation/electrical/v_150</property>
     <interpolation>
       <entry><ind>	0.0</ind>	<dep>	0.0</dep></entry>
-      <entry><ind>	60.0</ind>	<dep>	27.0</dep></entry>
-      <entry><ind>	90.0</ind>	<dep>	72.0</dep></entry>
-      <entry><ind>	100.0</ind>	<dep>	115.5</dep></entry>
-      <entry><ind>	300.0</ind>	<dep>	134.0</dep></entry>
-      <entry><ind>	400.0</ind>	<dep>	179.0</dep></entry>
-      <entry><ind>	500.0</ind>	<dep>	223.5</dep></entry>
+      <entry><ind>	60.0</ind>	<dep>	26.0</dep></entry>
+      <entry><ind>	90.0</ind>	<dep>	70.5</dep></entry>
+      <entry><ind>	120.0</ind>	<dep>	157.0</dep></entry>
+      <entry><ind>	150.0</ind>	<dep>	249.0</dep></entry>
     </interpolation>
     <axis>
       <x>-1.0</x>
