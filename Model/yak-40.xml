@@ -113,37 +113,6 @@
 	 </offsets>
  </model>
 
-<!-- Panels -->
- <model>
-   <name>tablo1</name><!-- Подогнал-->
-   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/tablo1.xml</path>
-   <offsets>
-     <x-m>-8.150</x-m>
-     <y-m>-0.226</y-m>
-     <z-m>1.599</z-m>
-   </offsets>
-</model>
-
-<model>
-   <name>tablo3</name><!-- Подогнал-->
-   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/tablo2.xml</path>
-   <offsets>   
-     <x-m>-8.150</x-m>
-     <y-m>-0.258</y-m>
-     <z-m>1.599</z-m>
-   </offsets>
-</model>
-
-<model>
-   <name>tablo2</name><!-- Подогнал-->
-   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/tablo3.xml</path>
-   <offsets>   
-     <x-m>-8.150</x-m>
-     <y-m>-0.290</y-m>
-     <z-m>1.599</z-m>
-   </offsets>
-</model>
-
 <!--KUS-->
  <model>
    <name>kus730-1100</name><!-- Подогнал-->
