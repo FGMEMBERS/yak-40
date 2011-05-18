@@ -99,7 +99,7 @@
    <offsets>
      <x-m>-8.156</x-m>
      <y-m>-0.192</y-m>
-     <z-m>1.339</z-m>
+     <z-m>1.349</z-m>
 	 <heading-deg>0.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
@@ -172,6 +172,66 @@
      <x-m>-8.156</x-m>
      <y-m>-0.301</y-m>
      <z-m>1.271</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
+   <name>OST_OIL_r</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/ost-oil-r.xml</path>
+   <offsets>
+     <x-m>-8.150</x-m>
+     <y-m>-0.195</y-m>
+     <z-m>1.588</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
+   <name>OST_OIL_c</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/ost-oil-c.xml</path>
+   <offsets>
+     <x-m>-8.150</x-m>
+     <y-m>-0.226</y-m>
+     <z-m>1.588</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
+   <name>OST_OIL_l</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/ost-oil-l.xml</path>
+   <offsets>
+     <x-m>-8.150</x-m>
+     <y-m>-0.258</y-m>
+     <z-m>1.588</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
+   <name>IN_AIR_OPEN</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/in-air-open.xml</path>
+   <offsets>
+     <x-m>-8.150</x-m>
+     <y-m>-0.226</y-m>
+     <z-m>1.607</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
+   <name>AP_PERESIL</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/ap-peresil.xml</path>
+   <offsets>
+     <x-m>-8.150</x-m>
+     <y-m>-0.258</y-m>
+     <z-m>1.607</z-m>
 	 <heading-deg>0.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
