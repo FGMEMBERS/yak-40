@@ -181,7 +181,7 @@
    <name>OST_OIL_r</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/ost-oil-r.xml</path>
    <offsets>
-     <x-m>-8.150</x-m>
+     <x-m>-8.154</x-m>
      <y-m>-0.195</y-m>
      <z-m>1.588</z-m>
 	 <heading-deg>0.0</heading-deg>
@@ -193,7 +193,7 @@
    <name>OST_OIL_c</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/ost-oil-c.xml</path>
    <offsets>
-     <x-m>-8.150</x-m>
+     <x-m>-8.154</x-m>
      <y-m>-0.226</y-m>
      <z-m>1.588</z-m>
 	 <heading-deg>0.0</heading-deg>
@@ -205,7 +205,7 @@
    <name>OST_OIL_l</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/ost-oil-l.xml</path>
    <offsets>
-     <x-m>-8.150</x-m>
+     <x-m>-8.154</x-m>
      <y-m>-0.258</y-m>
      <z-m>1.588</z-m>
 	 <heading-deg>0.0</heading-deg>
@@ -217,7 +217,7 @@
    <name>IN_AIR_OPEN</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/in-air-open.xml</path>
    <offsets>
-     <x-m>-8.150</x-m>
+     <x-m>-8.154</x-m>
      <y-m>-0.226</y-m>
      <z-m>1.607</z-m>
 	 <heading-deg>0.0</heading-deg>
@@ -229,7 +229,7 @@
    <name>AP_PERESIL</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/ap-peresil.xml</path>
    <offsets>
-     <x-m>-8.150</x-m>
+     <x-m>-8.154</x-m>
      <y-m>-0.258</y-m>
      <z-m>1.607</z-m>
 	 <heading-deg>0.0</heading-deg>
@@ -237,4 +237,160 @@
    </offsets>
   </model>
   
+  <model>
+   <name>OTKAZ_AP_BOK</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/otkaz-ap-bok.xml</path>
+   <offsets>
+     <x-m>-8.154</x-m>
+     <y-m>-0.290</y-m>
+     <z-m>1.607</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+ </model>
+   
+   <model>
+   <name>OTKAZ_AP_PROD</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/otkaz-ap-prod.xml</path>
+   <offsets>
+     <x-m>-8.154</x-m>
+     <y-m>-0.290</y-m>
+     <z-m>1.588</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
+   <name>KREN_PRAV</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/kren-prav.xml</path>
+   <offsets>
+     <x-m>-8.154</x-m>
+     <y-m>-0.322</y-m>
+     <z-m>1.607</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+ </model>
+   
+   <model>
+   <name>MARKER</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/marker.xml</path>
+   <offsets>
+     <x-m>-8.154</x-m>
+     <y-m>-0.322</y-m>
+     <z-m>1.588</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+ </model>
+ 
+ <model>
+   <name>KREN_LEFT</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/kren-left.xml</path>
+   <offsets>
+     <x-m>-8.154</x-m>
+     <y-m>-0.353</y-m>
+     <z-m>1.607</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+ </model>
+   
+   <model>
+   <name>OTKAZ_AGB</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/otkaz-agb.xml</path>
+   <offsets>
+     <x-m>-8.154</x-m>
+     <y-m>-0.322</y-m>
+     <z-m>1.588</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+ </model>
+ 
+ <model>
+   <name>VYPUSTI_SHASSI</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/vypusti-shassi.xml</path>
+   <offsets>
+     <x-m>-8.154</x-m>
+     <y-m>-0.417</y-m>
+     <z-m>1.588</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+ </model>
+ 
+ <model>
+   <name>OTDAY_SHTURVAL</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/otday-sturval.xml</path>
+   <offsets>
+     <x-m>-8.154</x-m>
+     <y-m>-0.449</y-m>
+     <z-m>1.588</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+ </model>
+ 
+ <model>
+   <name>OTKAZ_GN_LEFT</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/otkaz-gn-left.xml</path>
+   <offsets>
+     <x-m>-8.154</x-m>
+     <y-m>-0.449</y-m>
+     <z-m>1.319</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+ </model>
+ 
+ <model>
+   <name>OTKAZ_GN_RIGHT</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/otkaz-gn-right.xml</path>
+   <offsets>
+     <x-m>-8.154</x-m>
+     <y-m>-0.405</y-m>
+     <z-m>1.319</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+ </model>
+  
+ <model>
+   <name>STRUZHKA_L</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/struzhka-l.xml</path>
+   <offsets>
+     <x-m>-8.154</x-m>
+     <y-m>-0.246</y-m>
+     <z-m>1.284</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+ </model>
+ 
+ <model>
+   <name>STRUZHKA_C</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/struzhka-c.xml</path>
+   <offsets>
+     <x-m>-8.154</x-m>
+     <y-m>-0.209</y-m>
+     <z-m>1.284</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+ </model>
+ 
+ <model>
+   <name>STRUZHKA_R</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/struzhka-r.xml</path>
+   <offsets>
+     <x-m>-8.154</x-m>
+     <y-m>-0.173</y-m>
+     <z-m>1.284</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+ </model>
+ 
 </PropertyList>
