@@ -743,7 +743,7 @@
       <max>1.23</max>
     </pitch>
   </engine>
-  <engine>
+  <!--<engine>
     <name>jet_whine_2_3</name>
     <path>Aircraft/yak-40/Sounds/engines/xban13.wav</path>
     <condition>
@@ -752,9 +752,9 @@
     </condition>
     <mode>looped</mode>
     <position>
-      <x>3.903</x>
-      <y>-1.853</y>
-      <z>1.482</z>
+      <x>12.95</x>
+      <y>-6.35</y>
+      <z>2.74</z>
     </position>
     <volume>
       <property>/engines/engine[1]/n2</property>
@@ -781,9 +781,9 @@
     </condition>
     <mode>looped</mode>
     <position>
-      <x>3.903</x>
-      <y>-1.853</y>
-      <z>1.482</z>
+     <x>12.95</x>
+     <y>-6.35</y>
+     <z>2.74</z>
     </position>
     <volume>
       <property>/engines/engine[1]/n2</property>
@@ -808,9 +808,9 @@
     </condition>
     <mode>looped</mode>
     <position>
-      <x>3.903</x>
-      <y>-1.853</y>
-      <z>1.482</z>
+      <x>12.95</x>
+      <y>-6.35</y>
+      <z>2.74</z>
     </position>
     <volume>
       <property>/engines/engine[1]/n2</property>
@@ -830,9 +830,9 @@
     </condition>
     <mode>looped</mode>
     <position>
-      <x>3.903</x>
-      <y>-1.853</y>
-      <z>1.482</z>
+    <x>12.95</x>
+    <y>-6.35</y>
+    <z>2.74</z>
     </position>
     <volume>
       <property>/engines/engine[1]/n2</property>
@@ -847,8 +847,7 @@
       <offset>0.0</offset>
     </pitch>
   </engine>
-  
-  <!--<engine>
+  <engine>
     <name>rumble_2</name>
     <path>Sounds/rumble.wav</path>
     <condition>
