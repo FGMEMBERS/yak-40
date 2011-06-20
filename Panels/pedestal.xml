@@ -1,0 +1,13 @@
+<PropertyList>
+  <model>
+   <name>AP-40</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/ap40/ap.xml</path>
+   <offsets>
+     <x-m>-7.756</x-m>
+     <y-m>0.0</y-m>
+     <z-m>1.024</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>-36.8</pitch-deg>
+   </offsets>
+  </model>
+</PropertyList>
