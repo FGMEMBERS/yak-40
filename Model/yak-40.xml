@@ -17,6 +17,35 @@
     <nopreview/>
 </model>
 -->
+<model>
+  <path>Aircraft/Generic/Effects/tyre-smoke-nose.xml</path>
+  <name>tyre-smoke-n</name>
+  <offsets>
+    <x-m>-6.925</x-m>
+    <y-m>0.0</y-m>
+    <z-m>-1.484</z-m>
+  </offsets>
+ </model>
+ 
+ <model>
+  <path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
+  <name>tyre-smoke-p</name>
+  <offsets>
+   <x-m>0.636</x-m>
+   <y-m>-2.298</y-m>
+   <z-m>-1.741</z-m>
+  </offsets>
+ </model>
+ 
+ <model>
+  <path>Aircraft/Generic/Effects/tyre-smoke-stbd.xml</path>
+  <name>tyre-smoke-s</name>
+  <offsets>
+   <x-m>0.636</x-m>
+   <y-m>2.298</y-m>
+   <z-m>-1.741</z-m>
+  </offsets>
+ </model>
 
 <animation>
   <type>select</type>
@@ -81,27 +110,19 @@
 <model>
   <name>panel_right</name>
   <path>Aircraft/yak-40/Panels/big_panel.xml</path>
-</model> 
-<!--AGB--> 
-<!--
+</model>
+
  <model>
-   <name>agd-l</name>
-   <path>Aircraft/Yak-40/Panels/Instruments-3d/agb/agb_1.xml</path>
-   <offsets>
-     <x-m>-8.7259</x-m>
-     <y-m>-0.466</y-m>
-     <z-m>-0.095</z-m>
-	 <pitch-deg>-0.01</pitch-deg>
-	 <heading-deg>0.0</heading-deg>
-	 </offsets>
+   <name>pedestal</name>
+   <path>Aircraft/yak-40/Panels/pedestal.xml</path>
  </model>
- -->
+
  <effect>
     <inherits-from>Aircraft/yak-40/Model/Effects/bumpspec-rs-r</inherits-from>
     <object-name>reshetka_r</object-name>
  </effect>
  <!--KPP-1234--> 
- <model>
+ <!--<model>
    <name>agd-l</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/agd/agd-l.xml</path>
    <offsets>
@@ -111,48 +132,11 @@
 	 <pitch-deg>0.0</pitch-deg>
 	 <heading-deg>180.0</heading-deg>
 	 </offsets>
- </model>
-
-<!--KUS-->
- <model>
-   <name>kus730-1100</name><!-- Подогнал-->
-   <path>Aircraft/yak-40/Panels/Instruments-3d/kus730-1100/kus730-1100.xml</path>
-   <offsets>
-     <x-m>-8.700</x-m>
-     <y-m>-0.5833</y-m>
-     <z-m>-0.086</z-m>
-	 <heading-deg>-90.0</heading-deg>
-   </offsets>
-</model>
- 
-<!--VD-10-->
-<!--
-<model>
-   <name>vd10</name>
-   <path>Aircraft/Yak-40/Panels/Instruments-3d/vd10/vd10.xml</path>
-   <offsets>
-     <x-m>-8.702</x-m>
-     <y-m>-0.5815</y-m>
-     <z-m>-0.195</z-m>
-	 <heading-deg>-90.0</heading-deg>
-   </offsets>
-</model>
--->
-<!--UVID-15-L-->
-<model>
-   <name>uvid-15</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/uvid-15/uvid-15-m.xml</path>
-   <offsets>
-     <x-m>-8.7015</x-m>
-     <y-m>-0.5817</y-m>
-     <z-m>-0.190</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
+ </model>-->
 
 <!--ACHS-2-->
 
-<model>
+<!--<model>
    <name>achs-2</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/achs-2/achs-2.xml</path>
    <offsets>
@@ -161,10 +145,10 @@
      <z-m>0.33</z-m>
 	 <heading-deg>0.0</heading-deg>
    </offsets>
-</model>
+</model>-->
 
 <!--TNV-15-->
-<model>
+<!--<model>
    <name>tnv-15</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/tnv-15/tnv.xml</path>
    <offsets>
@@ -173,72 +157,10 @@
      <z-m>-0.368</z-m>
 	 <heading-deg>0.0</heading-deg>
    </offsets>
-</model>
-
-<!--VAR-30-->
-<model>
-   <name>var30-3</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/var/var-30.xml</path>
-   <offsets>
-     <x-m>-8.708</x-m>
-     <y-m>-0.337</y-m>
-     <z-m>-0.081</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
-
-<!--IKU-->
-<model>
-   <name>iku</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/iku-1/iku-1.xml</path>
-   <offsets>
-     <x-m>-8.701</x-m>
-     <y-m>-0.338</y-m>
-     <z-m>-0.19</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
-
-<!--RV5-M-->
-<model>
-   <name>RV5-1-UM</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/rv-5m/rv-5m.xml</path>
-   <offsets>
-     <x-m>-8.708</x-m>
-     <y-m>-0.24</y-m>
-     <z-m>-0.0834</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
+</model>-->
 
 <!--Приборы двигателя-->
 
-<!--UPS-->
-<model>
-   <name>stab-ind</name><!-- Подогнал-->
-   <path>Aircraft/yak-40/Panels/Instruments-3d/stabind/stabind.xml</path>
-   <offsets>
-     <x-m>-8.705</x-m>
-     <y-m>-0.0869</y-m>
-     <z-m>-0.09</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
-
-<!--UPZ-->
-<model>
-   <name>flaps-ind</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/flapsind/flapsind.xml</path>
-   <offsets>
-     <x-m>-8.71</x-m>
-     <y-m>0.0905</y-m>
-     <z-m>-0.09</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
-
-
-<!--KPPM-->
 <!--
 <model>
    <name>kppm</name>
@@ -251,18 +173,6 @@
    </offsets>
 </model>
 -->
-<!--NPP-->
-<model>
-   <name>npp</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/npp/kurs2L.xml</path>
-   <offsets>
-     <x-m>-8.705</x-m><!--вперед с -  -->
-     <y-m>-0.4648</y-m><!--влево с -  -->
-     <z-m>-0.222</z-m><!--вверх с + -->
-	 <heading-deg>90.0</heading-deg>
-   </offsets>
-</model>
-
 <!--aztest-->
 <model>
    <name>aztest</name>
@@ -280,22 +190,6 @@
 <model>
   <name>Central_panel</name>
   <path>Aircraft/yak-40/Panels/central.xml</path>
-</model>
-
-
-<!--************************** Captain panel down***************************-->
-<!--ARK-15-1-->
-<model>
-  <name>ark-15-1</name>
-  <path>Aircraft/yak-40/Panels/Instruments-3d/ark-15/ark-15-1.xml</path>
-  <offsets>
-    <x-m>-8.25</x-m>
-    <y-m>-0.955</y-m>
-    <z-m>-0.4</z-m>
-    <pitch-deg>-90.0</pitch-deg>
-    
-  </offsets>
-  
 </model>
 
 
