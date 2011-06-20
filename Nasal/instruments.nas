@@ -50,6 +50,7 @@ setprop("yak-40/switches/sw_fuel_check",0);
 	setprop("yak-40/instrumentation/npp/left/mode", 1);
 	setprop("yak-40/instrumentation/uvid-15m-l/powered", 1);
 	setprop("yak-40/instrumentation/rv-5m/indicated-altitude-m",0);
+	setprop("yak-40/instrumentation/ap40/online-btn",0);
 #	rv5m_handler();
 	rk();
 	iku();
@@ -928,7 +929,7 @@ altimeter_r_pressure_handler=func{
 # 
 # ################################
 # #On
-# var ap_on = func{
+ var ap_online = func{
 # 	var  power = getprop("yak-40/instrumentation/ap40/serviceable");
 # 	var  tangag = getprop("yak-40/instrumentation/ap40/tangag");
 # 	var  ap_but = getprop("yak-40/switches/vkl_ap");
@@ -963,7 +964,7 @@ altimeter_r_pressure_handler=func{
 # 	setprop("input/joysticks/js/axis[1])/binding/factor", -1);
 # 	setprop("input/joysticks/js/axis[2])/binding/factor", 1);
 # 	}
-# }
+ }
 # 
 # #####################################################
 # #Ap-job
