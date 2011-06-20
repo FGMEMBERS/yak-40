@@ -184,7 +184,7 @@
     <binding>
       <command>nasal</command>
       <script>
-        instruments.ap_online()
+        instruments.ap_online();
 	interpolate("yak-40/instrumentation/ap40/online-btn",1,0.1);
       </script>
     </binding>
