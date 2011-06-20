@@ -1,5 +1,23 @@
 <?xml version = '1.0' encoding = 'UTF-8' ?>
 <PropertyList>
+<gear>
+  <gear n="0">
+   <tyre-smoke type="int">0</tyre-smoke>
+   <sprayspeed-ms type="double">0</sprayspeed-ms>
+   <spray-density type="double">0</spray-density>
+   <caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
+  </gear>
+  <gear n="1">
+   <tyre-smoke type="int">0</tyre-smoke>
+   <sprayspeed-ms type="double">0</sprayspeed-ms>
+   <spray-density type="double">0</spray-density>
+  </gear>
+  <gear n="2">
+   <tyre-smoke type="int">0</tyre-smoke>
+   <sprayspeed-ms type="double">0</sprayspeed-ms>
+   <spray-density type="double">0</spray-density>
+  </gear>
+ </gear>
 <sim>
 	<description>Yakovlev-40</description>
 	<author>Yak40devels</author>
@@ -184,6 +202,9 @@
 	    <file>Aircraft/yak-40/Nasal/sliding.nas</file>
 	</sliding>
 	
+	<tyresmoke>
+	  <file>Aircraft/yak-40/Nasal/tyresmoke.nas</file>
+	</tyresmoke>
 	
 </nasal>
 
