@@ -930,6 +930,7 @@ altimeter_r_pressure_handler=func{
 # ################################
 # #On
  var ap_online = func{
+	print("AP Online");
 # 	var  power = getprop("yak-40/instrumentation/ap40/serviceable");
 # 	var  tangag = getprop("yak-40/instrumentation/ap40/tangag");
 # 	var  ap_but = getprop("yak-40/switches/vkl_ap");
@@ -964,6 +965,10 @@ altimeter_r_pressure_handler=func{
 # 	setprop("input/joysticks/js/axis[1])/binding/factor", -1);
 # 	setprop("input/joysticks/js/axis[2])/binding/factor", 1);
 # 	}
+ }
+ 
+ var ap_alt = func{
+	print("ALT on");
  }
 # 
 # #####################################################
