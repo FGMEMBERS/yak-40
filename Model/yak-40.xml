@@ -504,38 +504,16 @@
 
 <animation>
   <type>rotate</type>
-  <object-name>l_flap_ke0</object-name>
-  <object-name>l_flap_ke1</object-name>
-  <object-name>l_flap_ke2</object-name>
-  <object-name>l_flap_ke4</object-name>
-  <object-name>l_flap_ke5</object-name>
-  <object-name>l_flap_ke7</object-name>
-  <object-name>l_flap_ke8</object-name>
-  <object-name>l_flap_ke9</object-name>
+  <object-name>LFlap</object-name>
   <property>/fdm/jsbsim/fcs/flap-pos-deg</property>
- <interpolation>
-- <entry>
-  <ind>0</ind> 
-  <dep>0</dep> 
-  </entry>
-- <entry>
-  <ind>20</ind> 
-  <dep>20</dep> 
-  </entry>
-- <entry>
-  <ind>35</ind> 
-  <dep>35</dep> 
-  </entry>
-- 
-  </interpolation>
   <axis>    
-	<x1-m>0.7</x1-m>
-    <y1-m>-8.2</y1-m>
-    <z1-m >-0.6</z1-m>
+    <x1-m>1.021</x1-m>
+    <y1-m>-7.924</y1-m>
+    <z1-m >0.307</z1-m>
 	
-	<x2-m>1.1</x2-m>
-    <y2-m>-1.6</y2-m>
-    <z2-m>-1.3</z2-m> 	
+    <x2-m>1.479</x2-m>
+    <y2-m>0</y2-m>
+    <z2-m>-0.692</z2-m> 	
   </axis>
 </animation>
 
@@ -543,37 +521,16 @@
 
 <animation>
   <type>rotate</type>
-  <object-name>r_flap_ke0</object-name>
-  <object-name>r_flap_ke1</object-name>
-  <object-name>r_flap_ke2</object-name>
-  <object-name>r_flap_ke4</object-name>
-  <object-name>r_flap_ke5</object-name>
-  <object-name>r_flap_ke7</object-name>
-  <object-name>r_flap_ke8</object-name>
-  <object-name>r_flap_ke9</object-name>
+  <object-name>RFlap</object-name>
   <property>/fdm/jsbsim/fcs/flap-pos-deg</property>
- <interpolation>
-- <entry>
-  <ind>0</ind> 
-  <dep>0</dep> 
-  </entry>
-- <entry>
-  <ind>20</ind> 
-  <dep>-20</dep> 
-  </entry>
-- <entry>
-  <ind>35</ind> 
-  <dep>-35</dep> 
-  </entry> 
-  </interpolation>
   <axis>
-    <x1-m>0.70</x1-m>
-    <y1-m>8.20</y1-m>
-    <z1-m>-0.6</z1-m> 	
+    <x2-m>1.021</x2-m>
+    <y2-m>7.924</y2-m>
+    <z2-m>0.307</z2-m> 	
 	
-    <x2-m>1.1</x2-m>
-    <y2-m>1.6</y2-m>
-    <z2-m>-1.3</z2-m>
+    <x1-m>1.479</x1-m>
+    <y1-m>0</y1-m>
+    <z1-m>-0.692</z1-m>
   </axis>
 </animation>
 
@@ -585,71 +542,63 @@
 <!--Переднее шасси обжатие стойки-->
 
 
-<!--Створка большая левая-->
+<!--Створка передняя левая-->
 <animation>
 <type>rotate</type>
-  <object-name>c_gear_M14</object-name>
-  <property>gear/gear/position-norm</property>
-	  <interpolation>
+  <object-name>NLFGear</object-name>
+  <property>gear/gear[0]/position-norm</property>
+  <interpolation>
     <entry><ind>	0.0</ind>	<dep>0.0</dep></entry>
-		<entry><ind>	0.5</ind>	<dep>120</dep></entry>
-    <entry><ind>	1.0</ind>	<dep>	0.0</dep></entry>
+    <entry><ind>	0.1</ind>	<dep>90.0</dep></entry>
+    <entry><ind>	0.9</ind>	<dep>90.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>0.0</dep></entry>
   </interpolation>
    <axis>
-    <x1-m>-8.218</x1-m>
-    <y1-m>-0.278</y1-m>
-    <z1-m>-1.556</z1-m>
+    <x1-m>-7.657</x1-m>
+    <y1-m>-0.311</y1-m>
+    <z1-m>0.041</z1-m>
     
-    <x2-m>-9.368</x2-m>
-    <y2-m>-0.202</y2-m>
-    <z2-m>-1.427</z2-m>    
+    <x2-m>-8.652</x2-m>
+    <y2-m>-0.280</y2-m>
+    <z2-m>0.140</z2-m>    
    </axis>
 </animation>
 
-<!--Створка большая правая-->
+<!--Створка передняя правая-->
 <animation>
 <type>rotate</type>
-	<object-name>c_gear_ME7</object-name>
-  <property>gear/gear/position-norm</property>
-	  <interpolation>
+  <object-name>NRFGear</object-name>
+  <property>gear/gear[0]/position-norm</property>
+  <interpolation>
     <entry><ind>	0.0</ind>	<dep>0.0</dep></entry>
-    <entry><ind>	0.5</ind>	<dep>-120</dep></entry>
-    <entry><ind>	1.0</ind>	<dep>	0.0</dep></entry>
+    <entry><ind>	0.1</ind>	<dep>-90.0</dep></entry>
+    <entry><ind>	0.9</ind>	<dep>-90.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>0.0</dep></entry>
   </interpolation>
-   <axis>
-    <x1-m>-8.218</x1-m>
-    <y1-m>0.321</y1-m>
-    <z1-m>-1.556</z1-m>
+  <axis>
+    <x1-m>-7.657</x1-m>
+    <y1-m>0.311</y1-m>
+    <z1-m>0.041</z1-m>
     
-    <x2-m>-9.368</x2-m>
-    <y2-m>0.244</y2-m>
-    <z2-m>-1.427</z2-m>    
+    <x2-m>-8.652</x2-m>
+    <y2-m>0.280</y2-m>
+    <z2-m>0.140</z2-m>    
    </axis>
 </animation>
 
 <!--Переднее шасси целиком-->
 <animation>
 <type>rotate</type>
-	<object-name>c_gear_ME6</object-name>
-	<object-name>c_gear_ME5</object-name>
-	<object-name>c_gear_ME4</object-name>
-	<object-name>c_gear_MES</object-name>
-	<object-name>c_gear_ME1</object-name>
-	<object-name>c_gear_ME0</object-name>
-	<object-name>rudder_ME1</object-name>
-	<object-name>rudder_ME2</object-name>
-	<object-name>c_tire_ME0</object-name>
-	<object-name>c_tire_MES</object-name>
-  <property>gear/gear/position-norm</property>
-	  <interpolation>
-    <entry><ind>	0.0</ind>	<dep>118.0</dep></entry>
-    <entry><ind>	0.5</ind>	<dep>118.0</dep></entry>
+	<object-name>NGear</object-name>
+  <property>gear/gear[0]/position-norm</property>
+  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>112.5</dep></entry>
     <entry><ind>	1.0</ind>	<dep>	0.0</dep></entry>
   </interpolation>
 	<center>
-   <x-m>-7.8</x-m>
+   <x-m>-7.179</x-m>
    <y-m>0.000</y-m>
-   <z-m>-1.44</z-m>
+   <z-m>0.202</z-m>
 	</center>
    <axis>
     <x>0</x>
@@ -683,66 +632,68 @@
 <!--Переднее шасси подкос-->
 <animation>
 <type>rotate</type>
-	<object-name>c_gear_ME3</object-name>
-	<object-name>c_gear_ME2</object-name>
-  <property>gear/gear/position-norm</property>
-	  <interpolation>
-    <entry><ind>	0.0</ind>	<dep>-90.0</dep></entry>
-    <entry><ind>	1.0</ind>	<dep>	0.0</dep></entry>
+	<object-name>NPodcos</object-name>
+
+  <property>gear/gear[0]/compression-norm</property>
+  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>0.0</dep></entry>
+    <entry><ind>	0.6</ind>	<dep>-20.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>-35.0</dep></entry>
+    <entry><ind>	1.5</ind>	<dep>-50.0</dep></entry>
   </interpolation>
-	<center>
-   <x-m>-8.3</x-m>
-   <y-m>0.000</y-m>
-   <z-m>-1.4</z-m>
-	</center>
-   <axis>
+  <center>
+    <x-m>-7.309</x-m>
+    <y-m>0.000</y-m>
+    <z-m>-0.715</z-m>
+  </center>
+  <axis>
     <x>0</x>
     <y>1</y>
     <z>0</z>
-   </axis>
+  </axis>
 </animation>
 
-<!--Створка малая левая-->
+<!--Створка задняя левая-->
 <animation>
-<type>rotate</type>
-  <object-name>stvor_per_lev</object-name>
-  <property>gear/gear/position-norm</property>
-	  <interpolation>
-		<entry><ind>	0.0</ind>	<dep>-80</dep></entry>
-    <entry><ind>	1.0</ind>	<dep>	0.0</dep></entry>
+  <type>rotate</type>
+  <object-name>NLBGear</object-name>
+  <property>gear/gear[0]/position-norm</property>
+  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>0</dep></entry>
+    <entry><ind>	0.1</ind>	<dep>90</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>90</dep></entry>
   </interpolation>
-   <axis>
-    <x1-m>-7.752</x1-m>
-    <y1-m>-0.2977</y1-m>
-    <z1-m>-1.549</z1-m>
+  <axis>
+    <x1-m>-7.044</x1-m>
+    <y1-m>-0.310</y1-m>
+    <z1-m>0.019</z1-m>
     
-    <x2-m>-8.218</x2-m>
-    <y2-m>-0.2783</y2-m>
-    <z2-m>-1.556</z2-m>    
+    <x2-m>-7.544</x2-m>
+    <y2-m>-0.313</y2-m>
+    <z2-m>0.042</z2-m>    
    </axis>
 </animation>
 
 <!--Створка малая правая-->
 <animation>
-<type>rotate</type>
-  <object-name>stvor_per_prav</object-name>
-  <property>gear/gear/position-norm</property>
-	  <interpolation>
-    <entry><ind>	0.0</ind>	<dep>80</dep></entry>
-    <entry><ind>	1.0</ind>	<dep>	0.0</dep></entry>
+  <type>rotate</type>
+  <object-name>NRBGear</object-name>
+  <property>gear/gear[0]/position-norm</property>
+  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>0</dep></entry>
+    <entry><ind>	0.1</ind>	<dep>-90</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>-90</dep></entry>
   </interpolation>
-   <axis>
-    <x1-m>-7.752</x1-m>
-    <y1-m>0.340</y1-m>
-    <z1-m>-1.546</z1-m>
+  <axis>
+    <x1-m>-7.044</x1-m>
+    <y1-m>0.310</y1-m>
+    <z1-m>0.019</z1-m>
     
-    <x2-m>-8.217</x2-m>
-    <y2-m>0.319</y2-m>
-    <z2-m>-1.555</z2-m>    
+    <x2-m>-7.544</x2-m>
+    <y2-m>0.313</y2-m>
+    <z2-m>0.042</z2-m>    
    </axis>
 </animation>
-
-
 
 <!--++++++++++++++++++++++++++Правое шасси ++++++++++++++++++++++++++++++++++++ -->
 
@@ -862,57 +813,62 @@
 <!--+Уборка ++++++++++++++++++++++++++++++++++++ -->
 <animation>
 <type>rotate</type>
-	<object-name>r_tire_MES</object-name><!--Правое колесо-->
-	<object-name>r_gear_ME4</object-name><!--Правая стойка низ перед-->
-	<object-name>r_gear_ME5</object-name><!--Правая стойка низ перед-->
-	<object-name>r_gear_M11</object-name><!--Правая стойка низ перед-->
-	<object-name>r_gear_ME8</object-name><!--Правая стойка низ-->
-	<object-name>r_gear_ME9</object-name><!--Правая стойка низ-->
-	<object-name>r_gear_M12</object-name><!--Правая стойка середина-->
-	<object-name>r_gear_M13</object-name><!--Правая стойка середина-->
-	<object-name>r_gear_M10</object-name><!--Правая стойка верх-->
-
-  <property>gear/gear/position-norm</property>
+	<object-name>RGear</object-name><!--Правое колесо-->
+  <property>gear/gear[2]/position-norm</property>
 	  <interpolation>
-    <entry><ind>	0.0</ind>	<dep>82.0</dep></entry>
-    <entry><ind>	0.5</ind>	<dep>60.0</dep></entry>
+    <entry><ind>	0.0</ind>	<dep>90.0</dep></entry>
     <entry><ind>	1.0</ind>	<dep>	0.0</dep></entry>
   </interpolation>
 	<center>
-   <x-m>0.1</x-m>
-   <y-m>2.4</y-m>
-   <z-m>-1.1</z-m>
+   <x-m>0.296</x-m>
+   <y-m>1.952</y-m>
+   <z-m>0.171</z-m>
 	</center>
    <axis>
     <x>-1</x>
-    <y>0.1</y>
+    <y>0</y>
     <z>0</z>
    </axis>
 </animation>
 <!--+Вращение колеса ++++++++++++++++++++++++++++++++++++ -->
 <animation>
 <type>spin</type>
-	<object-name>r_tire_MES</object-name>
-  <condition>
-      <property>gear/gear[1]/compression-norm</property>
-  </condition>
-  <property>gear/gear/rollspeed-ms</property>
+	<object-name>RTire</object-name>
+   <property>gear/gear[2]/rollspeed-ms</property>
 	<factor>12.28</factor>
 	<center>
-   <x-m>0.68665</x-m>
-   <y-m>2.66458</y-m>
-   <z-m>-2.39241</z-m>
+   <x-m>0.636</x-m>
+   <y-m>2.093</y-m>
+   <z-m>-1.181</z-m>
 	</center>
    <axis>
     <x>0</x>
     <y>-1</y>
     <z>0</z>
    </axis>
-</animation>
+</animation> 
 <!--Обжатие стойки-->
-
-
-
+<animation>
+  <type>rotate</type>
+  <object-name>RPodcos</object-name><!--Правое колесо-->
+  <property>gear/gear[2]/compression-norm</property>
+  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>0.0</dep></entry>
+    <entry><ind>	0.5</ind>	<dep>15.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>30.0</dep></entry>
+    <entry><ind>	1.5</ind>	<dep>40.0</dep></entry>
+  </interpolation>
+  <center>
+    <x-m>0.093</x-m>
+    <y-m>1.994</y-m>
+    <z-m>-0.794</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+  </axis>
+</animation>
 <!--++++++++++++++++++++++++++Левое шасси ++++++++++++++++++++++++++++++++++++ -->
 
 <!--+Створка ++++++++++++++++++++++++++++++++++++ -->
@@ -1030,30 +986,21 @@
 <!--+Уборка ++++++++++++++++++++++++++++++++++++ -->
 <animation>
 <type>rotate</type>
-	<object-name>l_tire_MES</object-name><!--Левое колесо-->
-	<object-name>l_gear_ME4</object-name><!--Левая стойка низ перед-->
-	<object-name>l_gear_ME5</object-name><!--Левая стойка низ перед-->
-	<object-name>l_gear_M11</object-name><!--Левая стойка низ перед-->
-	<object-name>l_gear_ME8</object-name><!--Левая стойка низ-->
-	<object-name>l_gear_ME9</object-name><!--Левая стойка низ-->
-	<object-name>l_gear_M12</object-name><!--Левая стойка середина-->
-	<object-name>l_gear_M13</object-name><!--Левая стойка середина-->
-	<object-name>l_gear_M10</object-name><!--Левая стойка верх-->
+<object-name>LGear</object-name><!--Левое колесо-->
 
-  <property>gear/gear/position-norm</property>
+  <property>gear/gear[1]/position-norm</property>
 	  <interpolation>
-    <entry><ind>	0.0</ind>	<dep>82.0</dep></entry>
-    <entry><ind>	0.5</ind>	<dep>60.0</dep></entry>
+    <entry><ind>	0.0</ind>	<dep>90.0</dep></entry>
     <entry><ind>	1.0</ind>	<dep>	0.0</dep></entry>
   </interpolation>
 	<center>
-   <x-m>0.1</x-m>
-   <y-m>-2.4</y-m>
-   <z-m>-1.1</z-m>
+   <x-m>0.296</x-m>
+   <y-m>-1.952</y-m>
+   <z-m>0.171</z-m>
 	</center>
    <axis>
     <x>1</x>
-    <y>0.1</y>
+    <y>0</y>
     <z>0</z>
    </axis>
 </animation>
@@ -1061,16 +1008,13 @@
 <!--+Вращение колеса ++++++++++++++++++++++++++++++++++++ -->
 <animation>
 <type>spin</type>
-	<object-name>l_tire_MES</object-name>
-  <condition>
-      <property>gear/gear[2]/compression-norm</property>
-  </condition>
-  <property>gear/gear/rollspeed-ms</property>
+	<object-name>LTire</object-name>
+   <property>gear/gear[1]/rollspeed-ms</property>
 	<factor>12.28</factor>
 	<center>
-   <x-m>0.65793</x-m>
-   <y-m>-2.68673</y-m>
-   <z-m>-2.38546</z-m>
+   <x-m>0.636</x-m>
+   <y-m>-2.093</y-m>
+   <z-m>-1.181</z-m>
 	</center>
    <axis>
     <x>0</x>
@@ -1079,5 +1023,26 @@
    </axis>
 </animation> 
 <!--Обжатие стойки-->
+<animation>
+  <type>rotate</type>
+  <object-name>LPodcos</object-name><!--Правое колесо-->
+  <property>gear/gear[1]/compression-norm</property>
+  <interpolation>
+    <entry><ind>	0.0</ind>	<dep>0.0</dep></entry>
+    <entry><ind>	0.5</ind>	<dep>15.0</dep></entry>
+    <entry><ind>	1.0</ind>	<dep>30.0</dep></entry>
+    <entry><ind>	1.5</ind>	<dep>40.0</dep></entry>
+  </interpolation>
+  <center>
+    <x-m>0.093</x-m>
+    <y-m>-1.994</y-m>
+    <z-m>-0.794</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+  </axis>
+</animation>
 
 </PropertyList>
