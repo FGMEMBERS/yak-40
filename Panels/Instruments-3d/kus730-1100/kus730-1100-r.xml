@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<path>kus730-1100.ac</path>
+
+<animation>
+	<type>material</type>
+	<object-name>Plane.005</object-name>
+	<object-name>Plane.007</object-name>
+	<object-name>Plane.008</object-name>
+	<emission>
+		<red>0.9</red>
+		<green>0.25</green>
+		<blue>0.2</blue>
+		<factor-prop>/controls/switches/map-lights</factor-prop>
+	</emission>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>Plane.004</object-name>
+	<emission>
+		<red>0.2</red>
+		<green>0.2</green>
+		<blue>0.2</blue>
+		<factor-prop>/controls/switches/map-lights</factor-prop>
+	</emission>
+</animation>
+
+<animation>
+    <type>rotate</type>
+    <object-name>ind_needle</object-name>
+    <property>/yak-40/instrumentation/kus-730/indicated-speed-kmh</property>
+    <min>50</min>
+    <max>750</max>
+    <interpolation>
+	<entry><ind>	50</ind><dep>	0</dep></entry>
+	<entry><ind>	100</ind><dep>	-17.7</dep></entry>
+	<entry><ind>	150</ind><dep>	-43</dep></entry>
+	<entry><ind>	200</ind><dep>	-67</dep></entry>
+	<entry><ind>	250</ind><dep>	-95</dep></entry>
+	<entry><ind>	300</ind><dep>	-121.5</dep></entry>
+	<entry><ind>	350</ind><dep>	-147</dep></entry>
+	<entry><ind>	400</ind><dep>	-173.5</dep></entry>
+	<entry><ind>	450</ind><dep>	-198</dep></entry>
+	<entry><ind>	500</ind><dep>	-222.5</dep></entry>
+	<entry><ind>	550</ind><dep>	-247.5</dep></entry>
+	<entry><ind>	600</ind><dep>	-271</dep></entry>
+	<entry><ind>	650</ind><dep>	-294</dep></entry>
+	<entry><ind>	700</ind><dep>	-316.2</dep></entry>
+	<entry><ind>	750</ind><dep>	-340.2</dep></entry>
+    </interpolation>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+</animation>
+<animation>
+  <type>rotate</type>
+  <object-name>true_needle</object-name>
+  <property>/yak-40/instrumentation/kus-730/true-speed-kmh</property>
+  <min>400</min>
+  <max>1100</max>
+  <interpolation>
+	  <entry><ind>	400</ind><dep>	0</dep></entry>
+	  <entry><ind>	450</ind><dep>	-24.0</dep></entry>
+	  <entry><ind>	500</ind><dep>	-47.6</dep></entry>
+	  <entry><ind>	550</ind><dep>	-70</dep></entry>
+	  <entry><ind>	600</ind><dep>	-93.7</dep></entry>
+	  <entry><ind>	650</ind><dep>	-116.6</dep></entry>
+	  <entry><ind>	700</ind><dep>	-141</dep></entry>
+	  <entry><ind>	750</ind><dep>	-164.3</dep></entry>
+	  <entry><ind>	800</ind><dep>	-187</dep></entry>
+	  <entry><ind>	850</ind><dep>	-210.5</dep></entry>
+	  <entry><ind>	900</ind><dep>	-234.5</dep></entry>
+	  <entry><ind>	950</ind><dep>	-257</dep></entry>
+	  <entry><ind>	1000</ind><dep>	-280</dep></entry>
+	  <entry><ind>	1050</ind><dep>	-306.5</dep></entry>
+	  <entry><ind>	1100</ind><dep>	-333</dep></entry>
+  </interpolation>
+  <axis>
+    <x>1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+
+</PropertyList>
