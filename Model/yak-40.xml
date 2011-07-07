@@ -700,25 +700,56 @@
 <!--+Створка ++++++++++++++++++++++++++++++++++++ -->
 
 <animation>
-<type>rotate</type>
-	<object-name>r_gear_ME2</object-name><!--Правая створка верх боковина-->
-	<object-name>r_gear_ME0</object-name><!--Правая створка внешняя-->
-	<object-name>r_gear_ME1</object-name><!--Правая створка верхний тонкий-->
-	<object-name>r_gear_MES</object-name><!--Правая створка подкос нижний тонкий-->
-	<object-name>r_gear_ME3</object-name><!--Правая створка верх-->
-  <property>gear/gear/position-norm</property>
-	  <interpolation>
-    <entry><ind>	0.0</ind>	<dep>160.0</dep></entry>
-    <entry><ind>	0.5</ind>	<dep>80.0</dep></entry>
+  <type>rotate</type>
+  <object-name>RShitok</object-name><!--Правая створка верх боковина-->
+  <property>gear/gear[2]/position-norm</property>
+  <interpolation>
     <entry><ind>	1.0</ind>	<dep>0.0</dep></entry>
+    <entry><ind>	0.9</ind>	<dep>-23.7</dep></entry>
+    <entry><ind>	0.8</ind>	<dep>-44.2</dep></entry>
+    <entry><ind>	0.7</ind>	<dep>-63</dep></entry>
+    <entry><ind>	0.6</ind>	<dep>-79.8</dep></entry>
+    <entry><ind>	0.5</ind>	<dep>-95.5</dep></entry>
+    <entry><ind>	0.4</ind>	<dep>-110.4</dep></entry>
+    <entry><ind>	0.3</ind>	<dep>-125.1</dep></entry>
+    <entry><ind>	0.2</ind>	<dep>-139.8</dep></entry>
+    <entry><ind>	0.1</ind>	<dep>-155.4</dep></entry>
+    <entry><ind>	0.0</ind>	<dep>-165.0</dep></entry>
   </interpolation>
-	<center>
-   <x-m>0.0</x-m>
-   <y-m>2.7</y-m>
-   <z-m>-1.45</z-m>
-	</center>
    <axis>
-    <x>-1</x>
+    <x1-m>-0.011</x1-m>
+    <y1-m>2.089</y1-m>
+    <z1-m>-0.111</z1-m>
+    
+    <x2-m>0.491</x2-m>
+    <y2-m>2.086</y2-m>
+    <z2-m>-0.119</z2-m>
+   </axis>
+</animation>
+<animation>
+  <type>rotate</type>
+  <object-name>RTyaga</object-name><!--Правая створка верх боковина-->
+  <property>gear/gear[2]/position-norm</property>
+  <interpolation>
+    <entry><ind>	1.0</ind>	<dep>0.0</dep></entry>
+    <entry><ind>	0.9</ind>	<dep>7.0</dep></entry>
+    <entry><ind>	0.8</ind>	<dep>15.3</dep></entry>
+    <entry><ind>	0.7</ind>	<dep>24.8</dep></entry>
+    <entry><ind>	0.6</ind>	<dep>34.9</dep></entry>
+    <entry><ind>	0.5</ind>	<dep>45.7</dep></entry>
+    <entry><ind>	0.4</ind>	<dep>57.0</dep></entry>
+    <entry><ind>	0.3</ind>	<dep>69.25</dep></entry>
+    <entry><ind>	0.2</ind>	<dep>82.55</dep></entry>
+    <entry><ind>	0.1</ind>	<dep>98.15</dep></entry>
+    <entry><ind>	0.0</ind>	<dep>105.0</dep></entry>
+  </interpolation>
+  <center>
+    <x-m>0.228</x-m>
+    <y-m>2.385</y-m>
+    <z-m>-0.168</z-m>
+  </center>
+   <axis> 
+    <x>1</x>
     <y>0</y>
     <z>0</z>
    </axis>
