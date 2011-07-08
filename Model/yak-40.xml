@@ -197,100 +197,6 @@
 
 
 <!--********************* BM panel **********************-->
-<!--AP-40-->
- <model>
-   <name>ap40</name><!-- Подогнал-->
-   <path>Aircraft/yak-40/Panels/Instruments-3d/ap40/ap.xml</path>
-   <offsets>
-     <x-m>-8.280</x-m>
-     <y-m>-0.03</y-m>
-     <z-m>-0.59</z-m>
-	 <heading-deg>0.0</heading-deg>
-	 <pitch-deg>-32.0</pitch-deg>
-   </offsets>
-</model>
-
-<!--azvk_ap-->
- <model>
-   <name>vk_ap</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/vk_ap.xml</path>
-   <offsets>
-     <x-m>-8.280</x-m>
-     <y-m>-0.106</y-m>
-     <z-m>-0.588</z-m>
-	 <heading-deg>0.0</heading-deg>
-	 <pitch-deg>-32.0</pitch-deg>
-   </offsets>
-</model>
-
-<!--t_ap-->
- <model>
-   <name>t_ap</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/t_ap.xml</path>
-   <offsets>
-     <x-m>-8.280</x-m>
-     <y-m>0.047</y-m>
-     <z-m>-0.588</z-m>
-	 <heading-deg>0.0</heading-deg>
-	 <pitch-deg>-32.0</pitch-deg>
-   </offsets>
-</model>
-
-
-
-
-
-<!--************************** Co-pilot panel ***************************-->
-<!--KUS-->
- <model>
-   <name>kus730-1100</name><!-- Подогнал-->
-   <path>Aircraft/yak-40/Panels/Instruments-3d/kus730-1100/kus730-1100.xml</path>
-   <offsets>
-     <x-m>-8.700</x-m>
-     <y-m>0.345</y-m>
-     <z-m>-0.068</z-m>
-	 <heading-deg>-90.0</heading-deg>
-   </offsets>
-</model>
-
-<!--VD-10-->
-
-<model>
-   <name>vd10</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/vd10/vd10.xml</path>
-   <offsets>
-     <x-m>-8.7</x-m>
-     <y-m>0.24</y-m>
-     <z-m>-0.172</z-m>
-	 <heading-deg>-90.0</heading-deg>
-   </offsets>
-</model>
-
-
-<!--UVID-15-R-->
-<model>
-   <name>uvid-15-feet</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/uvid-15/uvid-15-ft.xml</path>
-   <offsets>
-     <x-m>-8.707</x-m>
-     <y-m>0.345</y-m>
-     <z-m>-0.170</z-m>
-	 <heading-deg>0.0</heading-deg>
-   </offsets>
-</model>
-
-<!--************************** Co-pilot panel down ***************************-->
-<!--ARK-15-2-->
-<model>
-  <name>ark-15-2</name>
-  <path>Aircraft/yak-40/Panels/Instruments-3d/ark-15/ark-15-2.xml</path>
-  <offsets>
-    <x-m>-8.25</x-m>
-    <y-m>0.94</y-m>
-    <z-m>-0.4</z-m>
-    <pitch-deg>-90.0</pitch-deg>
-  </offsets>
-</model>
 
 
 <!--************************** АЗС ПРАВЫЙ ЩИТОК***************************-->
@@ -702,7 +608,7 @@
 <animation>
   <type>rotate</type>
   <object-name>RShitok</object-name><!--Правая створка верх боковина-->
-  <property>gear/gear[2]/position-norm</property>
+  <property>gear/gear[2]/position-test</property>
   <interpolation>
     <entry><ind>	1.0</ind>	<dep>0.0</dep></entry>
     <entry><ind>	0.9</ind>	<dep>-23.7</dep></entry>
@@ -728,8 +634,8 @@
 </animation>
 <animation>
   <type>rotate</type>
-  <object-name>RTyaga</object-name><!--Правая створка верх боковина-->
-  <property>gear/gear[2]/position-norm</property>
+  <object-name>RTyaga</object-name><!--Правая тяга большая-->
+  <property>gear/gear[2]/position-test</property>
   <interpolation>
     <entry><ind>	1.0</ind>	<dep>0.0</dep></entry>
     <entry><ind>	0.9</ind>	<dep>7.0</dep></entry>
@@ -758,25 +664,57 @@
 
 <animation>
 <type>rotate</type>
-	<object-name>r_gear_ME0</object-name><!--Правая створка внешняя-->
-  <property>gear/gear/position-norm</property>
-	  <interpolation>
-    <entry><ind>	0.0</ind>	<dep>-90.0</dep></entry>
-    <entry><ind>	0.5</ind>	<dep>-45.0</dep></entry>
+	<object-name>RShitokL</object-name><!--Правая створка фигурная-->
+  <property>gear/gear[2]/position-shit</property>
+  <!--<interpolation>
     <entry><ind>	1.0</ind>	<dep>0.0</dep></entry>
-  </interpolation>
+    <entry><ind>	0.9</ind>	<dep>4.6</dep></entry>
+    <entry><ind>	0.8</ind>	<dep>10.5</dep></entry>
+    <entry><ind>	0.7</ind>	<dep>17.8</dep></entry>
+    <entry><ind>	0.6</ind>	<dep>26</dep></entry>
+    <entry><ind>	0.5</ind>	<dep>-45.0</dep></entry>
+    <entry><ind>	0.0</ind>	<dep>110.0</dep></entry>
+  </interpolation>-->
 	<center>
-   <x-m>0.1</x-m>
-   <y-m>3.7</y-m>
-   <z-m>-1.6</z-m>
+   <x-m>0.279</x-m>
+   <y-m>2.684</y-m>
+   <z-m>-0.218</z-m>
 	</center>
    <axis>
-    <x>-1</x>
+    <x>1</x>
     <y>0</y>
     <z>0</z>
    </axis>
 </animation>
 
+<animation>
+  <type>rotate</type>
+  <object-name>RTyagaL</object-name><!--Правая тяга малая-->
+  <property>gear/gear[2]/position-tyaga</property>
+  <!--<interpolation>
+    <entry><ind>	1.0</ind>	<dep>0.0</dep></entry>
+    <entry><ind>	0.9</ind>	<dep>-2.4</dep></entry>
+    <entry><ind>	0.8</ind>	<dep>-5.8</dep></entry>
+    <entry><ind>	0.7</ind>	<dep>-10.2</dep></entry>
+    <entry><ind>	0.6</ind>	<dep>-15.5</dep></entry>
+    <entry><ind>	0.5</ind>	<dep>45.7</dep></entry>
+    <entry><ind>	0.4</ind>	<dep>57.0</dep></entry>
+    <entry><ind>	0.3</ind>	<dep>69.25</dep></entry>
+    <entry><ind>	0.2</ind>	<dep>82.55</dep></entry>
+    <entry><ind>	0.1</ind>	<dep>98.15</dep></entry>
+    <entry><ind>	0.0</ind>	<dep>105.0</dep></entry>
+  </interpolation>-->
+  <center>
+    <x-m>0.228</x-m>
+    <y-m>2.582</y-m>
+    <z-m>-0.475</z-m>
+  </center>
+   <axis> 
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+   </axis>
+</animation>
 
 <animation>
 <type>rotate</type>
@@ -845,7 +783,7 @@
 <animation>
 <type>rotate</type>
 	<object-name>RGear</object-name><!--Правое колесо-->
-  <property>gear/gear[2]/position-norm</property>
+  <property>gear/gear[2]/position-test</property>
 	  <interpolation>
     <entry><ind>	0.0</ind>	<dep>90.0</dep></entry>
     <entry><ind>	1.0</ind>	<dep>	0.0</dep></entry>
