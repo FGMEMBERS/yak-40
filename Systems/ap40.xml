@@ -22,7 +22,7 @@
       <value>wing-leveler</value>
     </enable>
     <input>
-      <prop>yak-40/instrumentation/agd-l/kren-deg</prop>
+      <prop>instrumentation/attitude-indicator[0]/indicated-roll-deg</prop>
     </input>
     <reference>
       <value>0.0</value>
@@ -53,7 +53,7 @@
         <value>roll</value>
     </enable>
     <input>
-        <prop>yak-40/instrumentation/agd-l/kren-deg</prop>
+        <prop>instrumentation/attitude-indicator[0]/indicated-roll-deg</prop>
     </input>
     <reference>
         <prop>/autopilot/internal/target-roll-deg</prop>
@@ -120,7 +120,7 @@
       <value>dg-heading-hold</value>
     </enable>
     <input>
-      <prop>yak-40/instrumentation/agd-l/kren-deg</prop>
+      <prop>instrumentation/attitude-indicator[0]/indicated-roll-deg</prop>
     </input>
     <reference>
       <prop>/autopilot/internal/target-roll-deg</prop>
@@ -156,7 +156,7 @@
       <value>pitch-hold</value>
     </enable>
     <input>
-      <prop>yak-40/instrumentation/agd-l/tang-deg</prop>
+      <prop>instrumentation/attitude-indicator[0]/indicated-pitch-deg</prop>
     </input>
     <reference>
       <prop>/autopilot/settings/target-pitch-deg</prop>
