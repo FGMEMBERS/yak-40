@@ -6,7 +6,7 @@
 <animation>
   <type>material</type>
   <condition>
-    <property>yak-40/switches/board_right</property>
+    <property>yak-40/switches/board_left</property>
     <greater-than>
       <property>yak-40/systems/electrical/buses/bus27/volts</property>
       <value>16.0</value>
@@ -19,10 +19,10 @@
   <object-name>ind_needle</object-name>
   <object-name>true_needle</object-name>
   <emission>
-    <red-prop>yak-40/light/panel-r/red</red-prop>
-    <green-prop>yak-40/light/panel-r/green</green-prop>
-    <blue-prop>yak-40/light/panel-r/blue</blue-prop>
-    <factor-prop>yak-40/instrumentation/lights/board_right</factor-prop>
+    <red-prop>yak-40/light/panel-l/red</red-prop>
+    <green-prop>yak-40/light/panel-l/green</green-prop>
+    <blue-prop>yak-40/light/panel-l/blue</blue-prop>
+    <factor-prop>yak-40/instrumentation/lights/board_left</factor-prop>
   </emission>
 </animation>
 
