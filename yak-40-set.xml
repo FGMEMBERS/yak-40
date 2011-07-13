@@ -627,6 +627,11 @@
       <amb-green-def type="double" archive="y">0.3</amb-green-def>
       <amb-blue-def type="double" archive="y">0.3</amb-blue-def>      
     </panel>
+    <panel-l>
+      <red>0.9</red>
+      <green>0.25</green>
+      <blue>0.2</blue>
+    </panel-l>
     <!--<window-alpha type="double" archive="y">0.3</window-alpha>      -->
   </light>
 
