@@ -4,21 +4,34 @@
 	<path>kppm.ac</path>
 
 <animation>
-	<type>material</type>
-	<object-name>Plane.053</object-name>
-	<object-name>Plane.060</object-name>
-	<object-name>Plane.061</object-name>
-	<object-name>Plane.056</object-name>
-	<object-name>Plane.057</object-name>
-	<object-name>Plane.058</object-name>
-	<object-name>Plane.092</object-name>
-	<object-name>Plane.093</object-name>
-	<emission>
-		<red>0.9</red>
-		<green>0.25</green>
-		<blue>0.2</blue>
-		<factor-prop>/controls/switches/map-lights</factor-prop>
-	</emission>
+  <type>material</type>
+  <condition>
+    <property>yak-40/switches/board_right</property>
+    <greater-than>
+      <property>yak-40/systems/electrical/buses/bus27/volts</property>
+      <value>16.0</value>
+    </greater-than>
+  </condition>
+  <object-name>back</object-name>
+  <object-name>back_0</object-name>
+  <object-name>back_1</object-name>
+  <object-name>base</object-name>
+  <object-name>glass</object-name>
+  <object-name>gs_blenker</object-name>
+  <object-name>gs_blenker.001</object-name>
+  <object-name>hs_blenker</object-name>
+  <object-name>hs_blenker.001</object-name>
+  <object-name>gs_needle</object-name>
+  <object-name>hs_needle</object-name>
+  <object-name>knob</object-name>
+  <object-name>needle</object-name>
+  <object-name>scale</object-name>
+  <emission>
+    <red-prop>yak-40/light/panel-r/red</red-prop>
+    <green-prop>yak-40/light/panel-r/green</green-prop>
+    <blue-prop>yak-40/light/panel-r/blue</blue-prop>
+    <factor-prop>yak-40/instrumentation/lights/board_right</factor-prop>
+  </emission>
 </animation>
 
 <animation>
