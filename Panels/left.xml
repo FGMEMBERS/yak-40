@@ -25,7 +25,7 @@
   
   <model>
    <name>EMI-3K-1</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/kus730-1100/kus730-1100.xml</path>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/kus730-1100/kus730-1100-l.xml</path>
    <offsets>
      <x-m>-8.158</x-m>
      <y-m>-0.522</y-m>
