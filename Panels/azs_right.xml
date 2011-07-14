@@ -105,8 +105,8 @@
 
 <!--az_020-->
 <model>
-   <name>az_020</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_020.xml</path>
+   <name>az_sp50</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_sp50.xml</path>
    <offsets>
      <x-m>-7.070</x-m>
      <y-m>0.790</y-m>
@@ -118,8 +118,8 @@
 <!-- Второй ряд -->
 <!-- az KV-II -->
 <model>
-   <name>az_kv_2</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_kv_2.xml</path>
+   <name>az_ark_2</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_ark_2.xml</path>
    <offsets>
      <x-m>-7.070</x-m>
      <y-m>0.984</y-m>
@@ -131,8 +131,8 @@
 
 <!--az avar 115V-->
 <model>
-   <name>az_avar_115</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_avar_115.xml</path>
+   <name>az_avar115_ruch</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_right/az_avar115_ruch.xml</path>
    <offsets>
      <x-m>-7.070</x-m>
      <y-m>0.960</y-m>
