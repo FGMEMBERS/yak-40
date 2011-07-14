@@ -121,6 +121,11 @@
     <inherits-from>Aircraft/yak-40/Model/Effects/bumpspec-rs-r</inherits-from>
     <object-name>reshetka_r</object-name>
  </effect>
+ 
+ <effect>
+    <inherits-from>Aircraft/yak-40/Model/Effects/bumpspec-rs-r</inherits-from>
+    <object-name>reshetka_l</object-name>
+ </effect>
  <!--KPP-1234--> 
  <!--<model>
    <name>agd-l</name>
@@ -200,12 +205,17 @@
 
 
 <!--************************** АЗС ПРАВЫЙ ЩИТОК***************************-->
-
-<!--az_ukv_2-->
 <model>
   <name>AZS_right</name>
   <path>Aircraft/yak-40/Panels/azs_right.xml</path>
 </model>
+
+<!--************************** АЗС ЛЕВЫЙ ЩИТОК***************************-->
+<model>
+  <name>AZS_left</name>
+  <path>Aircraft/yak-40/Panels/azs_left.xml</path>
+</model>
+
 
 <!--*************************** END PANELS ****************************-->
 <!--Group all in VC-->
