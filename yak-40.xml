@@ -211,6 +211,7 @@
                 <yaw> 0 </yaw>
             </orient>
             <feed>0</feed>
+	    <feed>1</feed>
             <thruster file="direct">
                 <location unit="M">
                     <x> 4.9 </x>
@@ -235,6 +236,7 @@
                 <pitch> 0 </pitch>
                 <yaw> 0 </yaw>
             </orient>
+	    <feed>0</feed>
             <feed>1</feed>
             <thruster file="direct">
                 <location unit="M">
@@ -260,7 +262,8 @@
                 <pitch> 0 </pitch>
                 <yaw> 0 </yaw>
             </orient>
-            <feed>2</feed>
+	    <feed>0</feed> 
+            <feed>1</feed>
             <thruster file="direct">
                 <location unit="M">
                     <x> 4.9 </x>
