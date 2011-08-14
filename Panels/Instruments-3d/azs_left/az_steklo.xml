@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!--
+    #############################################################################
+    #    Copyright 								#
+    #									   	#
+    #    (C) 2009 by Yurik V. Nikiforoff - FDM, 3d instruments, animations, 	#
+    #    systems and over.   							#
+    #		yurik@megasignal.com					   	#
+
+    ************************* Yak-40 ver. 1.0 *************************************
+    -->
+
+<PropertyList>
+ <path>sw.ac</path>
+
+
+<!-- **************************** handle **************************** -->
+<animation>
+    <type>rotate</type>
+    <object-name>handle</object-name>
+    <object-name>base</object-name>
+    <object-name>base1</object-name>
+    <property>yak-40/switches/az_steklo</property>
+    <interpolation>
+      <entry><ind>0</ind>	<dep>30.0</dep></entry>
+      <entry><ind>1</ind>	<dep>-30.0</dep></entry>
+     </interpolation>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+</animation>
+
+
+<!-- ******************** pick staff ******************************* -->
+<animation>
+	<type>pick</type>
+	<object-name>handle</object-name>
+	<visible>true</visible>
+	<action>
+		<button>3</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>
+			setprop("yak-40/switches/az_steklo", 1);
+			</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>handle</object-name>
+	<visible>true</visible>
+	<action>
+		<button>4</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>
+			setprop("yak-40/switches/az_steklo", 0);
+			</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>handle</object-name>
+	<visible>true</visible>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>
+			if (getprop("yak-40/switches/az_steklo")==0) {setprop("yak-40/switches/az_steklo", 1);} else {setprop("yak-40/switches/az_steklo", 0);}
+			</script>
+		</binding>
+	</action>
+</animation>
+
+</PropertyList>

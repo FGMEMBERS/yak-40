@@ -33,7 +33,7 @@
 		<flight-model>jsb</flight-model>
 		<aero>yak-40</aero>
 		<model>
-			<path>Aircraft/yak-40/Model/yak-40.xml</path>
+		  <path>Aircraft/yak-40/Model/yak-40.xml</path>
 		</model>
 
 		<sound>
@@ -59,19 +59,19 @@
 	  <setting>0.572</setting>
 	  <setting>1.0</setting>
   </flaps>
-
-<virtual-cockpit archive="y">true</virtual-cockpit>
-<view>
+  
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+  <view>
     <name>Captain View</name>
-  <internal archive="y">true</internal>
-  <config>
-    <x-offset-m archive="y">-0.49</x-offset-m>
-    <y-offset-m archive="y">1.8</y-offset-m>
-    <z-offset-m archive="y">-7.45</z-offset-m>
-    <pitch-offset-deg type="double">-6.0</pitch-offset-deg>
-    <default-field-of-view-deg type="double">65.0</default-field-of-view-deg>
-  </config>
- </view>
+    <internal archive="y">true</internal>
+    <config>
+      <x-offset-m archive="y">-0.49</x-offset-m>
+      <y-offset-m archive="y">1.8</y-offset-m>
+      <z-offset-m archive="y">-7.45</z-offset-m>
+      <pitch-offset-deg type="double">-6.0</pitch-offset-deg>
+      <default-field-of-view-deg type="double">65.0</default-field-of-view-deg>
+    </config>
+  </view>
 
 <!--Custom views-->
  <view n="101">
@@ -163,7 +163,7 @@
 			<default-field-of-view-deg type="double">75.0</default-field-of-view-deg>
 			<dynamic-view type="bool">true</dynamic-view>
 		</config>
-  </view>
+	      </view>
   
 </sim>
 

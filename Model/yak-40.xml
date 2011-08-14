@@ -453,7 +453,21 @@
 <!--++++++++++++++++++++++++++Переднее шасси ++++++++++++++++++++++++++++++++++++ -->
 <!--Переднее шасси поворот-->
 
-
+<animation>
+  <type>rotate</type>
+  <object-name>NSteer</object-name>
+  <property>/fdm/jsbsim/gear/unit/steering-angle-deg</property>
+  <center>
+    <x-m>-7.150</x-m>
+    <y-m>0</y-m>
+    <z-m>0.420</z-m> 	
+  </center>
+  <axis>
+    <x>0</x>
+    <y>0</y>
+    <z>-1</z>
+  </axis>
+</animation>
 
 <!--Переднее шасси обжатие стойки-->
 
