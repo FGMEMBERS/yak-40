@@ -80,7 +80,7 @@ init_electrical = func {
 
 init_switches = func{
  
-  setprop("yak-40/switches/power_sw", 0);
+  setprop("yak-40/switches/az_akk", 0);
   setprop("yak-40/switches/po1500_1", 0);
   setprop("yak-40/switches/po1500_2", 0);
   setprop("yak-40/switches/az_adp", 0);
@@ -100,7 +100,7 @@ init_users = func{
     setlistener("yak-40/switches/az_ob_eng_1", az_ob_eng_1_handler);
     setlistener("yak-40/switches/az_ob_eng_2", az_ob_eng_2_handler);
     setlistener("yak-40/switches/az_ob_eng_3", az_ob_eng_3_handler);
-    setlistener("yak-40/switches/power_sw", battery_handler);
+    setlistener("yak-40/switches/az_akk", battery_handler);
     setlistener("yak-40/switches/az_adp", az_adp_handler);
 
 }
@@ -146,7 +146,7 @@ update_users = func{
 setlistener("/sim/signals/fdm-initialized", init_electrical);
 
 battery_handler = func{
-    if( getprop("yak-40/switches/power_sw")==1 ){
+    if( getprop("yak-40/switches/az_akk")==-1 ){
 	bus27.add_input( battery1 );
 	battery1.connect_to_bus( bus27 );
 	print("Batery 1 On");
@@ -154,7 +154,7 @@ battery_handler = func{
 	battery2.connect_to_bus( bus27 );
 	print("Batery 2 On");
     } 
-    if( getprop("yak-40/switches/power_sw")==0 ){
+    if( getprop("yak-40/switches/az_akk")==0 ){
 	bus27.rm_input( battery1.name );
 	battery1.disconnect_from_bus();
 	print("Battery 1 Off");
