@@ -24,6 +24,7 @@ var po500_1 = nil;
 var po500_2 = nil;
 
 var bus27 = nil;
+var akk_bus = nil;
 var bus115 = nil;
 var bus36 = nil;
 
@@ -41,6 +42,8 @@ init_electrical = func {
 
     battery1 = BatteryClass.new( "A20NKBN25-1" );
     battery2 = BatteryClass.new( "A20NKBN25-2" );
+
+    akk_bus = DCBusClass.new("akk_bus");
     
     gen1 = DCAlternatorClass.new( "gen1" );
     gen1.rpm_source( props.globals.getNode("engines/engine[0]") );
@@ -102,14 +105,19 @@ init_users = func{
     setlistener("yak-40/switches/az_ob_eng_3", az_ob_eng_3_handler);
     setlistener("yak-40/switches/az_akk", battery_handler);
     setlistener("yak-40/switches/az_adp", az_adp_handler);
-
+    setlistener("yak-40/switches/az_bat_1",az_bat1_handler);
+    setlistener("yak-40/switches/az_bat_2",az_bat2_handler);
 }
+
+
 
 update_buses_handler = func{
 
     update_users();
     bus36.update_voltage();
 #    AC1x115_bus.update_voltage();
+    akk_bus.update_voltage();
+    akk_bus.update_load();
 
     bus27.update_voltage();
 #    DC27_bus.update_voltage();
@@ -145,22 +153,41 @@ update_users = func{
 
 setlistener("/sim/signals/fdm-initialized", init_electrical);
 
+az_bat1_handler = func{
+  if (getprop("yak-40/switches/az_bat_1")==1){
+    akk_bus.add_input( battery1 );
+    battery1.connect_to_bus(akk_bus);
+  }
+  if (getprop("yak-40/switches/az_bat_1")==0) {
+    akk_bus.rm_input( battery1.name );
+    battery1.disconnect_from_bus();
+  }
+}
+
+az_bat2_handler = func{
+  if (getprop("yak-40/switches/az_bat_2")==1){
+    akk_bus.add_input( battery2 );
+    battery2.connect_to_bus(akk_bus);
+    print("Batery 2 On");
+  }
+  if (getprop("yak-40/switches/az_bat_2")==0){
+    akk_bus.rm_input( battery2.name );
+    battery2.disconnect_from_bus(akk_bus);
+  }
+}
+
 battery_handler = func{
     if( getprop("yak-40/switches/az_akk")==-1 ){
-	bus27.add_input( battery1 );
-	battery1.connect_to_bus( bus27 );
-	print("Batery 1 On");
-	bus27.add_input( battery2 );
-	battery2.connect_to_bus( bus27 );
-	print("Batery 2 On");
+	bus27.add_input(akk_bus);
+	akk_bus.connect_to_bus(bus27);
+	akk_bus.add_output(bus27);
+	akk_bus.connect_to_bus(bus27);
+	print("On battery");	
     } 
-    if( getprop("yak-40/switches/az_akk")==0 ){
-	bus27.rm_input( battery1.name );
-	battery1.disconnect_from_bus();
-	print("Battery 1 Off");
-	bus27.rm_input( battery2.name );
-	battery2.disconnect_from_bus();
-	print("Battery 2 Off");
+    if( getprop("yak-40/switches/az_akk")==1 ){
+	bus27.rm_input(akk_bus);
+	bus27.disconnect_from_bus();
+	print("Off battery");
     }
 }
 
