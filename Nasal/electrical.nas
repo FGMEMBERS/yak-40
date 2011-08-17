@@ -32,6 +32,7 @@ var ite2t_1 = nil;
 var ite2t_2 = nil;
 var ite2t_3 = nil;
 var adp = nil;
+var agd_r = nil;
 
 var beacon = aircraft.light.new( "/sim/model/lights/beacon", [0.05, 0.05] );
 beacon.interval = 0;
@@ -83,12 +84,14 @@ init_electrical = func {
 
 init_switches = func{
  
+  setprop("yak-40/switches/az_bat_1",1);
+  setprop("yak-40/switches/az_bat_2",1);
   setprop("yak-40/switches/az_akk", 0);
   setprop("yak-40/switches/po1500_1", 0);
   setprop("yak-40/switches/po1500_2", 0);
   setprop("yak-40/switches/az_adp", 0);
   setprop("yak-40/switches/az_agd_r", 0);
-  setprop("yak-40/switches/az_ob_eng_1", 0);
+  setprop("yak-40/switches/az_engine_1", 0);
   setprop("yak-40/switches/az_ob_eng_2", 0);
   setprop("yak-40/switches/az_ob_eng_3", 0);
 }
@@ -98,28 +101,38 @@ init_users = func{
     ite2t_2 = UserClass.new("instrumentation", "ite2t_2");
     ite2t_3 = UserClass.new("instrumentation", "ite2t_3");
     adp = UserClass.new("instrumentation", "adp");
+    agd_r = UserClass.new("instrumentation","agd_r");
 
     setlistener("yak-40/switches/po1500_1", PO1500_1_on_bus_handler);
-    setlistener("yak-40/switches/az_ob_eng_1", az_ob_eng_1_handler);
+    setlistener("yak-40/switches/az_engine_1", az_ob_eng_1_handler);
     setlistener("yak-40/switches/az_ob_eng_2", az_ob_eng_2_handler);
     setlistener("yak-40/switches/az_ob_eng_3", az_ob_eng_3_handler);
     setlistener("yak-40/switches/az_akk", battery_handler);
     setlistener("yak-40/switches/az_adp", az_adp_handler);
     setlistener("yak-40/switches/az_bat_1",az_bat1_handler);
     setlistener("yak-40/switches/az_bat_2",az_bat2_handler);
+    setlistener("yak-40/switches/az_agd_r",az_agd_r_handler);
 }
 
 
 
 update_buses_handler = func{
 
-    update_users();
+    print ("up");
+#     update_users();
     bus36.update_voltage();
 #    AC1x115_bus.update_voltage();
     akk_bus.update_voltage();
+    akk_bus.update_users();
+    akk_bus.update_uload();
     akk_bus.update_load();
+    
 
     bus27.update_voltage();
+    bus27.update_uload();
+    bus27.update_users();
+    bus27.update_load();
+    
 #    DC27_bus.update_voltage();
 #    Error_bus.update_voltage();
     
@@ -140,16 +153,16 @@ update_buses_handler = func{
 #    Error_bus.update_load();
     
     settimer(update_buses_handler, UPDATE_PERIOD );
-    settimer(update_users, UPDATE_PERIOD );
+#     settimer(update_users, UPDATE_PERIOD );
     
 }
 
-update_users = func{
-    adp.update_voltage();
-    ite2t_1.update_voltage();
-    ite2t_2.update_voltage();
-    ite2t_3.update_voltage();
-}
+# update_users = func{
+#     adp.update_voltage();
+#     ite2t_1.update_voltage();
+#     ite2t_2.update_voltage();
+#     ite2t_3.update_voltage();
+# }
 
 setlistener("/sim/signals/fdm-initialized", init_electrical);
 
@@ -179,20 +192,28 @@ az_bat2_handler = func{
 battery_handler = func{
     if( getprop("yak-40/switches/az_akk")==-1 ){
 	bus27.add_input(akk_bus);
-	akk_bus.connect_to_bus(bus27);
-	akk_bus.add_output(bus27);
-	akk_bus.connect_to_bus(bus27);
+	akk_bus.add_output(bus27,"yak-40/systems/electrical/buses/bus27/load");
 	print("On battery");	
     } 
     if( getprop("yak-40/switches/az_akk")==1 ){
-	bus27.rm_input(akk_bus);
-	bus27.disconnect_from_bus();
+	bus27.rm_input(akk_bus.name);
+	akk_bus.rm_output(bus27.name);
 	print("Off battery");
     }
 }
 
 update_electrical = func {
     settimer(update_electrical, UPDATE_PERIOD);
+}
+
+az_agd_r_handler = func {
+  if (getprop("yak-40/switches/az_agd_r")==1){
+    akk_bus.add_users(agd_r, 10,"instrumentation/agd_r");
+    print("AGD Right On");
+  }
+  if (getprop("yak-40/switches/az_agd_r")==0){
+    akk_bus.rm_users( agd_r.name,"instrumentation/agd_r" );
+  }
 }
 
 PO1500_1_on_bus_handler = func {
@@ -207,13 +228,11 @@ PO1500_1_on_bus_handler = func {
 }
 
 az_ob_eng_1_handler = func {
-  if( getprop("yak-40/switches/az_ob_eng_1")==1 ){
-	bus27.add_output(ite2t_1, 10);
-	ite2t_1.add_input( bus27 );
+  if( getprop("yak-40/switches/az_engine_1")==1 ){
+	bus27.add_users(ite2t_1,10,"instrumentation/ite2t_1");
 	print("Engine indicator 1 on");
     } else {
-	bus27.rm_output("ite2t_1");
-	ite2t_1.rm_input( "bus27");
+	bus27.rm_users("ite2t_1","instrumentation/ite2t_1");
 	print("Engine indicator 1 off");
     }
 }
@@ -244,12 +263,10 @@ az_ob_eng_3_handler = func {
 	
 az_adp_handler = func {
   if( getprop("yak-40/switches/az_adp")==1 ){
-	bus27.add_output(adp, 10);
-	adp.add_input( bus27 );
+	bus27.add_users(adp, 10,"instrumentation/adp");
 	print("ADP on");
     } else {
-	bus27.rm_output("adp");
-	adp.rm_input( "bus27");
+	bus27.rm_users("adp","instrumentation/adp");
 	print("ADP off");
     }
 }
@@ -268,10 +285,13 @@ DCBusClass.new = func( name ) {
 	    name :  name,
 	    volts :  props.globals.getNode( enode ~ "buses/" ~ name ~ "/volts", 1 ),
 	    load : props.globals.getNode( enode ~ "buses/" ~ name ~ "/load", 1 ),
+	    uload : props.globals.getNode( enode ~ "buses/" ~ name ~ "/uload", 1 ),
 	    inputs : props.globals.getNode( enode ~ "buses/" ~ name ~ "/inputs", 1 ),
-	    outputs : props.globals.getNode( enode ~ "buses/" ~ name ~ "/ouputs", 1 ) };
+	    outputs : props.globals.getNode( enode ~ "buses/" ~ name ~ "/outputs", 1 ) ,
+	    users : props.globals.getNode( enode ~ "buses/" ~ name ~ "/users", 1 ) };
     obj.volts.setValue(0.0);
     obj.load.setValue(0.0);
+    obj.uload.setValue(0.0);
     return obj;
 }
 
@@ -283,12 +303,23 @@ DCBusClass.add_output = func( obj, load ) {
     me.outputs.getNode( obj.name, 1).setValues({ "load" : load});
 }
 
+DCBusClass.add_users = func( obj, load,path ) {
+    volts = 0;
+    me.users.getNode( obj.name, 1).setValues({ "load" : load});
+    me.users.getNode( obj.name, 1).setValues({ "path" : path});
+}
+
 DCBusClass.rm_input = func( name ) {
     me.inputs.removeChild( name,0 );
 }
 
 DCBusClass.rm_output = func( name ) {
     me.outputs.removeChild( name,0 );
+}
+
+DCBusClass.rm_users = func( name,path ) {
+    setprop(path ~ "/volts","0");
+    me.users.removeChild( name,0 );
 }
 
 DCBusClass.voltage = func {
@@ -299,8 +330,28 @@ DCBusClass.update_input = func( name, volts ) {
     me.inputs.getNode( name ).setValues( { "volts" : volts } );
 }
 
+DCBusClass.update_users = func {
+  volts = me.volts.getValue();
+  outputs =  me.users.getChildren();
+  foreach( output; outputs){
+  path= output.getNode("path").getValue() ~ "/volts";
+  setprop(path,volts);
+#     output.setValues(volts);
+ }
+}
+
 DCBusClass.update_output = func( name, load ) {
-    me.ouputs.getNode( name ).setValues( { name : load } );
+    me.outputs.getNode( name ).setValues( { name : load } );
+}
+
+DCBusClass.update_uload = func {
+    uload = 0.0;
+    outputs =  me.users.getChildren();
+    if(outputs == nil) return;
+    foreach( output; outputs ){
+	uload += output.getNode("load").getValue();
+    }
+    me.uload.setValue( uload );
 }
 
 DCBusClass.update_load = func {
@@ -308,14 +359,22 @@ DCBusClass.update_load = func {
     outputs =  me.outputs.getChildren();
     if(outputs == nil) return;
     foreach( output; outputs ){
-	load += output.getNode("load").getValue();
+	a = output.getNode("load").getValue();
+	if (a == nil) return;
+	b=getprop(a);
+	if (b == nil) return;
+	print (b);
+  	load += getprop(a);
     }
-    me.load.setValue( load );
+    uload = me.uload.getValue();
+    print (load ~ "   " ~ uload);
+    me.load.setValue( load+uload );
 }
 
 DCBusClass.update_voltage = func {
     volts = 0.0;
     foreach( input; me.inputs.getChildren() ){
+	test = props.globals.getNode( input.getValue());
 	ivolts = props.globals.getNode( input.getValue() ~ "volts" ).getValue();
 	volts = volts < ivolts ? ivolts : volts;
     }
