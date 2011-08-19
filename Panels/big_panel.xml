@@ -157,12 +157,63 @@
 
 
  <!-- Right side -->
+ <!--Включатель аккумуляторов-->
  <model>
     <name>az_akk</name>
     <path>Aircraft/yak-40/Panels/Instruments-3d/azs_big/az_akk.xml</path>
     <offsets>
       <x-m>-8.158</x-m>
       <y-m>0.620</y-m>
+      <z-m>1.456</z-m>
+    </offsets>
+  </model>
+<!--ПТ-500 РЛС-->
+  <model>
+    <name>az_pt_rls</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_big/az_pt_rls.xml</path>
+    <offsets>
+      <x-m>-8.158</x-m>
+      <y-m>0.637</y-m>
+      <z-m>1.456</z-m>
+    </offsets>
+  </model>
+<!--ПТ-500 АП-->
+  <model>
+    <name>az_pt_ap</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_big/az_pt_ap.xml</path>
+    <offsets>
+      <x-m>-8.158</x-m>
+      <y-m>0.658</y-m>
+      <z-m>1.456</z-m>
+    </offsets>
+  </model>
+<!--Переключатель РАДИО ручной-автомат-->  
+  <model>
+    <name>sw_radio_ruch</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_big/sw_radio_ruch.xml</path>
+    <offsets>
+      <x-m>-8.159</x-m>
+      <y-m>0.679</y-m>
+      <z-m>1.454</z-m>
+    </offsets>
+  </model>
+<!--ПО СТЕКЛО-->
+  <model>
+    <name>az_po_steklo</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_big/az_po_steklo.xml</path>
+    <offsets>
+      <x-m>-8.158</x-m>
+      <y-m>0.700</y-m>
+      <z-m>1.456</z-m>
+    </offsets>
+  </model>
+<!--ПО РАДИО-->
+  <model>
+    <name>az_po_radio</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_big/az_po_radio.xml</path>
+    <offsets>
+      <x-m>-8.158</x-m>
+      <y-m>0.729</y-m>
       <z-m>1.456</z-m>
     </offsets>
   </model>
