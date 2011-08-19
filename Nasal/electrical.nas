@@ -118,7 +118,6 @@ init_users = func{
 
 update_buses_handler = func{
 
-    print ("up");
 #     update_users();
     bus36.update_voltage();
 #    AC1x115_bus.update_voltage();
