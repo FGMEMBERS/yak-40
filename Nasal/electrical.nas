@@ -17,7 +17,7 @@ var gen3 = nil;
 var rap_28 = nil;
 var rap_115 = nil;
 
-var po1500_1 = nil;
+var po1500_steklo = nil;
 var po1500_2 = nil;
 
 var po500_1 = nil;
@@ -58,7 +58,7 @@ init_electrical = func {
 
     
 
-    po1500_1 = DCACinverterClass.new("PO-1500-1", 1.33 );
+    po1500_steklo = DCACinverterClass.new("PO-1500-steklo", 1.33 );
     
     po1500_2 = DCACinverterClass.new("PO-1500-2", 1.33 );
     
@@ -71,7 +71,7 @@ init_electrical = func {
    
     bus115 = ACBusClass.new( "AC1x115-bus" );
     
-    bus36.add_input( po1500_1 );
+    bus36.add_input( po1500_steklo );
 
     init_users();
     init_switches();
@@ -87,7 +87,7 @@ init_switches = func{
   setprop("yak-40/switches/az_bat_1",1);
   setprop("yak-40/switches/az_bat_2",1);
   setprop("yak-40/switches/az_akk", 0);
-  setprop("yak-40/switches/po1500_1", 0);
+  setprop("yak-40/switches/po1500_steklo", 0);
   setprop("yak-40/switches/po1500_2", 0);
   setprop("yak-40/switches/az_adp", 0);
   setprop("yak-40/switches/az_agd_r", 0);
@@ -103,7 +103,7 @@ init_users = func{
     adp = UserClass.new("instrumentation", "adp");
     agd_r = UserClass.new("instrumentation","agd_r");
 
-    setlistener("yak-40/switches/po1500_1", PO1500_1_on_bus_handler);
+    setlistener("yak-40/switches/azs_po_steklo", PO1500_steklo_on_bus_handler);
     setlistener("yak-40/switches/az_engine_1", az_ob_eng_1_handler);
     setlistener("yak-40/switches/az_ob_eng_2", az_ob_eng_2_handler);
     setlistener("yak-40/switches/az_ob_eng_3", az_ob_eng_3_handler);
@@ -141,7 +141,7 @@ update_buses_handler = func{
 #    0_1_bus.update_voltage();
 #    PT_1000_1_bus.update_load();
     
-    po1500_1.update();
+    po1500_steklo.update();
 #    PT_1000_2.update();
     
     bus36.update_load();
@@ -215,14 +215,14 @@ az_agd_r_handler = func {
   }
 }
 
-PO1500_1_on_bus_handler = func {
+PO1500_steklo_on_bus_handler = func {
   
-  if (getprop("yak-40/switches/po1500_1") == 1) {
-      po1500_1.add_input( bus27 );
-      print ("PO-1500 on bus");
+  if (getprop("yak-40/switches/az_po_steklo") == 1) {
+      po1500_steklo.add_input( bus27 );
+      print ("PO-1500 Steklo on bus");
     } else {
-      po1500_1.rm_input( "bus27" );
-      print ("PO-1500 out bus");
+      po1500_steklo.rm_input( "bus27" );
+      print ("PO-1500 Steklo out bus");
     }
 }
 
@@ -645,6 +645,7 @@ DCACinverterClass.disconnect_from_bus = func{
 }
 
 DCACinverterClass.update = func{
+    print ("Up");
     volts = me.input == nil ? 0.0 : me.input.volts.getValue()*me.conv_coeff;
     me.volts.setValue(volts);
 }
