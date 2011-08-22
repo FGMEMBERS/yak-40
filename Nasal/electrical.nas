@@ -14,7 +14,7 @@ var gen1 = nil;
 var gen2 = nil;
 var gen3 = nil;
 
-var rap_28 = nil;
+var rap_27 = nil;
 var rap_115 = nil;
 
 var po1500_steklo = nil;
@@ -53,7 +53,7 @@ init_electrical = func {
     gen3 = DCAlternatorClass.new( "gen3" );
     gen3.rpm_source( props.globals.getNode("engines/engine[2]") );
     
-    rap_28 = ExternalClass.new("rap_28");
+    rap_27 = ExternalClass.new("rap_27");
     rap_115 = ExternalClass.new("rap_115");
 
     
@@ -147,7 +147,7 @@ update_buses_handler = func{
     bus36.update_load();
 #    AC1x115_bus.update_load();
     
-    bus27.update_load();
+#     bus27.update_load();
 #    DC27_bus.update_load();
 #    Error_bus.update_load();
     
@@ -658,9 +658,9 @@ ExternalClass.new = func( name ) {
 	    node :  enode ~ "suppliers/" ~ name ~ "/",
 	    volts :   props.globals.getNode( enode ~ "suppliers/" ~ name ~ "/volts", 1 ),
 	    bus : nil,
-            ideal_volts : 28.5,
+            ideal_volts : 27.5,
             ideal_amps : 110.0 };
-    props.globals.getNode(obj.node,1).setValues({ "volts": 28.5} );
+    props.globals.getNode(obj.node,1).setValues({ "volts": 27.5} );
     return obj;
 }
 
