@@ -218,4 +218,65 @@
     </offsets>
   </model>
  
+<!--Лампа трапа-->
+  <model>
+    <name>lamp_trap</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/lamps/trap.xml</path>
+    <offsets>
+      <x-m>-8.162</x-m>
+      <y-m>0.616</y-m>
+      <z-m>1.499</z-m>
+    </offsets>
+  </model>
+<!--Лампа Отказ ПО-1500-->
+  <model>
+    <name>po1500_otkaz</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/lamps/po1500_otkaz.xml</path>
+    <offsets>
+      <x-m>-8.162</x-m>
+      <y-m>0.648</y-m>
+      <z-m>1.499</z-m>
+    </offsets>
+  </model>
+<!--Лампа наземного питания-->
+  <model>
+    <name>grnd_pwr</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/lamps/grnd_pwr.xml</path>
+    <offsets>
+      <x-m>-8.162</x-m>
+      <y-m>0.678</y-m>
+      <z-m>1.499</z-m>
+    </offsets>
+  </model>
+<!--Лампа СРД сброс давления-->
+  <model>
+    <name>srd_sbros</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/lamps/srd_sbros.xml</path>
+    <offsets>
+      <x-m>-8.162</x-m>
+      <y-m>0.614</y-m>
+      <z-m>1.422</z-m>
+    </offsets>
+  </model>
+<!--Лампа СРД дублёр-->
+  <model>
+    <name>srd_dubler</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/lamps/srd_dubler.xml</path>
+    <offsets>
+      <x-m>-8.162</x-m>
+      <y-m>0.634</y-m>
+      <z-m>1.422</z-m>
+    </offsets>
+  </model>
+<!--Лампа СРД выключен-->
+  <model>
+    <name>srd_vykl</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/lamps/srd_vykl.xml</path>
+    <offsets>
+      <x-m>-8.162</x-m>
+      <y-m>0.658</y-m>
+      <z-m>1.422</z-m>
+    </offsets>
+  </model>
+  
 </PropertyList>
