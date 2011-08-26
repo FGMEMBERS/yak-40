@@ -1,4 +1,6 @@
 <PropertyList>
+  <!--Наклон лампочек и прочего - 74,5-->
+  
   <model>
    <name>AP-40</name>
    <path>Aircraft/yak-40/Panels/Instruments-3d/ap40/ap.xml</path>
@@ -8,6 +10,104 @@
      <z-m>1.024</z-m>
 	 <heading-deg>0.0</heading-deg>
 	 <pitch-deg>-36.8</pitch-deg>
+   </offsets>
+  </model>
+  
+<!--Лампы-->
+<!--Реверс включен-->
+  <model>
+   <name>Revers_on</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/lamps/revers_on.xml</path>
+   <offsets>
+     <x-m>-8.097</x-m>
+     <y-m>-0.156</y-m>
+     <z-m>1.180</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>-74.5</pitch-deg>
+   </offsets>
+  </model>
+<!--Реверс выключен-->
+  <model>
+   <name>Revers_off</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/lamps/revers_off.xml</path>
+   <offsets>
+     <x-m>-8.019</x-m>
+     <y-m>-0.156</y-m>
+     <z-m>1.158</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>-74.5</pitch-deg>
+   </offsets>
+  </model>
+<!--Кран объединения открыт-->
+  <model>
+   <name>Kompl_open</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/lamps/kompl_open.xml</path>
+   <offsets>
+     <x-m>-8.139</x-m>
+     <y-m>-0.107</y-m>
+     <z-m>1.192</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>-74.5</pitch-deg>
+   </offsets>
+  </model>  
+<!--Кран кольцевания открыт-->
+  <model>
+   <name>Kolco_open</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/lamps/kolco_open.xml</path>
+   <offsets>
+     <x-m>-8.139</x-m>
+     <y-m>-0.082</y-m>
+     <z-m>1.192</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>-74.5</pitch-deg>
+   </offsets>
+  </model>
+<!--АЦТ отказ-->
+  <model>
+   <name>ACT_otkaz</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/lamps/act_otkaz.xml</path>
+   <offsets>
+     <x-m>-8.139</x-m>
+     <y-m>-0.055</y-m>
+     <z-m>1.192</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>-74.5</pitch-deg>
+   </offsets>
+  </model> 
+<!--АЦТ исправен-->
+  <model>
+   <name>ACT_work</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/lamps/act_work.xml</path>
+   <offsets>
+     <x-m>-8.139</x-m>
+     <y-m>-0.028</y-m>
+     <z-m>1.192</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>-74.5</pitch-deg>
+   </offsets>
+  </model> 
+<!--Топливный насос левый-->
+  <model>
+   <name>Fuel_left</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/lamps/fuel_left.xml</path>
+   <offsets>
+     <x-m>-8.139</x-m>
+     <y-m>-0.002</y-m>
+     <z-m>1.192</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>-74.5</pitch-deg>
+   </offsets>
+  </model>
+<!--Топливный насос правый-->
+<model>
+   <name>Fuel_right</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/lamps/fuel_right.xml</path>
+   <offsets>
+     <x-m>-8.139</x-m>
+     <y-m>0.024</y-m>
+     <z-m>1.192</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>-74.5</pitch-deg>
    </offsets>
   </model>
 </PropertyList>
