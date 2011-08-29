@@ -110,4 +110,130 @@
 	 <pitch-deg>-74.5</pitch-deg>
    </offsets>
   </model>
+<!--Пожарный кран левый-->
+  <model>
+   <name>PK_left</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/lamps/pk_left.xml</path>
+   <offsets>
+     <x-m>-8.052</x-m>
+     <y-m>0.099</y-m>
+     <z-m>1.168</z-m>
+      <pitch-deg>-74.5</pitch-deg>
+   </offsets>
+  </model>
+<!--Пожарный кран средний-->
+  <model>
+   <name>PK_central</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/lamps/pk_center.xml</path>
+   <offsets>
+     <x-m>-8.052</x-m>
+     <y-m>0.125</y-m>
+     <z-m>1.168</z-m>
+      <pitch-deg>-74.5</pitch-deg>
+   </offsets>
+  </model>
+<!--Пожарный кран правый-->
+  <model>
+   <name>PK_right</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/lamps/pk_right.xml</path>
+   <offsets>
+     <x-m>-8.052</x-m>
+     <y-m>0.152</y-m>
+     <z-m>1.168</z-m>
+      <pitch-deg>-74.5</pitch-deg>
+   </offsets>
+  </model>
+  
+<!--Тумблеры-->
+<!--Отсечка топлива левая-->
+  <model>
+    <name>az_cutoff_l</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/az_cutoff_l.xml</path>
+    <offsets>
+      <x-m>-8.012</x-m>
+      <y-m>-0.108</y-m>
+      <z-m>1.158</z-m>
+      <pitch-deg>-74.5</pitch-deg>
+    </offsets>
+  </model>
+<!--Отсечка топлива средняя-->
+  <model>
+    <name>az_cutoff_c</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/az_cutoff_c.xml</path>
+    <offsets>
+      <x-m>-8.012</x-m>
+      <y-m>-0.081</y-m>
+      <z-m>1.158</z-m>
+      <pitch-deg>-74.5</pitch-deg>
+    </offsets>
+  </model>
+<!--Отсечка топлива правая-->
+  <model>
+    <name>az_cutoff_r</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/az_cutoff_r.xml</path>
+    <offsets>
+      <x-m>-8.012</x-m>
+      <y-m>-0.056</y-m>
+      <z-m>1.158</z-m>
+      <pitch-deg>-74.5</pitch-deg>
+    </offsets>
+  </model>
+<!--Пожарный кран левый-->
+  <model>
+    <name>az_pozh_l</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/az_pozh_l.xml</path>
+    <offsets>
+      <x-m>-8.009</x-m>
+      <y-m>0.098</y-m>
+      <z-m>1.157</z-m>
+      <pitch-deg>74.5</pitch-deg>
+      <roll-deg>180.0</roll-deg>
+    </offsets>
+  </model>
+<!--Пожарный кран средний-->
+  <model>
+    <name>az_pozh_c</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/az_pozh_c.xml</path>
+    <offsets>
+      <x-m>-8.009</x-m>
+      <y-m>0.124</y-m>
+      <z-m>1.157</z-m>
+      <pitch-deg>74.5</pitch-deg>
+      <roll-deg>180.0</roll-deg>
+    </offsets>
+  </model>
+<!--Пожарный кран правый-->
+  <model>
+    <name>az_pozh_r</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/az_pozh_r.xml</path>
+    <offsets>
+      <x-m>-8.009</x-m>
+      <y-m>0.150</y-m>
+      <z-m>1.157</z-m>
+      <roll-deg>180.0</roll-deg>
+      <pitch-deg>74.5</pitch-deg>
+    </offsets>
+  </model>
+<!--Насосная станция-->
+  <model>
+    <name>az_nasos</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/az_nasos.xml</path>
+    <offsets>
+      <x-m>-8.042</x-m>
+      <y-m>-0.011</y-m>
+      <z-m>1.167</z-m>
+      <pitch-deg>-74.5</pitch-deg>
+    </offsets>
+  </model>
+<!--Бустер передней ноги-->
+  <model>
+    <name>az_buster</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/az_buster.xml</path>
+    <offsets>
+      <x-m>-8.042</x-m>
+      <y-m>0.042</y-m>
+      <z-m>1.167</z-m>
+      <pitch-deg>-74.5</pitch-deg>
+    </offsets>
+  </model>
 </PropertyList>
