@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<!--
+    #############################################################################
+    #    Copyright 								#
+    #									   	#
+    #    (C) 2009 by Yurik V. Nikiforoff - FDM, 3d instruments, animations, 	#
+    #    systems and over.   							#
+    #		yurik@megasignal.com					   	#
+
+    ************************* Yak-40 ver. 1.0 *************************************
+    -->
+
+<PropertyList>
+ <path>azs_3.ac</path>
+
+
+<!-- **************************** handle **************************** -->
+<animation>
+    <type>rotate</type>
+    <object-name>handle</object-name>
+    <property>yak-40/switches/az_fuel_oslab</property>
+    <interpolation>
+      <entry><ind>1</ind>	<dep>30.0</dep></entry>
+      <entry><ind>0</ind>	<dep>0.0</dep></entry>
+      <entry><ind>-1</ind>	<dep>-30.0</dep></entry>
+     </interpolation>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+</animation>
+
+
+<!-- ******************** pick staff ******************************* -->
+<animation>
+	<type>pick</type>
+	<object-name>handle</object-name>
+	<visible>true</visible>
+	<action>
+		<button>3</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>
+			var sw_handle = getprop("yak-40/switches/az_fuel_oslab");
+			if (sw_handle > -1){
+			sw_handle = sw_handle - 1;
+			setprop("yak-40/switches/az_fuel_oslab", sw_handle);
+			}
+			</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>handle</object-name>
+	<visible>true</visible>
+	<action>
+		<button>4</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>
+			var sw_handle = getprop("yak-40/switches/az_fuel_oslab");
+			if (1 > sw_handle){
+			sw_handle = sw_handle + 1;
+			setprop("yak-40/switches/az_fuel_oslab", sw_handle);
+			}
+			</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>hotspot_1</object-name>
+	<visible>false</visible>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>
+			setprop("yak-40/switches/az_fuel_oslab", -1);
+			</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>hotspot_2</object-name>
+	<visible>false</visible>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>
+			setprop("yak-40/switches/az_fuel_oslab", 0);
+			</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>hotspot_3</object-name>
+	<visible>false</visible>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>
+			setprop("yak-40/switches/az_fuel_oslab", 1);
+			</script>
+		</binding>
+	</action>
+</animation>
+
+</PropertyList>
