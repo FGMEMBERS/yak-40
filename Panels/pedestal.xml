@@ -236,4 +236,70 @@
       <pitch-deg>-74.5</pitch-deg>
     </offsets>
   </model>
+<!--Кран объединения-->  
+  <model>
+    <name>az_kran_obyed</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/az_kran_obyed.xml</path>
+    <offsets>
+      <x-m>-8.096</x-m>
+      <y-m>-0.109</y-m>
+      <z-m>1.182</z-m>
+      <pitch-deg>-74.5</pitch-deg>
+    </offsets>
+  </model>
+<!--Кран кольцевания-->  
+  <model>
+    <name>az_kran_kolc</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/az_kran_kolc.xml</path>
+    <offsets>
+      <x-m>-8.096</x-m>
+      <y-m>-0.083</y-m>
+      <z-m>1.182</z-m>
+      <pitch-deg>-74.5</pitch-deg>
+    </offsets>
+  </model>
+<!--АЦТ-->  
+  <model>
+    <name>az_act</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/az_act.xml</path>
+    <offsets>
+      <x-m>-8.096</x-m>
+      <y-m>-0.056</y-m>
+      <z-m>1.182</z-m>
+      <pitch-deg>-74.5</pitch-deg>
+    </offsets>
+  </model>
+<!--Топливный насос левый-->  
+  <model>
+    <name>az_fuel_l</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/az_fuel_l.xml</path>
+    <offsets>
+      <x-m>-8.096</x-m>
+      <y-m>-0.003</y-m>
+      <z-m>1.182</z-m>
+      <pitch-deg>-74.5</pitch-deg>
+    </offsets>
+  </model>
+<!--Топливный насос правый-->  
+  <model>
+    <name>az_fuel_r</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/az_fuel_r.xml</path>
+    <offsets>
+      <x-m>-8.096</x-m>
+      <y-m>0.023</y-m>
+      <z-m>1.182</z-m>
+      <pitch-deg>-74.5</pitch-deg>
+    </offsets>
+  </model>
+<!--Топливные насосы ослабление-->  
+  <model>
+    <name>az_fuel_oslab</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/az_fuel_oslab.xml</path>
+    <offsets>
+      <x-m>-8.096</x-m>
+      <y-m>0.048</y-m>
+      <z-m>1.182</z-m>
+      <pitch-deg>-74.5</pitch-deg>
+    </offsets>
+  </model>
 </PropertyList>
