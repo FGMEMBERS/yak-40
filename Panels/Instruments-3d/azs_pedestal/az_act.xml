@@ -18,7 +18,7 @@
 <animation>
     <type>rotate</type>
     <object-name>handle</object-name>
-    <property>yak-40/switches/az_act</property>
+    <property>yak-40/switches/az-act</property>
     <interpolation>
       <entry><ind>0</ind>	<dep>30.0</dep></entry>
       <entry><ind>1</ind>	<dep>-30.0</dep></entry>
@@ -42,7 +42,7 @@
 		<binding>
 			<command>nasal</command>
 			<script>
-			setprop("yak-40/switches/az_act", 1);
+			setprop("yak-40/switches/az-act", 1);
 			</script>
 		</binding>
 	</action>
@@ -58,7 +58,7 @@
 		<binding>
 			<command>nasal</command>
 			<script>
-			setprop("yak-40/switches/az_act", 0);
+			setprop("yak-40/switches/az-act", 0);
 			</script>
 		</binding>
 	</action>
@@ -74,7 +74,7 @@
 		<binding>
 			<command>nasal</command>
 			<script>
-			if (getprop("yak-40/switches/az_act")==0) {setprop("yak-40/switches/az_act", 1);} else {setprop("yak-40/switches/az_act", 0);}
+			if (getprop("yak-40/switches/az-act")==0) {setprop("yak-40/switches/az-act", 1);} else {setprop("yak-40/switches/az-act", 0);}
 			</script>
 		</binding>
 	</action>

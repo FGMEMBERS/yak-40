@@ -18,7 +18,7 @@
 <animation>
     <type>rotate</type>
     <object-name>handle</object-name>
-    <property>yak-40/switches/az_fuel_oslab</property>
+    <property>yak-40/switches/az-fuel-oslab</property>
     <interpolation>
       <entry><ind>1</ind>	<dep>30.0</dep></entry>
       <entry><ind>0</ind>	<dep>0.0</dep></entry>
@@ -43,10 +43,10 @@
 		<binding>
 			<command>nasal</command>
 			<script>
-			var sw_handle = getprop("yak-40/switches/az_fuel_oslab");
+			var sw_handle = getprop("yak-40/switches/az-fuel-oslab");
 			if (sw_handle > -1){
 			sw_handle = sw_handle - 1;
-			setprop("yak-40/switches/az_fuel_oslab", sw_handle);
+			setprop("yak-40/switches/az-fuel-oslab", sw_handle);
 			}
 			</script>
 		</binding>
@@ -63,10 +63,10 @@
 		<binding>
 			<command>nasal</command>
 			<script>
-			var sw_handle = getprop("yak-40/switches/az_fuel_oslab");
+			var sw_handle = getprop("yak-40/switches/az-fuel-oslab");
 			if (1 > sw_handle){
 			sw_handle = sw_handle + 1;
-			setprop("yak-40/switches/az_fuel_oslab", sw_handle);
+			setprop("yak-40/switches/az-fuel-oslab", sw_handle);
 			}
 			</script>
 		</binding>
@@ -83,7 +83,7 @@
 		<binding>
 			<command>nasal</command>
 			<script>
-			setprop("yak-40/switches/az_fuel_oslab", -1);
+			setprop("yak-40/switches/az-fuel-oslab", -1);
 			</script>
 		</binding>
 	</action>
@@ -99,7 +99,7 @@
 		<binding>
 			<command>nasal</command>
 			<script>
-			setprop("yak-40/switches/az_fuel_oslab", 0);
+			setprop("yak-40/switches/az-fuel-oslab", 0);
 			</script>
 		</binding>
 	</action>
@@ -115,7 +115,7 @@
 		<binding>
 			<command>nasal</command>
 			<script>
-			setprop("yak-40/switches/az_fuel_oslab", 1);
+			setprop("yak-40/switches/az-fuel-oslab", 1);
 			</script>
 		</binding>
 	</action>
