@@ -2,7 +2,7 @@
 <!-- Первый ряд -->
 <model>
    <name>az_ukv_1</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_left/az_ukv_2.xml</path>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/azs_left/az_ukv_1.xml</path>
    <offsets>
      <x-m>-7.070</x-m>
      <y-m>-0.790</y-m>

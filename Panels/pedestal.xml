@@ -143,7 +143,17 @@
       <pitch-deg>-74.5</pitch-deg>
    </offsets>
   </model>
-  
+<!--Останов АИ-25-->
+  <model>
+   <name>AI25-stop</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/lamps/ai25_stop.xml</path>
+   <offsets>
+     <x-m>-8.105</x-m>
+     <y-m>0.111</y-m>
+     <z-m>1.182</z-m>
+      <pitch-deg>-74.5</pitch-deg>
+   </offsets>
+  </model>  
 <!--Тумблеры-->
 <!--Отсечка топлива левая-->
   <model>
@@ -298,6 +308,28 @@
     <offsets>
       <x-m>-8.096</x-m>
       <y-m>0.048</y-m>
+      <z-m>1.182</z-m>
+      <pitch-deg>-74.5</pitch-deg>
+    </offsets>
+  </model>
+<!--Топливный насос правый аврийный-->  
+  <model>
+    <name>az_fuel_r_avar</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/az_fuel_r_avar.xml</path>
+    <offsets>
+      <x-m>-8.097</x-m>
+      <y-m>0.077</y-m>
+      <z-m>1.182</z-m>
+      <pitch-deg>-74.5</pitch-deg>
+    </offsets>
+  </model>
+<!--Манометры-->  
+  <model>
+    <name>az_manometr</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_pedestal/az_manometr.xml</path>
+    <offsets>
+      <x-m>-8.097</x-m>
+      <y-m>0.150</y-m>
       <z-m>1.182</z-m>
       <pitch-deg>-74.5</pitch-deg>
     </offsets>
