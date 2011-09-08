@@ -18,7 +18,7 @@
 <animation>
     <type>rotate</type>
     <object-name>handle</object-name>
-    <property>yak-40/switches/az-act</property>
+    <property>yak-40/switches/az-fuel-l</property>
     <interpolation>
       <entry><ind>0</ind>	<dep>30.0</dep></entry>
       <entry><ind>1</ind>	<dep>-30.0</dep></entry>
