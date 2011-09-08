@@ -1,0 +1,27 @@
+<PropertyList>
+  <!--Наклон лампочек и прочего по большой стороне - 70,5-->
+  
+  <model>
+   <name>Ark-l</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/ark/ark.ac</path>
+   <offsets>
+     <x-m>-7.917</x-m>
+     <y-m>-0.068</y-m>
+     <z-m>2.008</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>70.5</pitch-deg>
+   </offsets>
+  </model>
+  <model>
+   <name>Ark-к</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/ark/ark.ac</path>
+   <offsets>
+     <x-m>-7.917</x-m>
+     <y-m>0.068</y-m>
+     <z-m>2.008</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>70.5</pitch-deg>
+   </offsets>
+  </model>
+
+</PropertyList>
