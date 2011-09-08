@@ -116,6 +116,11 @@
    <name>pedestal</name>
    <path>Aircraft/yak-40/Panels/pedestal.xml</path>
  </model>
+ 
+ <model>
+   <name>overhead</name>
+   <path>Aircraft/yak-40/Panels/overhead.xml</path>
+ </model>
 
  <effect>
     <inherits-from>Aircraft/yak-40/Model/Effects/bumpspec-rs-r</inherits-from>
