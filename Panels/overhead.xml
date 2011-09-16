@@ -3,7 +3,7 @@
   
   <model>
    <name>Ark-l</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/ark/ark.ac</path>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/ark/ark_l.xml</path>
    <offsets>
      <x-m>-7.917</x-m>
      <y-m>-0.068</y-m>
