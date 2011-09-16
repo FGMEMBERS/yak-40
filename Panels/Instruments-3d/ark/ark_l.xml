@@ -1,0 +1,419 @@
+<PropertyList>
+ <path>ark.ac</path>
+
+
+<!--Левый полукомлект--> 
+<!--Десятки-->
+<animation>
+  <type>rotate</type>
+  <object-name>left</object-name>
+  <object-name>tens_l</object-name>
+  <property>yak-40/instrumentation/ark_l/tens_l</property>
+  <interpolation>
+    <entry><ind>  0.0</ind><dep>-36.0</dep></entry>
+   <entry><ind>  9.0</ind><dep>288.0</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>-0.01870</y-m>
+   <z-m>-0.02596</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+<!--Крутить мышиным колесом--> 
+ <animation>
+  <type>pick</type>
+  <object-name>left</object-name>
+  <object-name>tens_l</object-name>
+  <visible>true</visible>
+  <action>
+    <button>3</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>yak-40/instrumentation/ark_l/tens_l</property>
+      <step>1</step>
+      <min>0.0</min>
+      <max>9.0</max>
+    </binding>
+  </action>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>left</object-name>
+  <object-name>tens_l</object-name>
+  <visible>true</visible>
+  <action>
+    <button>4</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>yak-40/instrumentation/ark_l/tens_l</property>
+      <step>-1</step>
+      <min>0.0</min>
+      <max>9.0</max>
+    </binding>
+  </action>
+</animation>
+
+<!--Сотни-->
+<animation>
+  <type>rotate</type>
+  <object-name>hund_l</object-name>
+  <property>yak-40/instrumentation/ark_l/hund_l</property>
+  <interpolation>
+    <entry><ind>  0.0</ind><dep>0.0</dep></entry>
+   <entry><ind>  11.0</ind><dep>330.0</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>-0.01870</y-m>
+   <z-m>-0.02596</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+<!--Крутить мышиным колесом--> 
+<animation>
+  <type>pick</type>
+  <object-name>hund_l</object-name>
+  <visible>true</visible>
+  <action>
+    <button>3</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>yak-40/instrumentation/ark_l/hund_l</property>
+      <step>1</step>
+      <min>0.0</min>
+      <max>11.0</max>
+    </binding>
+  </action>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>hund_l</object-name>
+  <visible>true</visible>
+  <action>
+    <button>4</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>yak-40/instrumentation/ark_l/hund_l</property>
+      <step>-1</step>
+      <min>0.0</min>
+      <max>11.0</max>
+    </binding>
+  </action>
+</animation>
+
+<!--Подстройка-->
+<animation>
+  <type>rotate</type>
+  <object-name>knob_l</object-name>
+  <property>yak-40/instrumentation/ark_l/knob_l</property>
+  <interpolation>
+    <entry><ind>  -5.0</ind><dep>-45.0</dep></entry>
+    <entry><ind>  -10.0</ind><dep>-90.0</dep></entry>
+    <entry><ind>  0.0</ind><dep>0.0</dep></entry>
+   <entry><ind>  5.0</ind><dep>45.0</dep></entry>
+   <entry><ind>  10.0</ind><dep>90.0</dep></entry>
+   <entry><ind>  15.0</ind><dep>135.0</dep></entry>
+   <entry><ind>  20.0</ind><dep>180.0</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>-0.04808</y-m>
+   <z-m>-0.02826</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+<!--Крутить мышиным колесом--> 
+<animation>
+  <type>pick</type>
+  <object-name>knob_l</object-name>
+  <visible>true</visible>
+  <action>
+    <button>3</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>yak-40/instrumentation/ark_l/knob_l</property>
+      <step>5</step>
+      <min>-10.0</min>
+      <max>20.0</max>
+    </binding>
+  </action>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>knob_l</object-name>
+  <visible>true</visible>
+  <action>
+    <button>4</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>yak-40/instrumentation/ark_l/knob_l</property>
+      <step>-5</step>
+      <min>-10.0</min>
+      <max>20.0</max>
+    </binding>
+  </action>
+</animation>
+
+<!--Правый полукомлект--> 
+<!--Десятки-->
+<animation>
+  <type>rotate</type>
+  <object-name>right</object-name>
+  <object-name>tens_r</object-name>
+  <property>yak-40/instrumentation/ark_l/tens_r</property>
+  <interpolation>
+    <entry><ind>  0.0</ind><dep>-36.0</dep></entry>
+   <entry><ind>  9.0</ind><dep>288.0</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.04168</y-m>
+   <z-m>-0.02596</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+<!--Крутить мышиным колесом--> 
+ <animation>
+  <type>pick</type>
+  <object-name>right</object-name>
+  <object-name>tens_r</object-name>
+  <visible>true</visible>
+  <action>
+    <button>3</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>yak-40/instrumentation/ark_l/tens_r</property>
+      <step>1</step>
+      <min>0.0</min>
+      <max>9.0</max>
+    </binding>
+  </action>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>right</object-name>
+  <object-name>tens_r</object-name>
+  <visible>true</visible>
+  <action>
+    <button>4</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>yak-40/instrumentation/ark_l/tens_r</property>
+      <step>-1</step>
+      <min>0.0</min>
+      <max>9.0</max>
+    </binding>
+  </action>
+</animation>
+
+<!--Сотни-->
+<animation>
+  <type>rotate</type>
+  <object-name>hund_r</object-name>
+  <property>yak-40/instrumentation/ark_l/hund_r</property>
+  <interpolation>
+    <entry><ind>  0.0</ind><dep>0.0</dep></entry>
+   <entry><ind>  11.0</ind><dep>330.0</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.04168</y-m>
+   <z-m>-0.02596</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+<!--Крутить мышиным колесом--> 
+<animation>
+  <type>pick</type>
+  <object-name>hund_r</object-name>
+  <visible>true</visible>
+  <action>
+    <button>3</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>yak-40/instrumentation/ark_l/hund_r</property>
+      <step>1</step>
+      <min>0.0</min>
+      <max>11.0</max>
+    </binding>
+  </action>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>hund_r</object-name>
+  <visible>true</visible>
+  <action>
+    <button>4</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>yak-40/instrumentation/ark_l/hund_r</property>
+      <step>-1</step>
+      <min>0.0</min>
+      <max>11.0</max>
+    </binding>
+  </action>
+</animation>
+
+
+<!--Подстройка-->
+<animation>
+  <type>rotate</type>
+  <object-name>knob_r</object-name>
+  <property>yak-40/instrumentation/ark_l/knob_r</property>
+  <interpolation>
+    <entry><ind>  -5.0</ind><dep>-45.0</dep></entry>
+    <entry><ind>  -10.0</ind><dep>-90.0</dep></entry>
+    <entry><ind>  0.0</ind><dep>0.0</dep></entry>
+   <entry><ind>  5.0</ind><dep>45.0</dep></entry>
+   <entry><ind>  10.0</ind><dep>90.0</dep></entry>
+   <entry><ind>  15.0</ind><dep>135.0</dep></entry>
+   <entry><ind>  20.0</ind><dep>180.0</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.01252</y-m>
+   <z-m>-0.02826</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+<!--Крутить мышиным колесом--> 
+<animation>
+  <type>pick</type>
+  <object-name>knob_r</object-name>
+  <visible>true</visible>
+  <action>
+    <button>3</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>yak-40/instrumentation/ark_l/knob_r</property>
+      <step>5</step>
+      <min>-10.0</min>
+      <max>20.0</max>
+    </binding>
+  </action>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>knob_r</object-name>
+  <visible>true</visible>
+  <action>
+    <button>4</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>yak-40/instrumentation/ark_l/knob_r</property>
+      <step>-5</step>
+      <min>-10.0</min>
+      <max>20.0</max>
+    </binding>
+  </action>
+</animation>
+
+<!--Громкость-->
+<animation>
+  <type>rotate</type>
+  <object-name>vol</object-name>
+  <property>yak-40/instrumentation/ark_l/vol</property>
+  <interpolation>
+    <entry><ind>  0.0</ind><dep>0.0</dep></entry>
+    <entry><ind>  1.0</ind><dep>260.0</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.05629</y-m>
+   <z-m>0.03234</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+<!--Крутить мышиным колесом--> 
+<animation>
+  <type>pick</type>
+  <object-name>vol</object-name>
+  <visible>true</visible>
+  <action>
+    <button>3</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>yak-40/instrumentation/ark_l/vol</property>
+      <step>0.05</step>
+      <min>0.0</min>
+      <max>1.0</max>
+    </binding>
+  </action>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>vol</object-name>
+  <visible>true</visible>
+  <action>
+    <button>4</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>yak-40/instrumentation/ark_l/vol</property>
+      <step>-0.05</step>
+      <min>0.0</min>
+      <max>1.0</max>
+    </binding>
+  </action>
+</animation>
+
+<!--Lights-->
+                                   
+ <animation>
+   <type>material</type>
+   <object-name>emi</object-name>
+   <object-name>rect1</object-name>
+   <object-name>rect2</object-name>
+   <object-name>rect3</object-name>
+   <emission>
+	<red-prop>/IL-76/instrumentation/lights/centr_panel/int-red</red-prop>
+    <green-prop>/IL-76/instrumentation/lights/centr_panel/int-green</green-prop>
+    <blue-prop>/IL-76/instrumentation/lights/centr_panel/int-blue</blue-prop>
+	</emission>
+</animation>
+
+
+ </PropertyList>
+
