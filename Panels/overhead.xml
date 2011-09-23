@@ -24,4 +24,28 @@
    </offsets>
   </model>
 
+  <model>
+   <name>Com-к</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/com/com.ac</path>
+   <offsets>
+     <x-m>-7.820</x-m>
+     <y-m>-0.053</y-m>
+     <z-m>2.054</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>70.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
+   <name>Com-к</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/com/com.ac</path>
+   <offsets>
+     <x-m>-7.820</x-m>
+     <y-m>0.053</y-m>
+     <z-m>2.054</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>70.0</pitch-deg>
+   </offsets>
+  </model>q		
+  
 </PropertyList>
