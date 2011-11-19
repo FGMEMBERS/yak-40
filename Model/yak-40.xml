@@ -17,6 +17,18 @@
     <nopreview/>
 </model>
 -->
+<effect>
+	<inherits-from>Effects/lightmap</inherits-from>
+	<parameters>
+		<texture n="1">
+			<image>Aircraft/yak-40/Models/cpan_lmap.png</image>
+		</texture>
+		<condition><use>/controls/lighting/logo-lights</use></condition>
+		<factor><use>/controls/lighting/panel-norm</use></factor>
+	</parameters>
+ 	<object-name>cover.003</object-name> 
+</effect>
+
 <model>
   <path>Aircraft/Generic/Effects/tyre-smoke-nose.xml</path>
   <name>tyre-smoke-n</name>
