@@ -62,7 +62,7 @@
 	</greater-than>
       </and>
     </condition>
-  <property>engines/engine[1]/n2</property>
+  <property>yak-40/instrumentation/ite2t_1/n2</property>
   <interpolation>
     <entry><ind>	0.0</ind>	<dep>	51.0</dep></entry>
     <entry><ind>	60.0</ind>	<dep>	236.0</dep></entry>
