@@ -56,6 +56,9 @@ setprop("yak-40/switches/sw_fuel_check",0);
 	iku();
 	kppm_l();
 	kppm_r();
+	ite2t_1();
+	ite2t_2();
+	ite2t_3();
 	fuel_meter();
 	altimeter_l_handler();
  	altimeter_r_handler();
@@ -93,6 +96,45 @@ var angular_lowpass = {
 
 var needle_l = aircraft.angular_lowpass.new(0.001);
 var needle_r = aircraft.angular_lowpass.new(0.001);
+####################
+# ITE-2T
+####################
+ite2t_1 = func {
+  if (getprop("yak-40/instrumentation/ite2t_1/n1")==nil){setprop("yak-40/instrumentation/ite2t_1/n1",0.0)};
+  if (getprop("yak-40/instrumentation/ite2t_1/n2")==nil){setprop("yak-40/instrumentation/ite2t_1/n2",0.0)};
+  if (getprop("yak-40/instrumentation/ite2t_1/volts") > 20){
+    interpolate("yak-40/instrumentation/ite2t_1/n1",getprop("/fdm/jsbsim/propulsion/engine[0]/n1"),0.3);
+    interpolate("yak-40/instrumentation/ite2t_1/n2",getprop("engines/engine[0]/n2"),0.3);
+  } else {
+    interpolate("yak-40/instrumentation/ite2t_1/n1",0,1);
+    interpolate("yak-40/instrumentation/ite2t_1/n2",0,1);
+  }
+  settimer(ite2t_1,0.1);
+}
+ite2t_3 = func {
+  if (getprop("yak-40/instrumentation/ite2t_2/n1")==nil){setprop("yak-40/instrumentation/ite2t_2/n1",0.0)};
+  if (getprop("yak-40/instrumentation/ite2t_2/n2")==nil){setprop("yak-40/instrumentation/ite2t_2/n2",0.0)};
+  if (getprop("yak-40/instrumentation/ite2t_2/volts") > 20){
+    interpolate("yak-40/instrumentation/ite2t_2/n1",getprop("/fdm/jsbsim/propulsion/engine[1]/n1"),0.3);
+    interpolate("yak-40/instrumentation/ite2t_2/n2",getprop("engines/engine[1]/n2"),0.3);
+  } else {
+    interpolate("yak-40/instrumentation/ite2t_2/n1",0,1);
+    interpolate("yak-40/instrumentation/ite2t_2/n2",0,1);
+  }
+  settimer(ite2t_2,0.1);
+}
+ite2t_3 = func {
+  if (getprop("yak-40/instrumentation/ite2t_3/n1")==nil){setprop("yak-40/instrumentation/ite2t_3/n1",0.0)};
+  if (getprop("yak-40/instrumentation/ite2t_3/n2")==nil){setprop("yak-40/instrumentation/ite2t_3/n2",0.0)};
+  if (getprop("yak-40/instrumentation/ite2t_3/volts") > 20){
+    interpolate("yak-40/instrumentation/ite2t_3/n1",getprop("/fdm/jsbsim/propulsion/engine[2]/n1"),0.3);
+    interpolate("yak-40/instrumentation/ite2t_3/n2",getprop("engines/engine[2]/n2"),0.3);
+  } else {
+    interpolate("yak-40/instrumentation/ite2t_3/n1",0,1);
+    interpolate("yak-40/instrumentation/ite2t_3/n2",0,1);
+  }
+  settimer(ite2t_3,0.1);
+}
 ####################
 # IKU
 ####################

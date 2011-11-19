@@ -97,7 +97,7 @@ init_switches = func{
 }
 
 init_users = func{
-    ite2t_1 = UserClass.new("instrumentation", "ite2t_1");
+    ite2t_1 = UserClass.new("yak-40/instrumentation", "ite2t_1");
     ite2t_2 = UserClass.new("instrumentation", "ite2t_2");
     ite2t_3 = UserClass.new("instrumentation", "ite2t_3");
     adp = UserClass.new("instrumentation", "adp");
@@ -228,10 +228,10 @@ PO1500_steklo_on_bus_handler = func {
 
 az_ob_eng_1_handler = func {
   if( getprop("yak-40/switches/az_engine_1")==1 ){
-	bus27.add_users(ite2t_1,10,"instrumentation/ite2t_1");
+	bus27.add_users(ite2t_1,10,"yak-40/instrumentation/ite2t_1");
 	print("Engine indicator 1 on");
     } else {
-	bus27.rm_users("ite2t_1","instrumentation/ite2t_1");
+	bus27.rm_users("ite2t_1","yak-40/instrumentation/ite2t_1");
 	print("Engine indicator 1 off");
     }
 }
@@ -362,7 +362,7 @@ DCBusClass.update_load = func {
 	if (a == nil) return;
 	b=getprop(a);
 	if (b == nil) return;
-	print (b);
+# 	print (b);
   	load += getprop(a);
     }
     uload = me.uload.getValue();
