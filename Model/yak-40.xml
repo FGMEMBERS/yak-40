@@ -23,8 +23,8 @@
 		<texture n="1">
 			<image>Aircraft/yak-40/Models/cpan_lmap.png</image>
 		</texture>
-		<condition><use>/controls/lighting/logo-lights</use></condition>
-		<factor><use>/controls/lighting/panel-norm</use></factor>
+		<condition><use>yak-40/light/board_center</use></condition>
+	    <factor><use>yak-40/instrumentation/lights/board_center</use></factor>
 	</parameters>
  	<object-name>cover.003</object-name> 
 </effect>
@@ -124,6 +124,7 @@
   <path>Aircraft/yak-40/Panels/big_panel.xml</path>
 </model>
 
+<!--********************* Central Console panel **********************-->
  <model>
    <name>pedestal</name>
    <path>Aircraft/yak-40/Panels/pedestal.xml</path>
@@ -133,6 +134,29 @@
    <name>overhead</name>
    <path>Aircraft/yak-40/Panels/overhead.xml</path>
  </model>
+ 
+<model>
+  <name>bort_right</name>
+  <path>Aircraft/yak-40/Panels/bort_right.xml</path>
+</model>
+
+<!--************************** Central panel ***************************-->
+<model>
+  <name>Central_panel</name>
+  <path>Aircraft/yak-40/Panels/central.xml</path>
+</model>
+
+<!--************************** АЗС ПРАВЫЙ ЩИТОК***************************-->
+<model>
+  <name>AZS_right</name>
+  <path>Aircraft/yak-40/Panels/azs_right.xml</path>
+</model>
+
+<!--************************** АЗС ЛЕВЫЙ ЩИТОК***************************-->
+<model>
+  <name>AZS_left</name>
+  <path>Aircraft/yak-40/Panels/azs_left.xml</path>
+</model>
 
  <effect>
     <inherits-from>Aircraft/yak-40/Model/Effects/bumpspec-rs-r</inherits-from>
@@ -207,31 +231,7 @@
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
 </model>
-<!--************************** Central panel ***************************-->
-<!--KLN-89-->
-<model>
-  <name>Central_panel</name>
-  <path>Aircraft/yak-40/Panels/central.xml</path>
-</model>
 
-
-<!--********************* Central Console panel **********************-->
-
-
-<!--********************* BM panel **********************-->
-
-
-<!--************************** АЗС ПРАВЫЙ ЩИТОК***************************-->
-<model>
-  <name>AZS_right</name>
-  <path>Aircraft/yak-40/Panels/azs_right.xml</path>
-</model>
-
-<!--************************** АЗС ЛЕВЫЙ ЩИТОК***************************-->
-<model>
-  <name>AZS_left</name>
-  <path>Aircraft/yak-40/Panels/azs_left.xml</path>
-</model>
 
 
 <!--*************************** END PANELS ****************************-->
