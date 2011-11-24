@@ -154,7 +154,28 @@
       <z-m>1.266</z-m>
     </offsets>
   </model>
+  
+  <!--az_board_center-->
+  <model>
+    <name>az_board_center</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_big/az_board_center.xml</path>
+    <offsets>
+      <x-m>-8.158</x-m>
+      <y-m>0.863</y-m>
+      <z-m>1.244</z-m>
+    </offsets>
+  </model>
 
+  <!--az_board_right-->
+  <model>
+    <name>az_board_right</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_big/az_board_right.xml</path>
+    <offsets>
+      <x-m>-8.158</x-m>
+      <y-m>0.886</y-m>
+      <z-m>1.244</z-m>
+    </offsets>
+  </model>
 
  <!-- Right side -->
  <!--Включатель аккумуляторов-->

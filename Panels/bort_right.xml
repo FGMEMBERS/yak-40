@@ -1,0 +1,49 @@
+<PropertyList>
+  <model>
+   <name>Knob_panel_center</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/knobs/knob_board_center.xml</path>
+   <offsets>
+     <x-m>-7.434</x-m>
+     <y-m>0.851</y-m>
+     <z-m>1.184</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>-90.0</pitch-deg>
+   </offsets>
+  </model>
+  <model>
+   <name>Knob_overhead</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/knobs/knob_overhead.xml</path>
+   <offsets>
+     <x-m>-7.434</x-m>
+     <y-m>0.907</y-m>
+     <z-m>1.184</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>-90.0</pitch-deg>
+   </offsets>
+  </model>
+  <model>
+   <name>Knob_doska_right</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/knobs/knob_board_right.xml</path>
+   <offsets>
+     <x-m>-7.434</x-m>
+     <y-m>0.964</y-m>
+     <z-m>1.184</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>-90.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <!-- AZSes -->
+  <!--az_pozh_sign-->
+  <!--<model>
+    <name>az_pozh_sign</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/azs_big/az_pozh_sign.xml</path>
+    <offsets>
+      <x-m>-8.158</x-m>
+      <y-m>-0.776</y-m>
+      <z-m>1.362</z-m>
+    </offsets>
+  </model>-->
+
+  
+</PropertyList>
