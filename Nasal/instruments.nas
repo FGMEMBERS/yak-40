@@ -51,6 +51,7 @@ setprop("yak-40/switches/sw_fuel_check",0);
 	setprop("yak-40/instrumentation/uvid-15m-l/powered", 1);
 	setprop("yak-40/instrumentation/rv-5m/indicated-altitude-m",0);
 	setprop("yak-40/instrumentation/ap40/online-btn",0);
+	setprop("yak-40/switches/az_board_center",0);
 #	rv5m_handler();
 	rk();
 	iku();
@@ -111,7 +112,7 @@ ite2t_1 = func {
   }
   settimer(ite2t_1,0.1);
 }
-ite2t_3 = func {
+ite2t_2 = func {
   if (getprop("yak-40/instrumentation/ite2t_2/n1")==nil){setprop("yak-40/instrumentation/ite2t_2/n1",0.0)};
   if (getprop("yak-40/instrumentation/ite2t_2/n2")==nil){setprop("yak-40/instrumentation/ite2t_2/n2",0.0)};
   if (getprop("yak-40/instrumentation/ite2t_2/volts") > 20){

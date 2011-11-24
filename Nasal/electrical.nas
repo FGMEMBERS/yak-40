@@ -76,7 +76,7 @@ init_electrical = func {
     init_users();
     init_switches();
     
-
+    settimer(update_lights, UPDATE_PERIOD );
     settimer(update_buses_handler, UPDATE_PERIOD );
     settimer(update_electrical, UPDATE_PERIOD );
 
@@ -98,8 +98,8 @@ init_switches = func{
 
 init_users = func{
     ite2t_1 = UserClass.new("yak-40/instrumentation", "ite2t_1");
-    ite2t_2 = UserClass.new("instrumentation", "ite2t_2");
-    ite2t_3 = UserClass.new("instrumentation", "ite2t_3");
+    ite2t_2 = UserClass.new("yak-40/instrumentation", "ite2t_2");
+    ite2t_3 = UserClass.new("yak-40/instrumentation", "ite2t_3");
     adp = UserClass.new("instrumentation", "adp");
     agd_r = UserClass.new("instrumentation","agd_r");
 
@@ -114,8 +114,15 @@ init_users = func{
     setlistener("yak-40/switches/az_agd_r",az_agd_r_handler);
 }
 
-
-
+update_lights = func{
+  if (getprop("yak-40/switches/az_board_center")==nil){settimer(update_lights, UPDATE_PERIOD );}
+  if ((getprop("yak-40/systems/electrical/buses/bus27/volts")>16) and (getprop("yak-40/switches/az_board_center")==1)){
+    setprop("yak-40/light/board_center",1);
+  } else {
+    setprop("yak-40/light/board_center",0);
+  }
+  settimer(update_lights, UPDATE_PERIOD );
+}
 update_buses_handler = func{
 
 #     update_users();
