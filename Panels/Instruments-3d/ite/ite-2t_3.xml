@@ -12,23 +12,38 @@
 <PropertyList>
  <path>ite-2t.ac</path>
 <!-- Internal instruments lighting -->
-  
+<animation>
+  <type>material</type>
+  <condition>
+    <property>yak-40/switches/az_board_center</property>
+    <greater-than>
+      <property>yak-40/systems/electrical/buses/bus27/volts</property>
+      <value>16.0</value>
+    </greater-than>
+  </condition>
+  <object-name>Circle</object-name>
+  <object-name>bezel</object-name>
+  <object-name>base</object-name>
+  <object-name>needle_1</object-name>
+  <object-name>needle_2</object-name>
+  <emission>
+    <red-prop>yak-40/light/panel-l/red</red-prop>
+    <green-prop>yak-40/light/panel-l/green</green-prop>
+    <blue-prop>yak-40/light/panel-l/blue</blue-prop>
+    <factor-prop>yak-40/instrumentation/lights/board_center</factor-prop>
+  </emission>
+</animation>
 <!--Needles-->
+
 <animation>
     <type>rotate</type>
     <object-name>needle_1</object-name>
     <condition>
-      <and>
-	<not>
-	  <property>/instrumentation/ite2t_3/fail</property>
+    	<not>
+	  <property>yak-40/instrumentation/ite2t_3/fail</property>
 	</not>
-	<greater-than>
-	  <property>/instrumentation/ite2t_3/volts</property>
-	  <value>20.0</value>
-	</greater-than>
-      </and>
     </condition>
-    <property>/fdm/jsbsim/propulsion/engine[2]/n1</property>
+   <property>yak-40/instrumentation/ite2t_3/n1</property>
     <interpolation>
       <entry><ind>	0.0</ind>	<dep>	51.0</dep></entry>
       <entry><ind>	60.0</ind>	<dep>	236.0</dep></entry>
@@ -41,21 +56,16 @@
       <z>0.0</z>
     </axis>
 </animation>
+
 <animation>
   <type>rotate</type>
   <object-name>needle_2</object-name>
   <condition>
-      <and>
 	<not>
-	  <property>/instrumentation/ite2t_3/fail</property>
+	  <property>yak-40/instrumentation/ite2t_3/fail</property>
 	</not>
-	<greater-than>
-	  <property>/instrumentation/ite2t_3/volts</property>
-	  <value>20.0</value>
-	</greater-than>
-      </and>
-    </condition>
-  <property>engines/engine[2]/n2</property>
+  </condition>
+  <property>yak-40/instrumentation/ite2t_3/n2</property>
   <interpolation>
     <entry><ind>	0.0</ind>	<dep>	51.0</dep></entry>
     <entry><ind>	60.0</ind>	<dep>	236.0</dep></entry>
