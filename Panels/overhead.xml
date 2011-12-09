@@ -46,6 +46,18 @@
 	 <heading-deg>0.0</heading-deg>
 	 <pitch-deg>70.0</pitch-deg>
    </offsets>
-  </model>q		
+  </model>
+  
+  <model>
+   <name>Fire_hand_rh</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/buttons/fire_hand_lh.xml</path>
+   <offsets>
+     <x-m>-8.027</x-m>
+     <y-m>-0.038</y-m>
+     <z-m>1.969</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>70.0</pitch-deg>
+   </offsets>
+  </model>
   
 </PropertyList>
