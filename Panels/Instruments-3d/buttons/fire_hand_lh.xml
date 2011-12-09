@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<PropertyList>
+ <path>btn.ac</path>
+<!-- Internal instruments lighting -->
+<!-- altitude-->
+
+<!--Warning lamp
+<animation>
+  <type>material</type>
+  <object-name>lamp</object-name>
+  <emission>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+    <factor-prop>tu154/systems/electrical/checking-lamps/lamps-power</factor-prop>
+  </emission>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>lamp</object-name>
+  <condition>
+    <or>
+  	<property>tu154/instrumentation/rv-5m/warn</property>
+        <property>tu154/systems/electrical/checking-lamps/main-panel</property>
+    </or>
+  </condition>
+</animation>
+-->
+<animation>
+    <type>translate</type>
+    <object-name>btn</object-name>
+    <property>yak-40/switches/fire_hand_rh</property>
+    <interpolation>
+      <entry><ind>      0.0</ind>      <dep>   0.0</dep></entry>
+      <entry><ind>      1.0</ind>      <dep>   -0.0030</dep></entry>
+    </interpolation>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>btn</object-name>
+  <visible>true</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+        setprop("yak-40/switches/fire_hand_rh",-1);
+        interpolate("yak-40/switches/fire_hand_rh",1,0.1);
+      </script>
+    </binding>
+    <mod-up>
+      <binding>
+	<command>nasal</command>
+	<script>
+          setprop("yak-40/switches/fire_hand_rh",0);
+          interpolate("yak-40/switches/fire_hand_rh",0,0.1);
+        </script>
+      </binding>
+    </mod-up>  
+  </action>
+</animation>
+
+</PropertyList>
