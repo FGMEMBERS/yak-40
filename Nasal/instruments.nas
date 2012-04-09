@@ -191,6 +191,16 @@ iku = func {
 #############################
 # Radio compass
 #############################
+#ШУМ = 0.5*((sin(ticks/5)+0.05)*0.5+(sin(ticks/23)-0.05)*0.8+sin(ticks/111)*0.3+sin(ticks/166)*0.3);
+#где ticks есть TICK18
+
+#срелка_угол += ШУМ; 
+
+#срелка_угол  и ШУМ - в градусах
+
+#Для второго полукомплекта коэффициенты немного другие:
+#0.5*((sin(ticks/6)+0.05)*0.5+(sin(ticks/15)-0.05)*0.8+sin(ticks/132)*0.3+sin(ticks/178)*0.3)
+
 var needle_1 = aircraft.angular_lowpass.new(0.001);
 var needle_2 = aircraft.angular_lowpass.new(0.001);
 
