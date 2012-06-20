@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>FluorLight.ac</path>
+
+  <animation>
+    <object-name>left-flor-body</object-name>
+    <object-name>left-flor-front</object-name>
+    <object-name>left-flor-cord</object-name>
+    <object-name>left-flor-bracket</object-name>
+    <object-name>Bulb</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>Bulb</object-name>
+    <emission>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+  
+</PropertyList>

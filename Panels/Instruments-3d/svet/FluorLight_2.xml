@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>FluorLight_2.ac</path>
+
+  <animation>
+    <object-name>left-flor-body</object-name>
+    <object-name>left-flor-front</object-name>
+    <object-name>left-flor-cord</object-name>
+    <object-name>left-flor-bracket</object-name>
+    <object-name>Bulb</object-name>
+    <object-name>LightVolume</object-name>
+  </animation>
+
+ <animation>
+    <type>material</type>
+    <object-name>left-flor-front</object-name>
+    <emission>
+      <red>   0.8 </red>
+      <green> 0.8 </green>
+      <blue>  0.8 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>Bulb</object-name>
+   <condition>
+     <equals>
+        <property>/sim/model/lights/FluorLamp[1]</property>
+     <value>true</value>
+     </equals>
+   </condition>
+    <emission>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>left-flor-front</object-name>
+    <object-name>left-flor-body</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/model/lights/FluorLamp[1]</property>
+      </binding>
+    </action>
+  </animation>
+ 
+  <animation>
+   <type>select</type>
+  <object-name>LightVolume</object-name>   
+  <nopreview/>
+   <condition>
+     <equals>
+        <property>/sim/model/lights/FluorLamp[1]</property>
+     <value>true</value>
+     </equals>
+   </condition>
+ </animation>
+
+<!--light effect-->
+
+  <animation>
+    <type>light</type>
+    <light-type>spot</light-type>
+    <name>FluorLight</name>
+    <object-name>LightVolume</object-name>
+    <position>
+      <x> 0.138</x>
+      <y>-0.052</y>
+      <z> 0.050</z>
+    </position>
+    <direction>
+      <x>-69.639</x>
+      <y>-17.636</y>
+      <z>-52.079</z>
+    </direction>
+    <ambient>
+      <r> 0.0 </r>
+      <g> 0.0 </g>
+      <b> 0.0 </b>
+      <a> 0.5  </a>
+    </ambient>
+    <diffuse>
+      <r> 0.5  </r>
+      <g> 0.4  </g>
+      <b> 0.8  </b>
+      <a> 1.0  </a>
+    </diffuse>
+    <specular>
+      <r> 0.0 </r>
+      <g> 0.0 </g>
+      <b> 0.0 </b>
+      <a> 1.0 </a>
+    </specular>
+    <attenuation>
+      <c>0.5</c>
+      <l>0.002</l>
+      <q>0.00005</q>
+    </attenuation>
+    <exponent>25</exponent> 
+    <near-m>0.001</near-m>
+    <far-m>50</far-m>
+    <cutoff>50</cutoff>
+  </animation>
+</PropertyList>
