@@ -1,4 +1,5 @@
 AC3Db
+MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
 OBJECT world
 kids 15
 OBJECT poly
@@ -7,7 +8,7 @@ loc -0.00045 0.0067 -0.001899
 data 9
 Plane.012
 texture "pu_27.png"
-texrep 1 1
+texrep 1.000000 1.000000
 crease 179.000000
 numvert 4
 0 -0.004959 -0.000384
@@ -29,7 +30,7 @@ loc -0.002974 -0.05327 0.047893
 data 10
 contr_back
 texture "pu_27.png"
-texrep 1 1
+texrep 1.000000 1.000000
 crease 179.000000
 numvert 64
 0.000002 0.030924 -0.014549
@@ -440,7 +441,7 @@ loc -0.002974 -0.05327 0.047893
 data 11
 contr_front
 texture "pu_27.png"
-texrep 1 1
+texrep 1.000000 1.000000
 crease 179.000000
 numvert 81
 0.019104 0.025879 -0.002369
@@ -1076,7 +1077,7 @@ loc -0.000711 0.031574 -0.025063
 data 5
 l_osn
 texture "pu_27.png"
-texrep 1 1
+texrep 1.000000 1.000000
 crease 179.000000
 numvert 33
 0 0 -0.006492
@@ -1328,7 +1329,7 @@ loc -0.000711 0.031574 0.020465
 data 5
 l_zap
 texture "pu_27.png"
-texrep 1 1
+texrep 1.000000 1.000000
 crease 179.000000
 numvert 33
 0 0 -0.006492
@@ -1580,7 +1581,7 @@ loc 0.000252 0.000129 -0.030558
 data 5
 plate
 texture "pu_27.png"
-texrep 1 1
+texrep 1.000000 1.000000
 crease 179.000000
 numvert 1020
 0 0 -0.006624
@@ -9473,7 +9474,7 @@ loc -0.002974 0.000001 0.047308
 data 8
 s-n_back
 texture "pu_27.png"
-texrep 1 1
+texrep 1.000000 1.000000
 crease 179.000000
 numvert 64
 0.000002 0.030924 -0.014549
@@ -9884,7 +9885,7 @@ loc -0.002974 0.000001 0.047308
 data 9
 s-n_front
 texture "pu_27.png"
-texrep 1 1
+texrep 1.000000 1.000000
 crease 179.000000
 numvert 81
 0.019104 0.025879 -0.002369
@@ -10520,7 +10521,7 @@ loc -0.000929 -0.014141 -0.002086
 data 7
 shirota
 texture "pu_27.png"
-texrep 1 1
+texrep 1.000000 1.000000
 crease 179.000000
 numvert 114
 -0 0 0.025277
@@ -11477,7 +11478,7 @@ loc -0.002974 0.000001 -0.000006
 data 7
 sw_back
 texture "pu_27.png"
-texrep 1 1
+texrep 1.000000 1.000000
 crease 179.000000
 numvert 64
 0.000002 0.030924 -0.014549
@@ -11888,7 +11889,7 @@ loc -0.002974 0.000001 -0.000006
 data 8
 sw_front
 texture "pu_27.png"
-texrep 1 1
+texrep 1.000000 1.000000
 crease 179.000000
 numvert 81
 0.019104 0.025879 -0.002369
@@ -12524,7 +12525,7 @@ loc -0.002974 -0.000212 -0.045813
 data 10
 vybor_back
 texture "pu_27.png"
-texrep 1 1
+texrep 1.000000 1.000000
 crease 179.000000
 numvert 64
 0.000002 0.030924 -0.014549
@@ -12935,7 +12936,7 @@ loc -0.002974 -0.000212 -0.045813
 data 11
 vybor_front
 texture "pu_27.png"
-texrep 1 1
+texrep 1.000000 1.000000
 crease 179.000000
 numvert 81
 0.019104 0.025879 -0.002369
@@ -13571,7 +13572,7 @@ loc -0.002974 -0.05327 -0.045651
 data 7
 zk_back
 texture "pu_27.png"
-texrep 1 1
+texrep 1.000000 1.000000
 crease 179.000000
 numvert 64
 0.000002 0.030924 -0.014549
@@ -13982,7 +13983,7 @@ loc -0.002974 -0.05327 -0.045651
 data 8
 zk_front
 texture "pu_27.png"
-texrep 1 1
+texrep 1.000000 1.000000
 crease 179.000000
 numvert 81
 0.019104 0.025879 -0.002369
