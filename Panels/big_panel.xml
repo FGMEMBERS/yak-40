@@ -300,4 +300,15 @@
     </offsets>
   </model>
   
+ <!--ПУ-27--> 
+  <model>
+    <name>pu_27</name>
+    <path>Aircraft/yak-40/Panels/Instruments-3d/pu-27/pu-27.ac</path>
+    <offsets>
+      <x-m>-8.154</x-m>
+      <y-m>0.671</y-m>
+      <z-m>1.250</z-m>
+    </offsets>
+  </model>
+  
 </PropertyList>
