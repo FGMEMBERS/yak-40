@@ -154,4 +154,28 @@
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
   </model>
+  
+  <model>
+   <name>Var-10</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/electric/vr-10/vr-10.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>0.19295</y-m>
+     <z-m>1.3444</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
+   <name>TUE-48K</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/electric/tue-48k/tue-48k.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>0.2817</y-m>
+     <z-m>1.3378</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
 </PropertyList>
