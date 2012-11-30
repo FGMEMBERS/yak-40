@@ -10,7 +10,7 @@
 <!-- Variometer
 3D instrument for Tu-154 -->
 <PropertyList>
- <path>var-30.ac</path>
+ <path>vr-10.ac</path>
 <!-- Internal instruments lighting -->
 <animation>
   <type>material</type>
