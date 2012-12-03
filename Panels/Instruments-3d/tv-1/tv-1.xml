@@ -10,7 +10,7 @@
 <!-- TNV-15 termometer
 3D instrument for Tu-154 -->
 <PropertyList>
- <path>tnv-15.ac</path>
+ <path>tv-1.ac</path>
 <!-- Internal instruments lighting -->
 <animation>
   <type>material</type>
