@@ -178,4 +178,41 @@
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
   </model>
+  
+  <model>
+   <name>UVPD</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/uvpd/uvpd.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>0.193</y-m>
+     <z-m>1.4313</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
+   <name>TV-1</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tv-1/tv-1.xml</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>0.5281</y-m>
+     <z-m>1.3171</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
+  <model>
+   <name>URVK-18K</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/urvk/urvk-18k.ac</path>
+   <offsets>
+     <x-m>-8.156</x-m>
+     <y-m>0.5191</y-m>
+     <z-m>1.40014</z-m>
+	 <heading-deg>0.0</heading-deg>
+	 <pitch-deg>0.0</pitch-deg>
+   </offsets>
+  </model>
+  
 </PropertyList>
