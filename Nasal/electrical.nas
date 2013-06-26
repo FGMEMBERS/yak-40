@@ -1,284 +1,574 @@
-# Pilot40&CAXAP
-# Yak-40 electrical system.
-print("Initializing Electrical System");
+#Yak-40 electrical system.
+
+print(getprop("/sim/gui/dialogs"));
+
 
 var UPDATE_PERIOD = 0.3;
 
-var enode="yak-40/systems/electrical/";
-var swnode = "yak-40/switches/";
+var enode="yak40/systems/electrical/";
+var swnode = "yak40/switches/";
 
 var battery1 = nil;
 var battery2 = nil;
 
-var gen1 = nil;
-var gen2 = nil;
-var gen3 = nil;
+var VG7500_1 = nil;
+var VG7500_2 = nil;
+var VG7500_3 = nil;
 
-var rap_27 = nil;
-var rap_115 = nil;
+var RAP = nil;
 
-var po1500_steklo = nil;
-var po1500_2 = nil;
+var TSZZOSS4B_1 = nil;
+var TSZZOSS4B_2 = nil;
 
-var po500_1 = nil;
-var po500_2 = nil;
 
-var bus27 = nil;
-var akk_bus = nil;
-var bus115 = nil;
-var bus36 = nil;
+var VU6B_1 = nil;
+var VU6B_2 = nil;
+var VU6B_3 = nil;
 
-var ite2t_1 = nil;
-var ite2t_2 = nil;
-var ite2t_3 = nil;
-var adp = nil;
-var agd_r = nil;
+var PTS_250_1 = nil;
+var PTS_250_2 = nil;
+var POS_125 = nil;
 
-var beacon = aircraft.light.new( "/sim/model/lights/beacon", [0.05, 0.05] );
-beacon.interval = 0;
+
+var DC27_bus   = nil;
+var DC27_bus_avar   = nil;
+
+
+var AC1x115_bus = nil;
+
+var AC3x36_bus = nil;
+
+var last_time = 0.0;
+var bat_src_volts = 0.0;
+var alt_flag = 0x00;
+
+ammeter_ave = 0.0;
+
+update_buses_thandler = func{
+
+    AC1x115_bus.update_voltage();
+        
+    TSZZOSS4B_1.update();
+    TSZZOSS4B_2.update();
+
+    AC3x36_bus.update_voltage();
+    
+    VG7500_1.update();
+    VG7500_2.update();
+    VG7500_3.update();
+
+    DC27_bus.update_voltage();
+    DC27_bus_avar.update_voltage();
+
+    PTS_250_1.update();
+    PTS_250_2.update();
+    POS_125.update();
+
+    AC1x115_bus.update_load();
+    
+    AC3x36_bus.update_load();
+    
+    DC27_bus.update_load();
+    DC27_bus_avar.update_load();
+    
+    settimer(update_buses_thandler, UPDATE_PERIOD );
+
+}
+
+
+RPPO30_KP_1_handler = func {
+    n2=getprop("engines/engine[0]/n2");
+    setprop("engines/engine[0]/rpm", n2>53 ? n2*73.9 : 0.0);
+}
+RPPO30_KP_2_handler = func {
+    n2=getprop("engines/engine[1]/n2");
+    setprop("engines/engine[1]/rpm", n2>53 ? n2*73.9 : 0.0);
+}
+RPPO30_KP_3_handler = func {
+    n2=getprop("engines/engine[2]/n2");
+    setprop("engines/engine[2]/rpm", n2>53 ? n2*73.9 : 0.0);
+}
+
+
+VG7500_1_rpm_handler = func {
+    VG7500_1.rpm_handler();
+}
+VG7500_2_rpm_handler = func {
+    VG7500_2.rpm_handler();
+}
+VG7500_3_rpm_handler = func {
+    VG7500_3.rpm_handler();
+}
+
+generator_1_shandler = func{
+    if( getprop("yak40/switches/generator-1")==1 ){
+	DC27_bus.add_input( VG7500_1 );
+	VG7500_1.connect_to_bus( DC27_bus );
+	DC27_bus.rm_input( "RAP" );
+#	setprop("tu154/lamps/generator-1",0.0);
+	print(" VG7500-1 On");
+    } 
+    if( getprop("yak40/switches/generator-1")==0 ){
+	DC27_bus.rm_input( "VG7500-1" );
+	VG7500_1.disconnect_from_bus();
+#	setprop("tu154/lamps/generator-1",1.0);
+	print("VG7500-1 Off");
+    }
+}
+
+generator_2_shandler = func{
+    if( getprop("yak40/switches/generator-2")==1 ){
+	DC27_bus.add_input( VG7500_2 );
+	VG7500_2.connect_to_bus( DC27_bus );
+	DC27_bus.rm_input( "RAP" );
+#	setprop("tu154/lamps/generator-1",0.0);
+	print(" VG7500-2 On");
+    } 
+    if( getprop("yak40/switches/generator-2")==0 ){
+	DC27_bus.rm_input( "VG7500-2" );
+	VG7500_2.disconnect_from_bus();
+#	setprop("tu154/lamps/generator-1",1.0);
+	print("VG7500-2 Off");
+    }
+}
+
+generator_3_shandler = func{
+    if( getprop("yak40/switches/generator-3")==1 ){
+	DC27_bus.add_input( VG7500_3 );
+	VG7500_3.connect_to_bus( DC27_bus );
+	DC27_bus.rm_input( "RAP" );
+#	setprop("tu154/lamps/generator-1",0.0);
+	print(" VG7500-3 On");
+    } 
+    if( getprop("yak40/switches/generator-3")==0 ){
+	DC27_bus.rm_input( "VG7500-3" );
+	VG7500_3.disconnect_from_bus();
+#	setprop("tu154/lamps/generator-1",1.0);
+	print("VG7500-3 Off");
+    }
+}
+
+main_battery_handler = func{
+    if( getprop("yak40/switches/main-battery")==1 ){
+	DC27_bus_avar.add_input( battery1 );
+	DC27_bus_avar.add_input( battery2 );
+	battery1.connect_to_bus( DC27_bus_avar );
+	battery2.connect_to_bus( DC27_bus_avar );
+#	setprop("tu154/lamps/battery",1.0);
+	print("Battery on");
+    } 
+    if( getprop("yak40/switches/main-battery")==0 ){
+	DC27_bus_avar.rm_input( battery1.name );
+	DC27_bus_avar.rm_input( battery2.name );
+	battery1.disconnect_from_bus();
+	battery2.disconnect_from_bus();
+#	setprop("tu154/lamps/battery",0.0);
+	print("Battery off");
+    }
+}
+
+APU_RAP_shandler = func{
+    if( getprop("tu154/switches/APU-RAP-selector")==0 ){
+	DC27_bus.rm_input( "RAP" );
+
+	print(" RAP Off");
+    }
+    if( getprop("tu154/switches/APU-RAP-selector")==1 ){
+	DC27_bus.add_input( RAP );
+	
+	print(" RAP On");
+    }
+}
+
+
+AGR_shandler = func{
+    if( getprop("tu154/switches/AGR")==1 ){
+	DC27_bus_Lv.add_output( "PTS-250-1" ,0.0);
+	AC3x36_bus_PTS1.add_input( "PTS-250-1" );
+	print(" AGR On");
+    } 
+    if( getprop("tu154/switches/vypr-2")==0 ){
+	AC3x36_bus_PTS1.rm_input( "PTS-250-1" );
+	DC27_bus_Lv.rm_output( "PTS-250-1" );
+	print(" AGR Off");
+    }
+}
+
+
+
+
 
 init_electrical = func {
-    
     print("Initializing Nasal Electrical System");
 
-    battery1 = BatteryClass.new( "A20NKBN25-1" );
-    battery2 = BatteryClass.new( "A20NKBN25-2" );
+    battery1 = BatteryClass.new( "20NKBN25-1" );
+    battery2 = BatteryClass.new( "20NKBN25-2" );
+    
+    VG7500_1 = DCAlternatorClass.new( "VG7500-1" );
+    VG7500_1.rpm_source( props.globals.getNode("engines/engine[0]") );
+    VG7500_2 = DCAlternatorClass.new( "VG7500-2" );
+    VG7500_2.rpm_source( props.globals.getNode("engines/engine[1]") );
+    VG7500_3 = DCAlternatorClass.new( "VG7500-3" );
+    VG7500_3.rpm_source( props.globals.getNode("engines/engine[2]") );
+    
+    RAP = ExternalClass.new("RAP");
 
-    akk_bus = DCBusClass.new("akk_bus");
-    
-    gen1 = DCAlternatorClass.new( "gen1" );
-    gen1.rpm_source( props.globals.getNode("engines/engine[0]") );
-    gen2 = DCAlternatorClass.new( "gen2" );
-    gen2.rpm_source( props.globals.getNode("engines/engine[1]") );
-    gen3 = DCAlternatorClass.new( "gen3" );
-    gen3.rpm_source( props.globals.getNode("engines/engine[2]") );
-    
-    rap_27 = ExternalClass.new("rap_27");
-    rap_115 = ExternalClass.new("rap_115");
+    TSZZOSS4B_1 = TransformerClass.new("TSZZOSS4B-1", 0.18 );
+    TSZZOSS4B_2 = TransformerClass.new("TSZZOSS4B-2", 0.18 );
+
+    PTS_250_1 = DCACinverterClass.new("PTS-250-1", 7.4 );
+    PTS_250_2 = DCACinverterClass.new("PTS-250-2", 7.4 );
+    POS_125 = DCACinverterClass.new("POS-125", 4.4 );
+
+    VU6B_1 = ACDCconverterClass.new( "VU6B-1", 0.135 );
+    VU6B_2 = ACDCconverterClass.new( "VU6B-2", 0.135 );
+    VU6B_3 = ACDCconverterClass.new( "VU6B-3", 0.135 );
 
     
 
-    po1500_steklo = DCACinverterClass.new("PO-1500-steklo", 1.33 );
-    
-    po1500_2 = DCACinverterClass.new("PO-1500-2", 1.33 );
-    
-    po500_1 = DCACinverterClass.new("PT-500-1", 4.26 );
-    po500_2 = DCACinverterClass.new("PT-500-2", 4.26 );
-        
-    bus27 = DCBusClass.new( "bus27");
-        
-    bus36 = ACBusClass.new( "AC3x36-bus" );
-   
-    bus115 = ACBusClass.new( "AC1x115-bus" );
-    
-    bus36.add_input( po1500_steklo );
+    DC27_bus   = DCBusClass.new( "DC27-bus" );
+    DC27_bus_avar  = DCBusClass.new( "DC27-bus-avar" );
 
-    init_users();
-    init_switches();
+    AC1x115_bus = ACBusClass.new( "AC1x115-bus" );
     
-    settimer(update_lights, UPDATE_PERIOD );
-    settimer(update_buses_handler, UPDATE_PERIOD );
-    settimer(update_electrical, UPDATE_PERIOD );
+    AC3x36_bus    = ACBusClass.new( "AC3x36-bus" );
+    
+    
+#--------- connect bases ------------------
+    DC27_bus_L.add_input( DC27_bus_Lv );
+    DC27_bus_R.add_input( DC27_bus_Rv );
 
+    DC27_bus_Lv.add_output( "DC27-bus-L" ,0.0);
+    DC27_bus_Rv.add_output( "DC27-bus-R" ,0.0);
+
+    DC27_bus_Lv.add_output( "POS-125" ,20.0);
+    DC27_bus_Lv.add_output( "PTS-250-1" ,20.0);
+    DC27_bus_Rv.add_output( "PTS-250-2" ,20.0);
+
+    AC3x36_bus_L.add_input( TSZZOSS4B_1 );
+    AC3x36_bus_PTS1.add_input( PTS_250_1 );
+    AC3x36_bus_PTS2.add_input( PTS_250_2 );
+    AC3x36_bus_R.add_input( TSZZOSS4B_2 );
+
+    AC3x200_bus_1L.add_output( "VU6B-1", 25.0);
+    AC3x200_bus_3R.add_output( "VU6B-2", 25.0);
+    AC3x200_bus_1L.add_output( "TSZZOSS4B-1",10.0);
+    AC3x200_bus_3R.add_output( "TSZZOSS4B-2",10.0);
+
+# Added by Yurik V. Nikiforoff
+# connect fuel system. it's a hack...
+    AC3x200_bus_1L.add_output( "FUEL_SYSTEM", 20.0);
+    AC3x200_bus_2.add_output( "FUEL_SYSTEM", 20.0);
+    AC3x200_bus_3R.add_output( "FUEL_SYSTEM", 20.0);
+
+
+    TSZZOSS4B_1.add_input( AC3x200_bus_1L );
+    TSZZOSS4B_2.add_input( AC3x200_bus_3R );
+
+    PTS_250_1.add_input( DC27_bus_Lv );
+    PTS_250_2.add_input( DC27_bus_Rv );
+    POS_125.add_input( DC27_bus_Lv );
+
+    VU6B_1.add_input( AC3x200_bus_1L );
+    VU6B_2.add_input( AC3x200_bus_3R );
+
+
+
+    setprop("tu154/switches/main-battery", 0);
+    setlistener("tu154/switches/main-battery", main_battery_handler,0,0 );
+
+  setprop("tu154/switches/ut7-3-serviceable", 0);  
+  setprop("tu154/switches/pump-1-serviceable", 0);  
+  setprop("tu154/switches/pump-2-serviceable", 0);  
+  setprop("tu154/switches/pump-3-serviceable", 0);  
+  setprop("tu154/switches/pump-4-serviceable", 0);  
+  setprop("tu154/switches/tank-4-serviceable", 0);  
+  setprop("tu154/switches/tank-3-left-serviceable", 0);  
+  setprop("tu154/switches/tank-3-right-serviceable", 0);  
+  setprop("tu154/switches/tank-2-left-serviceable", 0);  
+  setprop("tu154/switches/tank-2-right-serviceable", 0);  
+  setprop("tu154/switches/zk-selector", 0);  
+  setprop("tu154/switches/fuel-meter-serviceable", 0);  
+  setprop("tu154/switches/fuel-autolevel-serviceable", 0);  
+  setprop("tu154/switches/fuel-autoconsumption-mode", 0);  
+  setprop("tu154/switches/fuel-consumption-meter", 0);  
+  setprop("tu154/switches/ext-hydro-pump-2", 0);  
+  setprop("tu154/switches/ext-hydro-pump-3", 0);  
+  setprop("tu154/switches/APU-starter-switch", 0);  
+  setprop("tu154/switches/APU-starter-selector", 0);  
+  setprop("tu154/switches/AUASP", 0);  
+  setprop("tu154/switches/AUASP-check", 0);  
+  setprop("tu154/switches/main-battery", 0);  
+  setprop("tu154/switches/UVID", 0);  
+  setprop("tu154/switches/EUP", 0);  
+    setprop("tu154/switches/AGR", 0);  
+#   setlistener("tu154/switches/AGR", AGR_shandler,0,0 );
+  setprop("tu154/switches/TKC-power-1", 0);  
+  setprop("tu154/switches/TKC-power-2", 0);  
+  setprop("tu154/switches/TKC-heat", 0);  
+  setprop("tu154/switches/TKC-BGMK-1", 0);  
+  setprop("tu154/switches/TKC-BGMK-2", 0);  
+  setprop("tu154/switches/KURS-PNP-left", 0);  
+  setprop("tu154/switches/KURS-PNP-right", 0);  
+    setprop("tu154/switches/vypr-1", 0);  
+    setlistener("tu154/switches/vypr-1", VU6B_1_shandler,0,0 );
+  setprop("tu154/switches/SVS-power", 0);  
+  setprop("tu154/switches/SVS-heat", 0);  
+  setprop("tu154/switches/fasten-seat-belts", 0);  
+  setprop("tu154/switches/no-smoking", 0);  
+  setprop("tu154/switches/exit", 0);  
+  setprop("tu154/switches/pito-heat", 0);  
+  setprop("tu154/switches/DISS-power", 0);  
+  setprop("tu154/switches/DISS-surface", 0);  
+  setprop("tu154/switches/DISS-check", 0);  
+  setprop("tu154/switches/KURS-MP-1", 0);  
+    setprop("tu154/switches/vypr-2", 0);  
+    setlistener("tu154/switches/vypr-2", VU6B_2_shandler,0,0 );
+  setprop("tu154/switches/KURS-MP-2", 0);  
+  setprop("tu154/switches/RSBN-power", 0);  
+  setprop("tu154/switches/RSBN-opozn", 0);  
+  setprop("tu154/switches/RV-5-1", 0);  
+  setprop("tu154/switches/RV-5-2", 0);  
+  setprop("tu154/switches/comm-power-1", 0);  
+  setprop("tu154/switches/comm-power-2", 0);  
+  setprop("tu154/switches/adf-power-1", 0);  
+  setprop("tu154/switches/adf-power-2", 0);  
+  setprop("tu154/switches/stab-hyro-1", 0);  
+    setprop("tu154/switches/generator-1", 0);  
+    setlistener("tu154/switches/generator-1", generator_1_shandler,0,0 );
+  setprop("tu154/switches/stab-hyro-2", 0);  
+  setprop("tu154/switches/landing-light-retract", 0);  
+    setprop("tu154/switches/generator-2", 0);  
+    setlistener("tu154/switches/generator-2", generator_2_shandler,0,0 );
+    setprop("tu154/switches/generator-3", 0);  
+    setlistener("tu154/switches/generator-3", generator_3_shandler,0,0 );
+  setprop("tu154/switches/ut7-1-serviceable", 0);  
+  setprop("tu154/switches/ut7-2-serviceable", 0);  
+#  setprop("tu154/switches/azs1-1", 0);  
+#  setprop("tu154/switches/azs1-1", 0);  
+  setprop("tu154/switches/BKK-test", 0);  
+  setprop("tu154/switches/BKK-test-cover", 0);  
+  setprop("tu154/switches/BKK-power", 0);  
+  setprop("tu154/switches/BKK-power-cover", 0);  
+  setprop("tu154/switches/SAU-STU", 0);  
+  setprop("tu154/switches/SAU-STU-cover", 0);  
+  setprop("tu154/switches/PKP-left", 0);  
+  setprop("tu154/switches/PKP-left-cover", 0);  
+  setprop("tu154/switches/PKP-right", 0);  
+  setprop("tu154/switches/PKP-right-cover", 0);  
+  setprop("tu154/switches/MGV-contr", 0);  
+  setprop("tu154/switches/MGV-contr-cover", 0);  
+  setprop("tu154/switches/steering", 0);  
+  setprop("tu154/switches/steering-cover", 0);  
+  setprop("tu154/switches/steering-limit", 0);  
+  setprop("tu154/switches/steering-limit-cover", 0);  
+  setprop("tu154/switches/transfer-valve-1", 0);  
+  setprop("tu154/switches/transfer-valve-1-cover", 0);  
+  setprop("tu154/switches/transfer-valve-2", 0);  
+  setprop("tu154/switches/transfer-valve-2-cover", 0);  
+  setprop("tu154/switches/emergency-alternator", 0);  
+  setprop("tu154/switches/emergency-alternator-cover", 0);  
+  setprop("tu154/switches/APU-cutoff-valve", 0);  
+  setprop("tu154/switches/APU-cutoff-valve-cover", 0);  
+  setprop("tu154/switches/hydrosystem-1-to-2", 0);  
+  setprop("tu154/switches/hydrosystem-1-to-2-cover", 0);  
+  setprop("tu154/switches/fuel-autoconsumption-serviceable", 0);  
+  setprop("tu154/switches/fuel-autoconsumption-serviceable-cover", 0);  
+  setprop("tu154/switches/fuel-cutoff-valve-1", 0);  
+  setprop("tu154/switches/fuel-cutoff-valve-1-cover", 0);  
+  setprop("tu154/switches/fuel-cutoff-valve-2", 0);  
+  setprop("tu154/switches/fuel-cutoff-valve-2-cover", 0);  
+  setprop("tu154/switches/fuel-cutoff-valve-3", 0);  
+  setprop("tu154/switches/fuel-cutoff-valve-3-cover", 0);  
+#  setprop("tu154/switches/azs3-1", 0);  
+  setprop("tu154/switches/capt-idr-selector", 0);  
+  setprop("tu154/switches/copilot-idr-selector", 0);  
+  setprop("tu154/switches/APU-bleed", 1);  
+    setprop("tu154/switches/APU-RAP-selector", 1);  
+    setlistener("tu154/switches/APU-RAP-selector", APU_RAP_shandler,0,0 );
+  setprop("tu154/switches/headlight-mode", 1);  
+  setprop("tu154/switches/voltage-src-selector", 0);  
+  setprop("tu154/switches/voltage-phase-selector", 0);  
+  setprop("tu154/switches/current-src-selector", 0);  
+  setprop("tu154/switches/current-phase-selector", 0);  
+  setprop("tu154/switches/dc-src-selector", 0);  
+  setprop("tu154/switches/POS", 0);  
+
+
+    setlistener("engines/engine[0]/n2", RPPO30_KP_1_handler,0,0 );
+    setlistener("engines/engine[1]/n2", RPPO30_KP_2_handler,0,0 );
+    setlistener("engines/engine[2]/n2", RPPO30_KP_3_handler,0,0 );
+    setlistener("engines/engine[3]/n2", RPPO30_KP_4_handler,0,0 );
+
+    setlistener("engines/engine[0]/rpm", GT40_1_rpm_handler,0,0 );
+    setlistener("engines/engine[1]/rpm", GT40_2_rpm_handler,0,0 );
+    setlistener("engines/engine[2]/rpm", GT40_3_rpm_handler,0,0 );
+# Added by Yurik V. Nikiforoff, sep 2008
+    setlistener("engines/engine[3]/rpm", GT40_APU_rpm_handler,0,0 );
+
+
+    settimer(update_buses_thandler, UPDATE_PERIOD );
+settimer(update_electrical, 0);
 }
 
-init_switches = func{
- 
-  setprop("yak-40/switches/az_bat_1",1);
-  setprop("yak-40/switches/az_bat_2",1);
-  setprop("yak-40/switches/az_akk", 0);
-  setprop("yak-40/switches/po1500_steklo", 0);
-  setprop("yak-40/switches/po1500_2", 0);
-  setprop("yak-40/switches/az_adp", 0);
-  setprop("yak-40/switches/az_agd_r", 0);
-  setprop("yak-40/switches/az_engine_1", 0);
-  setprop("yak-40/switches/az_ob_eng_2", 0);
-  setprop("yak-40/switches/az_ob_eng_3", 0);
-}
-
-init_users = func{
-    ite2t_1 = UserClass.new("yak-40/instrumentation", "ite2t_1");
-    ite2t_2 = UserClass.new("yak-40/instrumentation", "ite2t_2");
-    ite2t_3 = UserClass.new("yak-40/instrumentation", "ite2t_3");
-    adp = UserClass.new("instrumentation", "adp");
-    agd_r = UserClass.new("instrumentation","agd_r");
-
-    setlistener("yak-40/switches/azs_po_steklo", PO1500_steklo_on_bus_handler);
-    setlistener("yak-40/switches/az_engine_1", az_ob_eng_1_handler);
-    setlistener("yak-40/switches/az_ob_eng_2", az_ob_eng_2_handler);
-    setlistener("yak-40/switches/az_ob_eng_3", az_ob_eng_3_handler);
-    setlistener("yak-40/switches/az_akk", battery_handler);
-    setlistener("yak-40/switches/az_adp", az_adp_handler);
-    setlistener("yak-40/switches/az_bat_1",az_bat1_handler);
-    setlistener("yak-40/switches/az_bat_2",az_bat2_handler);
-    setlistener("yak-40/switches/az_agd_r",az_agd_r_handler);
-}
-
-update_lights = func{
-  if (getprop("yak-40/switches/az_board_center")==nil){settimer(update_lights, UPDATE_PERIOD );}
-  if ((getprop("yak-40/systems/electrical/buses/bus27/volts")>16) and (getprop("yak-40/switches/az_board_center")==1)){
-    setprop("yak-40/light/board_center",1);
-  } else {
-    setprop("yak-40/light/board_center",0);
-  }
-  settimer(update_lights, UPDATE_PERIOD );
-}
-update_buses_handler = func{
-
-#     update_users();
-    bus36.update_voltage();
-#    AC1x115_bus.update_voltage();
-    akk_bus.update_voltage();
-    akk_bus.update_users();
-    akk_bus.update_uload();
-    akk_bus.update_load();
-    
-
-    bus27.update_voltage();
-    bus27.update_uload();
-    bus27.update_users();
-    bus27.update_load();
-    
-#    DC27_bus.update_voltage();
-#    Error_bus.update_voltage();
-    
-#    PO_4500_1.update();
-#    PO_4500_2.update();
-    
-#    0_1_bus.update_voltage();
-#    PT_1000_1_bus.update_load();
-    
-    po1500_steklo.update();
-#    PT_1000_2.update();
-    
-    bus36.update_load();
-#    AC1x115_bus.update_load();
-    
-#     bus27.update_load();
-#    DC27_bus.update_load();
-#    Error_bus.update_load();
-    
-    settimer(update_buses_handler, UPDATE_PERIOD );
-#     settimer(update_users, UPDATE_PERIOD );
-    
-}
-
-# update_users = func{
-#     adp.update_voltage();
-#     ite2t_1.update_voltage();
-#     ite2t_2.update_voltage();
-#     ite2t_3.update_voltage();
-# }
 
 setlistener("/sim/signals/fdm-initialized", init_electrical);
 
-az_bat1_handler = func{
-  if (getprop("yak-40/switches/az_bat_1")==1){
-    akk_bus.add_input( battery1 );
-    battery1.connect_to_bus(akk_bus);
-  }
-  if (getprop("yak-40/switches/az_bat_1")==0) {
-    akk_bus.rm_input( battery1.name );
-    battery1.disconnect_from_bus();
-  }
-}
 
-az_bat2_handler = func{
-  if (getprop("yak-40/switches/az_bat_2")==1){
-    akk_bus.add_input( battery2 );
-    battery2.connect_to_bus(akk_bus);
-    print("Batery 2 On");
-  }
-  if (getprop("yak-40/switches/az_bat_2")==0){
-    akk_bus.rm_input( battery2.name );
-    battery2.disconnect_from_bus(akk_bus);
-  }
-}
-
-battery_handler = func{
-    if( getprop("yak-40/switches/az_akk")==-1 ){
-	bus27.add_input(akk_bus);
-	akk_bus.add_output(bus27,"yak-40/systems/electrical/buses/bus27/load");
-	print("On battery");	
-    } 
-    if( getprop("yak-40/switches/az_akk")==1 ){
-	bus27.rm_input(akk_bus.name);
-	akk_bus.rm_output(bus27.name);
-	print("Off battery");
-    }
-}
 
 update_electrical = func {
     settimer(update_electrical, UPDATE_PERIOD);
-}
+instruments.update_electrical();
+# Added by Yurik 
+# Electrical panel gauges and lamps support
 
-az_agd_r_handler = func {
-  if (getprop("yak-40/switches/az_agd_r")==1){
-    akk_bus.add_users(agd_r, 10,"instrumentation/agd_r");
-    print("AGD Right On");
-  }
-  if (getprop("yak-40/switches/az_agd_r")==0){
-    akk_bus.rm_users( agd_r.name,"instrumentation/agd_r" );
-  }
-}
-
-PO1500_steklo_on_bus_handler = func {
-  
-  if (getprop("yak-40/switches/az_po_steklo") == 1) {
-      po1500_steklo.add_input( bus27 );
-      print ("PO-1500 Steklo on bus");
-    } else {
-      po1500_steklo.rm_input( "bus27" );
-      print ("PO-1500 Steklo out bus");
-    }
-}
-
-az_ob_eng_1_handler = func {
-  if( getprop("yak-40/switches/az_engine_1")==1 ){
-	bus27.add_users(ite2t_1,10,"yak-40/instrumentation/ite2t_1");
-	print("Engine indicator 1 on");
-    } else {
-	bus27.rm_users("ite2t_1","yak-40/instrumentation/ite2t_1");
-	print("Engine indicator 1 off");
-    }
-}
-
-az_ob_eng_2_handler = func {
-  if( getprop("yak-40/switches/az_ob_eng_2")==1 ){
-	bus27.add_output(ite2t_2, 10);
-	ite2t_2.add_input( bus27 );
-	print("Engine indicator 2 on");
-    } else {
-	bus27.rm_output("ite2t_2");
-	ite2t_2.rm_input( "bus27");
-	print("Engine indicator 2 off");
-    }
-}
-
-az_ob_eng_3_handler = func {
-  if( getprop("yak-40/switches/az_ob_eng_3")==1 ){
-	bus27.add_output(ite2t_3, 10);
-	ite2t_3.add_input( bus27 );
-	print("Engine indicator 3 on");
-    } else {
-	bus27.rm_output("ite2t_3");
-	ite2t_3.rm_input( "bus27");
-	print("Engine indicator 3 off");
-    }
-}
+# AC 
+var src = getprop( "tu154/switches/voltage-src-selector" );
+if( src == nil ) src = 0;
+var voltage = 0.0;
+var freq = 0.0;
+if( src == 0 ) {
+	voltage = getprop( "tu154/systems/electrical/suppliers/GT40-1/volts" );
+	freq = getprop( "tu154/systems/electrical/suppliers/GT40-1/frequency" );
+	}
+if( src == 1 ) {
+	voltage = getprop( "tu154/systems/electrical/suppliers/GT40-2/volts" );
+	freq = getprop( "tu154/systems/electrical/suppliers/GT40-2/frequency" );
+	}
+if( src == 2 ) {
+	voltage = getprop( "tu154/systems/electrical/suppliers/GT40-3/volts" );
+	freq = getprop( "tu154/systems/electrical/suppliers/GT40-3/frequency" );
+	}
+if( src == 3 ) {
+	voltage = getprop( "tu154/systems/electrical/suppliers/GT40-APU/volts" );
+	freq = getprop( "tu154/systems/electrical/suppliers/GT40-APU/frequency" );
+	}
+if( src == 4 ) {
+	voltage = getprop( "tu154/systems/electrical/buses/AC3x200-bus-1L/volts" );
+	freq = getprop( "tu154/systems/electrical/suppliers/AC3x200-bus-1L/frequency" );
+	}
+if( src == 5 ) {
+	voltage = getprop( "tu154/systems/electrical/buses/AC3x200-bus-2/volts" );
+	freq = getprop( "tu154/systems/electrical/suppliers/AC3x200-bus-2/frequency" );
+	}
+if( src == 6 ) {
+	voltage = getprop( "tu154/systems/electrical/buses/AC3x200-bus-3L/volts" );
+	freq = getprop( "tu154/systems/electrical/suppliers/AC3x200-bus-3L/frequency" );
+	}
 	
-az_adp_handler = func {
-  if( getprop("yak-40/switches/az_adp")==1 ){
-	bus27.add_users(adp, 10,"instrumentation/adp");
-	print("ADP on");
-    } else {
-	bus27.rm_users("adp","instrumentation/adp");
-	print("ADP off");
-    }
+	if( voltage == nil ) voltage = 0.0;
+	if( freq == nil ) freq = 0.0;
+# v=v/sqrt(3);
+	interpolate("tu154/instrumentation/electrical/v200", voltage/1.73, UPDATE_PERIOD );
+	interpolate("tu154/instrumentation/electrical/hz200", freq, UPDATE_PERIOD );
+	
+src = getprop( "tu154/switches/current-src-selector" );
+if( src == nil ) src = 0;
+var current = 0.0;
+if( src == 0 ) 
+	current = getprop( "tu154/systems/electrical/buses/AC3x200-bus-1L/load" );
+if( src == 1 ) 
+	current = getprop( "tu154/systems/electrical/buses/AC3x200-bus-2/load" );
+if( src == 2 ) 
+	current = getprop( "tu154/systems/electrical/buses/AC3x200-bus-3L/load" );
+if( src == 4 ) # It's evil hack... 
+	current = getprop( "tu154/systems/electrical/buses/AC3x200-bus-1L/load" );
+	
+	if( current == nil ) current = 0.0;
+	
+	interpolate("tu154/instrumentation/electrical/a200", current, UPDATE_PERIOD );
+# DC
+src = getprop( "tu154/switches/dc-src-selector" );
+if( src == nil ) src = 0;
+if( src == 0 )
+	voltage = getprop( "tu154/systems/electrical/buses/DC27-bus-L/volts" );
+if( src == 1 )
+	voltage = getprop( "tu154/systems/electrical/suppliers/A20NKBN25U3-1/volts" );
+	if( voltage == nil ) voltage = 0.0;
+	interpolate("tu154/instrumentation/electrical/v27", voltage, UPDATE_PERIOD );
+# Only for demo!
+	current = getprop( "tu154/systems/electrical/buses/DC27-bus-Lv/load" );
+	if( current == nil ) current = 0.0;
+	interpolate("tu154/instrumentation/electrical/a27", current, UPDATE_PERIOD );
+
+# Lamps
+voltage = getprop( "tu154/systems/electrical/buses/DC27-bus-L/volts" );
+if( voltage == nil ) voltage = 0.0;
+if( voltage > 15.0 )
+	{
+	# NPK
+	if( getprop( "tu154/systems/electrical/buses/AC3x200-bus-1L/volts" ) > 150 )
+		setprop("tu154/lamps/npk-left", 0.0);
+	else	setprop("tu154/lamps/npk-left", 1.0);
+	if( getprop( "tu154/systems/electrical/buses/AC3x200-bus-3L/volts" ) > 150 )
+		setprop("tu154/lamps/npk-right", 0.0);
+	else	setprop("tu154/lamps/npk-right", 1.0);
+	# Generators
+	if( (getprop( "tu154/systems/electrical/suppliers/GT40-1/volts" ) > 150) and
+		( getprop( "tu154/switches/generator-1") == 1 ) )
+			setprop("tu154/lamps/gen-1-failure", 0.0);
+	else	setprop("tu154/lamps/gen-1-failure", 1.0);
+	
+	if( (getprop( "tu154/systems/electrical/suppliers/GT40-2/volts" ) > 150) and
+		( getprop( "tu154/switches/generator-2") == 1 ) )
+			setprop("tu154/lamps/gen-2-failure", 0.0);
+	else	setprop("tu154/lamps/gen-2-failure", 1.0);
+	
+	if( (getprop( "tu154/systems/electrical/suppliers/GT40-3/volts" ) > 150) and
+		( getprop( "tu154/switches/generator-3") == 1 ) )
+			setprop("tu154/lamps/gen-3-failure", 0.0);
+	else	setprop("tu154/lamps/gen-3-failure", 1.0);
+
+
+	# Main battery lamp
+	if( 
+	      ( (getprop( "tu154/systems/electrical/suppliers/VU6B-1/volts" ) > 18.0 ) and
+	      ( getprop( "tu154/switches/vypr-1") == 1 ) ) or
+	      ( (getprop( "tu154/systems/electrical/suppliers/VU6B-2/volts" ) > 18.0 ) and
+	      ( getprop( "tu154/switches/vypr-2") == 1 ) )
+	  )	
+		{
+		setprop("tu154/lamps/battery", 0.0);
+		setprop( "tu154/systems/electrical/suppliers/battery_charge", 1.0 );
+		}
+	else	{
+		setprop("tu154/lamps/battery", 1.0);
+		setprop( "tu154/systems/electrical/suppliers/battery_charge", 0.0 );
+		}
+	
+	}
+else	{
+	setprop("tu154/lamps/npk-left", 0.0);
+	setprop("tu154/lamps/npk-right", 0.0);
+	setprop("tu154/lamps/gen-1-failure", 0.0);
+	setprop("tu154/lamps/gen-2-failure", 0.0);
+	setprop("tu154/lamps/gen-3-failure", 0.0);
+	setprop("tu154/lamps/battery", 0.0);
+	setprop( "tu154/systems/electrical/suppliers/battery_charge", 0.0 );
+	interpolate("tu154/instrumentation/electrical/v27", 0.0, UPDATE_PERIOD );
+	interpolate("tu154/instrumentation/electrical/a27", 0.0, UPDATE_PERIOD );
+	interpolate("tu154/instrumentation/electrical/a200", 0.0, UPDATE_PERIOD );
+	interpolate("tu154/instrumentation/electrical/v200", 0.0, UPDATE_PERIOD );
+	interpolate("tu154/instrumentation/electrical/hz200", 0.0, UPDATE_PERIOD );
+	}
+
+var hd_input = getprop("tu154/light/headlight-selector");
+if( hd_input == nil ) hd_input = 0.0;
+if(  hd_input > 0.0 )
+	{
+	setprop("tu154/light/headlight", 1.0 );
+	}
+	else { 
+	setprop("tu154/light/headlight", 0.0 );
+	}
+
+
+
 }
 
 
-###########################################################
+
+
 
 #---- Buses -----
 
@@ -291,13 +581,10 @@ DCBusClass.new = func( name ) {
 	    name :  name,
 	    volts :  props.globals.getNode( enode ~ "buses/" ~ name ~ "/volts", 1 ),
 	    load : props.globals.getNode( enode ~ "buses/" ~ name ~ "/load", 1 ),
-	    uload : props.globals.getNode( enode ~ "buses/" ~ name ~ "/uload", 1 ),
 	    inputs : props.globals.getNode( enode ~ "buses/" ~ name ~ "/inputs", 1 ),
-	    outputs : props.globals.getNode( enode ~ "buses/" ~ name ~ "/outputs", 1 ) ,
-	    users : props.globals.getNode( enode ~ "buses/" ~ name ~ "/users", 1 ) };
+	    outputs : props.globals.getNode( enode ~ "buses/" ~ name ~ "/ouputs", 1 ) };
     obj.volts.setValue(0.0);
     obj.load.setValue(0.0);
-    obj.uload.setValue(0.0);
     return obj;
 }
 
@@ -305,14 +592,8 @@ DCBusClass.add_input = func( obj ) {
     me.inputs.getNode( obj.name, 1).setValue( obj.node );
 }
 
-DCBusClass.add_output = func( obj, load ) {
-    me.outputs.getNode( obj.name, 1).setValues({ "load" : load});
-}
-
-DCBusClass.add_users = func( obj, load,path ) {
-    volts = 0;
-    me.users.getNode( obj.name, 1).setValues({ "load" : load});
-    me.users.getNode( obj.name, 1).setValues({ "path" : path});
+DCBusClass.add_output = func( name, load ) {
+    me.outputs.getNode( name, 1).setValues({ "load" : load});
 }
 
 DCBusClass.rm_input = func( name ) {
@@ -323,41 +604,16 @@ DCBusClass.rm_output = func( name ) {
     me.outputs.removeChild( name,0 );
 }
 
-DCBusClass.rm_users = func( name,path ) {
-    setprop(path ~ "/volts","0");
-    me.users.removeChild( name,0 );
-}
-
 DCBusClass.voltage = func {
     return me.volts.getValue();
 }
 
-DCBusClass.update_input = func( name, volts ) {
+DCBusClass.update_intput = func( name, volts ) {
     me.inputs.getNode( name ).setValues( { "volts" : volts } );
 }
 
-DCBusClass.update_users = func {
-  volts = me.volts.getValue();
-  outputs =  me.users.getChildren();
-  foreach( output; outputs){
-  path= output.getNode("path").getValue() ~ "/volts";
-  setprop(path,volts);
-#     output.setValues(volts);
- }
-}
-
 DCBusClass.update_output = func( name, load ) {
-    me.outputs.getNode( name ).setValues( { name : load } );
-}
-
-DCBusClass.update_uload = func {
-    uload = 0.0;
-    outputs =  me.users.getChildren();
-    if(outputs == nil) return;
-    foreach( output; outputs ){
-	uload += output.getNode("load").getValue();
-    }
-    me.uload.setValue( uload );
+    me.ouputs.getNode( name ).setValues( { name : load } );
 }
 
 DCBusClass.update_load = func {
@@ -365,22 +621,14 @@ DCBusClass.update_load = func {
     outputs =  me.outputs.getChildren();
     if(outputs == nil) return;
     foreach( output; outputs ){
-	a = output.getNode("load").getValue();
-	if (a == nil) return;
-	b=getprop(a);
-	if (b == nil) return;
-# 	print (b);
-  	load += getprop(a);
+	load += output.getNode("load").getValue();
     }
-    uload = me.uload.getValue();
-    print (load ~ "   " ~ uload);
-    me.load.setValue( load+uload );
+    me.load.setValue( load );
 }
 
 DCBusClass.update_voltage = func {
     volts = 0.0;
     foreach( input; me.inputs.getChildren() ){
-	test = props.globals.getNode( input.getValue());
 	ivolts = props.globals.getNode( input.getValue() ~ "volts" ).getValue();
 	volts = volts < ivolts ? ivolts : volts;
     }
@@ -507,28 +755,30 @@ BatteryClass.disconnect_from_bus = func{
 
 #---- Alernators
 
-DCAlternatorClass = {};
-DCAlternatorClass.new = func( name ) {
-    obj = { parents : [DCAlternatorClass],
+ACAlternatorClass = {};
+ACAlternatorClass.new = func( name ) {
+    obj = { parents : [ACAlternatorClass],
 	    name : name,
 	    node :  enode ~ "suppliers/" ~ name ~ "/",
 	    volts :   props.globals.getNode( enode ~ "suppliers/" ~ name ~ "/volts", 1 ),
+	    frequency :  props.globals.getNode( enode ~ "suppliers/" ~ name ~ "/frequency", 1 ),
 	    engine : nil,
 	    bus : nil,
-            ideal_volts : 28.5,
-	    ideal_amps : 600.0 };
-    props.globals.getNode(obj.node,1).setValues({ "volts": 0.0} );
+            ideal_volts : 208.0,
+	    ideal_freq : 400,
+            ideal_amps : 110.0 };
+    props.globals.getNode(obj.node,1).setValues({ "volts": 0.0, "frequency" : 400.0} );
     return obj;
 }
 
 
-DCAlternatorClass.apply_load = func( amps, dt ) {
+ACAlternatorClass.apply_load = func( amps, dt ) {
     rpm = me.engine.getNode("rpm").getValue();
     available_amps = me.ideal_amps * math.ln(rpm)/9;
     return available_amps - amps;
 }
 
-DCAlternatorClass.rpm_handler = func {
+ACAlternatorClass.rpm_handler = func {
     rpm = me.engine.getNode("rpm").getValue();
     if( rpm < 1000.0 ) volts = 0.0;
     else volts = me.ideal_volts*math.ln(rpm)/9;
@@ -536,7 +786,7 @@ DCAlternatorClass.rpm_handler = func {
     if( me.bus != nil ) setprop(me.bus.volts, volts );
 }
 
-DCAlternatorClass.get_output_amps = func(src ){
+ACAlternatorClass.get_output_amps = func(src ){
     rpm = getprop( src );
     if( rpm == nil ) rpm = 0;
     # APU can have 0 rpm
@@ -548,19 +798,19 @@ DCAlternatorClass.get_output_amps = func(src ){
     return me.ideal_amps * factor;
 }
 
-DCAlternatorClass.connect_to_bus = func( _bus ){
+ACAlternatorClass.connect_to_bus = func( _bus ){
     me.bus = _bus;
 }
 
-DCAlternatorClass.disconnect_from_bus = func{
+ACAlternatorClass.disconnect_from_bus = func{
     me.bus = nil;
 }
 
-DCAlternatorClass.rpm_source = func( eng ){
+ACAlternatorClass.rpm_source = func( eng ){
     me.engine = eng;
 }
 
-DCAlternatorClass.voltage = func( eng ){
+ACAlternatorClass.voltage = func( eng ){
     return me.volts.getValue();
 }
 
@@ -639,20 +889,11 @@ DCACinverterClass.add_input = func( obj ){
     me.input = obj;
 }
 
-DCACinverterClass.rm_input = func( obj ){
-    me.input = nil;
-}
-
 DCACinverterClass.output = func( obj ){
     me.output = obj;
 }
 
-DCACinverterClass.disconnect_from_bus = func{
-    me.bus = nil;
-}
-
 DCACinverterClass.update = func{
-    print ("Up");
     volts = me.input == nil ? 0.0 : me.input.volts.getValue()*me.conv_coeff;
     me.volts.setValue(volts);
 }
@@ -664,10 +905,12 @@ ExternalClass.new = func( name ) {
 	    name : name,
 	    node :  enode ~ "suppliers/" ~ name ~ "/",
 	    volts :   props.globals.getNode( enode ~ "suppliers/" ~ name ~ "/volts", 1 ),
+	    frequency :  props.globals.getNode( enode ~ "suppliers/" ~ name ~ "/frequency", 1 ),
 	    bus : nil,
-            ideal_volts : 27.5,
+            ideal_volts : 208.0,
+	    ideal_freq : 400,
             ideal_amps : 110.0 };
-    props.globals.getNode(obj.node,1).setValues({ "volts": 27.5} );
+    props.globals.getNode(obj.node,1).setValues({ "volts": 208.0, "frequency" : 400.0} );
     return obj;
 }
 
@@ -679,39 +922,6 @@ ExternalClass.disconnect_from_bus = func{
     me.bus = nil;
 }
 
-UserClass = {};
 
-UserClass.new = func( node, name ) {
-    obj = { parents : [UserClass],
-	    node : node,
-	    name :  name,
-	    volts :  props.globals.getNode( node ~ "/" ~ name ~ "/volts", 1 ),
-	    inputs : props.globals.getNode( node ~ "/" ~ name ~ "/inputs", 1 ) };
-    obj.volts.setValue(0.0);
-    return obj;
-}
 
-UserClass.add_input = func( obj ) {
-    me.inputs.getNode( obj.name, 1).setValue( obj.node );
-}
 
-UserClass.rm_input = func( name ) {
-    me.inputs.removeChild( name,0 );
-}
-
-UserClass.voltage = func {
-    return me.volts.getValue();
-}
-
-UserClass.update_input = func( name, volts ) {
-    me.inputs.getNode( name ).setValues( { "volts" : volts } );
-}
-
-UserClass.update_voltage = func {
-    volts = 0.0;
-    foreach( input; me.inputs.getChildren() ){
-	ivolts = props.globals.getNode( input.getValue() ~ "volts" ).getValue();
-	volts = volts < ivolts ? ivolts : volts;
-    }
-    me.volts.setValue( volts );
-}
