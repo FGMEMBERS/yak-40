@@ -100,7 +100,7 @@ VG7500_3_rpm_handler = func {
     VG7500_3.rpm_handler();
 }
 
-generator_1_shandler = func{
+generator_1_handler = func{
     if( getprop("yak40/switches/generator-1")==1 ){
 	DC27_bus.add_input( VG7500_1 );
 	VG7500_1.connect_to_bus( DC27_bus );
@@ -116,7 +116,7 @@ generator_1_shandler = func{
     }
 }
 
-generator_2_shandler = func{
+generator_2_handler = func{
     if( getprop("yak40/switches/generator-2")==1 ){
 	DC27_bus.add_input( VG7500_2 );
 	VG7500_2.connect_to_bus( DC27_bus );
@@ -132,7 +132,7 @@ generator_2_shandler = func{
     }
 }
 
-generator_3_shandler = func{
+generator_3_handler = func{
     if( getprop("yak40/switches/generator-3")==1 ){
 	DC27_bus.add_input( VG7500_3 );
 	VG7500_3.connect_to_bus( DC27_bus );
@@ -148,54 +148,44 @@ generator_3_shandler = func{
     }
 }
 
-main_battery_handler = func{
-    if( getprop("yak40/switches/main-battery")==1 ){
+main_battery_1_handler = func{
+    if( getprop("yak40/switches/main-battery-1")==1 ){
 	DC27_bus_avar.add_input( battery1 );
-	DC27_bus_avar.add_input( battery2 );
 	battery1.connect_to_bus( DC27_bus_avar );
-	battery2.connect_to_bus( DC27_bus_avar );
-#	setprop("tu154/lamps/battery",1.0);
-	print("Battery on");
+	print("Battery 1 on");
     } 
-    if( getprop("yak40/switches/main-battery")==0 ){
+    if( getprop("yak40/switches/main-battery-2")==0 ){
 	DC27_bus_avar.rm_input( battery1.name );
-	DC27_bus_avar.rm_input( battery2.name );
 	battery1.disconnect_from_bus();
-	battery2.disconnect_from_bus();
-#	setprop("tu154/lamps/battery",0.0);
-	print("Battery off");
+	print("Battery 1 off");
     }
 }
 
-APU_RAP_shandler = func{
-    if( getprop("tu154/switches/APU-RAP-selector")==0 ){
+main_battery_2_handler = func{
+    if( getprop("yak40/switches/main-battery-2")==1 ){
+	DC27_bus_avar.add_input( battery2 );
+	battery2.connect_to_bus( DC27_bus_avar );
+	print("Battery 2 on");
+    } 
+    if( getprop("yak40/switches/main-battery-2")==0 ){
+	DC27_bus_avar.rm_input( battery2.name );
+	battery2.disconnect_from_bus();
+	print("Battery 2 off");
+    }
+}
+
+APU_RAP_handler = func{
+    if( getprop("yak40/switches/RAP")==0 ){
 	DC27_bus.rm_input( "RAP" );
 
 	print(" RAP Off");
     }
-    if( getprop("tu154/switches/APU-RAP-selector")==1 ){
+    if( getprop("yak40/switches/RAP")==1 ){
 	DC27_bus.add_input( RAP );
 	
 	print(" RAP On");
     }
 }
-
-
-AGR_shandler = func{
-    if( getprop("tu154/switches/AGR")==1 ){
-	DC27_bus_Lv.add_output( "PTS-250-1" ,0.0);
-	AC3x36_bus_PTS1.add_input( "PTS-250-1" );
-	print(" AGR On");
-    } 
-    if( getprop("tu154/switches/vypr-2")==0 ){
-	AC3x36_bus_PTS1.rm_input( "PTS-250-1" );
-	DC27_bus_Lv.rm_output( "PTS-250-1" );
-	print(" AGR Off");
-    }
-}
-
-
-
 
 
 init_electrical = func {
