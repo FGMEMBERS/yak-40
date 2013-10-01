@@ -286,8 +286,8 @@
  </model>
  
  <model>
-   <name>KREN_LEFT</name>
-   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/kren-left.xml</path>
+   <name>KREN_LEV</name>
+   <path>Aircraft/yak-40/Panels/Instruments-3d/tablo/kren-lev.xml</path>
    <offsets>
      <x-m>-8.154</x-m>
      <y-m>-0.353</y-m>
