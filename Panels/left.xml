@@ -86,8 +86,8 @@
    <path>Aircraft/yak-40/Panels/Instruments-3d/iku-1/iku-1.xml</path>
    <offsets>
      <x-m>-8.156</x-m>
-     <y-m>-0.193</y-m>
-     <z-m>1.431</z-m>
+     <y-m>-0.2884</y-m>
+     <z-m>1.4293</z-m>
 	 <heading-deg>0.0</heading-deg>
 	 <pitch-deg>0.0</pitch-deg>
    </offsets>
