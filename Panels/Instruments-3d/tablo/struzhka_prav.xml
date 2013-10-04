@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!-- Autopilot tablo for Tu-134
+3D instrument for Tu-134-->
+<PropertyList>
+ <path>tablo.ac</path>
+
+  <animation>
+   <type>material</type>
+   <object-name>Lamp</object-name>
+   <texture>struzhka_prav.png</texture>
+  </animation>
+  
+  <animation>
+    <type>textranslate</type>
+    <object-name>Lamp</object-name>
+    <property>yak-40/lamps/struzhka-prav</property>
+    <factor>0.5</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>Lamp</object-name>
+    <emission>
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+      <factor-prop>yak-40/lamps/struzhka-prav</factor-prop>
+    </emission>
+  </animation>
+  
+</PropertyList>
